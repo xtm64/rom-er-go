@@ -1738,3 +1738,12 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+        .include "data/maps/FervorFieldCity_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Entrance_ARHU_1/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PlayersHouse_2F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PlayersHouse_1F_ARHU/scripts.inc"

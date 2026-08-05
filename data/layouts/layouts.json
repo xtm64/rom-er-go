@@ -9323,6 +9323,67 @@
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_ARHU",
+      "name": "FervorFieldCity_ARHU_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_FuchsiaCity",
+      "border_filepath": "data/layouts/FervorFieldCity_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1",
+      "name": "FervorFieldCity_SafariZone_Entrance_ARHU_1_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_Entrance_ARHU_1/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_Entrance_ARHU_1/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU",
+      "name": "FervorField_PlayersHouse_2F_ARHU_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_GenericBuilding1",
+      "border_filepath": "data/layouts/FervorField_PlayersHouse_2F_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorField_PlayersHouse_2F_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_PLAYERS_HOUSE_1F_ARHU",
+      "name": "FervorField_PlayersHouse_1F_ARHU_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_GenericBuilding1",
+      "border_filepath": "data/layouts/FervorField_PlayersHouse_1F_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorField_PlayersHouse_1F_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_SIDE_ROOM_ARHU",
+      "name": "FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
     }
   ]
 }

@@ -135,10 +135,8 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    // PokeRedDe: Start player in Fervor Field Player's House 2F (STR-005)
+    SetWarpDestination(MAP_GROUP(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), MAP_NUM(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), WARP_ID_NONE, 6, 4);
     WarpIntoMap();
 }
 

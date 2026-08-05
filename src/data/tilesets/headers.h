@@ -836,16 +836,6 @@ const struct Tileset gTileset_UnionRoom =
 #else
 
 // FRLG tilesets
-const struct Tileset gTileset_BuildingFrlg =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Building_Frlg,
-    .palettes = gTilesetPalettes_Building_Frlg,
-    .metatiles = gMetatiles_Building_Frlg,
-    .metatileAttributes = gMetatileAttributes_Building_Frlg,
-    .callback = NULL,
-};
 
 const struct Tileset gTileset_General_Frlg =
 {
@@ -1042,17 +1032,6 @@ const struct Tileset gTileset_BikeShop_Frlg =
     .palettes = gTilesetPalettes_BikeShop_Frlg,
     .metatiles = gMetatiles_BikeShop_Frlg,
     .metatileAttributes = gMetatileAttributes_BikeShop_Frlg,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_GenericBuilding1 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_GenericBuilding1,
-    .palettes = gTilesetPalettes_GenericBuilding1,
-    .metatiles = gMetatiles_GenericBuilding1,
-    .metatileAttributes = gMetatileAttributes_GenericBuilding1,
     .callback = NULL,
 };
 
@@ -1342,17 +1321,6 @@ const struct Tileset gTileset_PokemonTower =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_SafariZoneBuilding =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SafariZoneBuilding,
-    .palettes = gTilesetPalettes_SafariZoneBuilding,
-    .metatiles = gMetatiles_SafariZoneBuilding,
-    .metatileAttributes = gMetatileAttributes_SafariZoneBuilding,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_PokemonMansion =
 {
     .isCompressed = TRUE,
@@ -1541,3 +1509,37 @@ const struct Tileset gTileset_HallOfFame =
 };
 
 #endif // IS_FRLG
+
+// Used by custom ARHU maps — needed in both Emerald and FRLG builds
+const struct Tileset gTileset_BuildingFrlg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Building_Frlg,
+    .palettes = gTilesetPalettes_Building_Frlg,
+    .metatiles = gMetatiles_Building_Frlg,
+    .metatileAttributes = gMetatileAttributes_Building_Frlg,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_GenericBuilding1 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GenericBuilding1,
+    .palettes = gTilesetPalettes_GenericBuilding1,
+    .metatiles = gMetatiles_GenericBuilding1,
+    .metatileAttributes = gMetatileAttributes_GenericBuilding1,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SafariZoneBuilding =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariZoneBuilding,
+    .palettes = gTilesetPalettes_SafariZoneBuilding,
+    .metatiles = gMetatiles_SafariZoneBuilding,
+    .metatileAttributes = gMetatileAttributes_SafariZoneBuilding,
+    .callback = NULL,
+};

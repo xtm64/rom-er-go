@@ -74,7 +74,9 @@
     "gMapGroup_IndoorFiveIslandRoute_Frlg",
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
-    "gMapGroup_IndoorSevenIslandRoute_Frlg"
+    "gMapGroup_IndoorSevenIslandRoute_Frlg",
+    "gMapGroup_TownsAndRoutes_ARHU",
+    "gMapGroup_IndoorFervorField_ARHU"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1160,5 +1162,14 @@
   ],
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
+  ],
+  "gMapGroup_TownsAndRoutes_ARHU": [
+    "FervorFieldCity_ARHU"
+  ],
+  "gMapGroup_IndoorFervorField_ARHU": [
+    "FervorFieldCity_SafariZone_Entrance_ARHU_1",
+    "FervorField_PlayersHouse_2F_ARHU",
+    "FervorField_PlayersHouse_1F_ARHU",
+    "FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU"
   ]
 }

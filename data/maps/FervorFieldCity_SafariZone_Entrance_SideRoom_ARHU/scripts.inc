@@ -1,0 +1,2 @@
+FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU_MapScripts::
+	.byte 0
