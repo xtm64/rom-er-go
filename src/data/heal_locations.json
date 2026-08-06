@@ -353,8 +353,10 @@
     {
       "id": "HEAL_LOCATION_FERVOR_FIELD",
       "map": "MAP_FERVOR_FIELD_CITY_ARHU",
-      "respawn_map": "MAP_FERVOR_FIELD_CITY_ARHU",
-      "respawn_npc": "LOCALID_NURSE"
+      "x": 6,
+      "y": 4,
+      "respawn_map": "MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU",
+      "respawn_npc": "0"
     }
   ]
 }
