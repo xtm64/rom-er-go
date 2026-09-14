@@ -214,9 +214,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 
 
-const u16 gMetatiles_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatiles.bin");
-const u16 gMetatileAttributes_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatile_attributes.bin");
-
 const u16 gMetatiles_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatiles.bin");
 const u16 gMetatileAttributes_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatile_attributes.bin");
 
@@ -237,9 +234,6 @@ const u16 gMetatileAttributes_VermilionCity[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_CeladonCity[] = INCBIN_U16("data/tilesets/secondary/celadon_city_frlg/metatiles.bin");
 const u16 gMetatileAttributes_CeladonCity[] = INCBIN_U16("data/tilesets/secondary/celadon_city_frlg/metatile_attributes.bin");
-
-const u16 gMetatiles_FuchsiaCity[] = INCBIN_U16("data/tilesets/secondary/fuchsia_city_frlg/metatiles.bin");
-const u16 gMetatileAttributes_FuchsiaCity[] = INCBIN_U16("data/tilesets/secondary/fuchsia_city_frlg/metatile_attributes.bin");
 
 const u16 gMetatiles_CinnabarIsland[] = INCBIN_U16("data/tilesets/secondary/cinnabar_island_frlg/metatiles.bin");
 const u16 gMetatileAttributes_CinnabarIsland[] = INCBIN_U16("data/tilesets/secondary/cinnabar_island_frlg/metatile_attributes.bin");
@@ -412,3 +406,9 @@ const u16 gMetatileAttributes_GenericBuilding1[] = INCBIN_U16("data/tilesets/sec
 
 const u16 gMetatiles_SafariZoneBuilding[] = INCBIN_U16("data/tilesets/secondary/safari_zone_building_frlg/metatiles.bin");
 const u16 gMetatileAttributes_SafariZoneBuilding[] = INCBIN_U16("data/tilesets/secondary/safari_zone_building_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatiles.bin");
+const u16 gMetatileAttributes_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_FuchsiaCity[] = INCBIN_U16("data/tilesets/secondary/fuchsia_city_frlg/metatiles.bin");
+const u16 gMetatileAttributes_FuchsiaCity[] = INCBIN_U16("data/tilesets/secondary/fuchsia_city_frlg/metatile_attributes.bin");

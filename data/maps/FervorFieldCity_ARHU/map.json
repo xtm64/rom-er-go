@@ -24,7 +24,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Erik",
+      "script": "FervorFieldCity_ARHU_EventScript_Erik",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Youngster",
+      "script": "FervorFieldCity_ARHU_EventScript_Youngster",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_LittleBoy",
+      "script": "FervorFieldCity_ARHU_EventScript_LittleBoy",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_OldMan",
+      "script": "FervorFieldCity_ARHU_EventScript_OldMan",
       "flag": "0"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_SubstituteTutor",
+      "script": "FervorFieldCity_ARHU_EventScript_SubstituteTutor",
       "flag": "0"
     }
   ],
@@ -213,7 +213,7 @@
       "y": 9,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_CitySign"
+      "script": "FervorFieldCity_ARHU_EventScript_CitySign"
     },
     {
       "type": "sign",
@@ -221,7 +221,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_SafariZoneSign"
+      "script": "FervorFieldCity_ARHU_EventScript_SafariZoneSign"
     },
     {
       "type": "sign",
@@ -229,7 +229,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_GymSign"
+      "script": "FervorFieldCity_ARHU_EventScript_GymSign"
     },
     {
       "type": "sign",
@@ -237,7 +237,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_WardensHomeSign"
+      "script": "FervorFieldCity_ARHU_EventScript_WardensHomeSign"
     },
     {
       "type": "sign",
@@ -245,7 +245,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_SafariGameSign"
+      "script": "FervorFieldCity_ARHU_EventScript_SafariGameSign"
     },
     {
       "type": "hidden_item",
@@ -258,6 +258,5 @@
       "underfoot": false
     }
   ],
-  "floor_number": 0,
-  "region": "REGION_KANTO"
+  "floor_number": 0
 }

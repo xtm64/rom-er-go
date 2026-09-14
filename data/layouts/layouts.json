@@ -9334,8 +9334,7 @@
       "border_filepath": "data/layouts/FervorFieldCity_ARHU/border.bin",
       "blockdata_filepath": "data/layouts/FervorFieldCity_ARHU/map.bin",
       "border_height": 2,
-      "border_width": 2,
-      "layout_version": "frlg"
+      "border_width": 2
     },
     {
       "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1",

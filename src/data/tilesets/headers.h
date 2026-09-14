@@ -837,17 +837,6 @@ const struct Tileset gTileset_UnionRoom =
 
 // FRLG tilesets
 
-const struct Tileset gTileset_General_Frlg =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_General_Frlg,
-    .palettes = gTilesetPalettes_General_Frlg,
-    .metatiles = gMetatiles_General_Frlg,
-    .metatileAttributes = gMetatileAttributes_General_Frlg,
-    .callback = InitTilesetAnim_General_Frlg,
-};
-
 const struct Tileset gTileset_PalletTown =
 {
     .isCompressed = TRUE,
@@ -923,17 +912,6 @@ const struct Tileset gTileset_CeladonCity =
     .metatiles = gMetatiles_CeladonCity,
     .metatileAttributes = gMetatileAttributes_CeladonCity,
     .callback = InitTilesetAnim_CeladonCity,
-};
-
-const struct Tileset gTileset_FuchsiaCity =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_FuchsiaCity,
-    .palettes = gTilesetPalettes_FuchsiaCity,
-    .metatiles = gMetatiles_FuchsiaCity,
-    .metatileAttributes = gMetatileAttributes_FuchsiaCity,
-    .callback = NULL,
 };
 
 const struct Tileset gTileset_CinnabarIsland =
@@ -1541,5 +1519,27 @@ const struct Tileset gTileset_SafariZoneBuilding =
     .palettes = gTilesetPalettes_SafariZoneBuilding,
     .metatiles = gMetatiles_SafariZoneBuilding,
     .metatileAttributes = gMetatileAttributes_SafariZoneBuilding,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_General_Frlg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General_Frlg,
+    .palettes = gTilesetPalettes_General_Frlg,
+    .metatiles = gMetatiles_General_Frlg,
+    .metatileAttributes = gMetatileAttributes_General_Frlg,
+    .callback = InitTilesetAnim_General_Frlg,
+};
+
+const struct Tileset gTileset_FuchsiaCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FuchsiaCity,
+    .palettes = gTilesetPalettes_FuchsiaCity,
+    .metatiles = gMetatiles_FuchsiaCity,
+    .metatileAttributes = gMetatileAttributes_FuchsiaCity,
     .callback = NULL,
 };

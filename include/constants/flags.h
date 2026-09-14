@@ -664,7 +664,6 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
 #define FLAG_UNUSED_0x265  0x265 // Unused Flag
 #define FLAG_UNUSED_0x266  0x266 // Unused Flag
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
@@ -2287,7 +2286,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE12_RARE_CANDY                                0
 #define FLAG_HIDDEN_ITEM_ROUTE12_LEFTOVERS                                 0
 #define FLAG_HIDDEN_ITEM_ROUTE16_LEFTOVERS                                 0
-#define FLAG_HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE                           0
+// Repurposed FLAG_UNUSED_0x264 — used by FervorFieldCity_ARHU
+#define FLAG_HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE                           (FLAG_HIDDEN_ITEMS_START + 0x70)
 #define FLAG_HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL                       0
 #define FLAG_HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL                            0
 #define FLAG_HIDDEN_ITEM_SILPH_CO_3F_PROTEIN                               0

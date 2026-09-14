@@ -1791,28 +1791,6 @@ const u16 gTilesetPalettes_CeladonCity[][16] =
     INCGFX_U16("data/tilesets/secondary/celadon_city_frlg/palettes/15.pal", ".gbapal"),
 };
 
-const u32 gTilesetTiles_FuchsiaCity[] = INCGFX_U32("data/tilesets/secondary/fuchsia_city_frlg/tiles.png", ".4bpp.fastSmol");
-
-const u16 gTilesetPalettes_FuchsiaCity[][16] =
-{
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/00.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/01.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/02.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/03.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/04.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/05.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/06.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/07.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/08.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/09.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/10.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/11.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/12.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/13.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/14.pal", ".gbapal"),
-    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/15.pal", ".gbapal"),
-};
-
 const u32 gTilesetTiles_CinnabarIsland[] = INCGFX_U32("data/tilesets/secondary/cinnabar_island_frlg/tiles.png", ".4bpp.fastSmol");
 
 const u16 gTilesetPalettes_CinnabarIsland[][16] =
@@ -2959,6 +2937,9 @@ const u16 gTilesetPalettes_DepartmentStore[][16] =
 
 const u32 gTilesetTiles_DepartmentStore[] = INCGFX_U32("data/tilesets/secondary/department_store_frlg/tiles.png", ".4bpp.fastSmol");
 
+#endif // IS_FRLG
+
+// Used by custom ARHU maps - needed in both Emerald and FRLG builds
 const u16 ALIGNED(4) gTilesetPalettes_General_Frlg[][16] =
 {
     INCGFX_U16("data/tilesets/primary/general_frlg/palettes/00.pal", ".gbapal"),
@@ -2981,9 +2962,27 @@ const u16 ALIGNED(4) gTilesetPalettes_General_Frlg[][16] =
 
 const u32 gTilesetTiles_General_Frlg[] = INCGFX_U32("data/tilesets/primary/general_frlg/tiles.png", ".4bpp.smol");
 
-#endif // IS_FRLG
+const u32 gTilesetTiles_FuchsiaCity[] = INCGFX_U32("data/tilesets/secondary/fuchsia_city_frlg/tiles.png", ".4bpp.fastSmol");
 
-// Used by custom ARHU maps - needed in both Emerald and FRLG builds
+const u16 gTilesetPalettes_FuchsiaCity[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/fuchsia_city_frlg/palettes/15.pal", ".gbapal"),
+};
 const u32 gTilesetTiles_Building_Frlg[] = INCGFX_U32("data/tilesets/primary/building_frlg/tiles.png", ".4bpp.smol");
 
 const u16 gTilesetPalettes_Building_Frlg[][16] =
