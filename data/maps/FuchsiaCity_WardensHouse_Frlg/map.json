@@ -3,7 +3,6 @@
   "name": "FuchsiaCity_WardensHouse_Frlg",
   "layout": "LAYOUT_FUCHSIA_CITY_WARDENS_HOUSE",
   "music": "MUS_RG_FUCHSIA",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_FUCHSIA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -12,12 +11,10 @@
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
-  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
       "x": 3,
       "y": 5,
@@ -31,7 +28,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG",
       "x": 11,
       "y": 6,
@@ -45,7 +41,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 11,
       "y": 5,
@@ -59,7 +54,6 @@
       "flag": "FLAG_HIDE_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY"
     },
     {
-      "type": "object",
       "graphics_id": "0",
       "x": 4,
       "y": 1,
@@ -130,5 +124,7 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "FuchsiaCity_WardensHouse_EventScript_DisplaySign2"
     }
-  ]
+  ],
+  "floor_number": 0,
+  "region": "REGION_KANTO"
 }
