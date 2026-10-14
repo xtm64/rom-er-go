@@ -59,7 +59,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TRAINER_CHALLENGE_STATE",
+      "var_value": "0",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_TrainerChallengeIntro_LeftOfStairs"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TRAINER_CHALLENGE_STATE",
+      "var_value": "0",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_TrainerChallengeIntro_BelowStairs"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
