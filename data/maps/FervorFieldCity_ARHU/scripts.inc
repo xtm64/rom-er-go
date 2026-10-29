@@ -372,8 +372,8 @@ FervorFieldCity_ARHU_EventScript_SafariGate_AlreadyPassed::
 	releaseall
 	end
 
-@ The FRLG gate door has no Emerald door animation registered, so these are no-ops visually
-@ but keep the timing of the original script.
+@ The gate (METATILE_FuchsiaCity_SafariZoneDoor) animates with the FRLG Safari door art through the
+@ Emerald door system (src/field_door.c, "Fervor Field City" entries).
 FervorFieldCity_ARHU_EventScript_SafariGate_OpenDoor::
 	opendoor 24, 5
 	waitdooranim
@@ -535,27 +535,7 @@ FervorFieldCity_ARHU_Text_Westin_ThatsOurCue::
 FervorFieldCity_ARHU_Text_SafariGate_AlreadyPassed::
 	.string "Hey! You've already passed!$"
 
-@ Local copies of FuchsiaCity_Frlg scripts (FRLG originals are IS_FRLG-only)
-
-FervorFieldCity_ARHU_EventScript_LittleBoy::
-	msgbox FervorFieldCity_ARHU_Text_DidYouTrySafariGame, MSGBOX_NPC
-	end
-
-FervorFieldCity_ARHU_EventScript_OldMan::
-	msgbox FervorFieldCity_ARHU_Text_SafariZoneZooInFront, MSGBOX_NPC
-	end
-
-FervorFieldCity_ARHU_EventScript_Erik::
-	msgbox FervorFieldCity_ARHU_Text_WheresSara, MSGBOX_NPC
-	end
-
-FervorFieldCity_ARHU_EventScript_Youngster::
-	msgbox FervorFieldCity_ARHU_Text_ItemBallInThere, MSGBOX_NPC
-	end
-
-FervorFieldCity_ARHU_EventScript_SubstituteTutor::
-	msgbox FervorFieldCity_ARHU_Text_SubstituteTutor, MSGBOX_NPC
-	end
+@ Local copies of FuchsiaCity_Frlg sign scripts (FRLG originals are IS_FRLG-only)
 
 FervorFieldCity_ARHU_EventScript_CitySign::
 	msgbox FervorFieldCity_ARHU_Text_CitySign, MSGBOX_SIGN
@@ -576,32 +556,6 @@ FervorFieldCity_ARHU_EventScript_WardensHomeSign::
 FervorFieldCity_ARHU_EventScript_GymSign::
 	msgbox FervorFieldCity_ARHU_Text_GymSign, MSGBOX_SIGN
 	end
-
-FervorFieldCity_ARHU_Text_DidYouTrySafariGame::
-	.string "Did you try the SAFARI GAME?\p"
-	.string "There are some rare POKéMON that\n"
-	.string "can only be caught there.$"
-
-FervorFieldCity_ARHU_Text_SafariZoneZooInFront::
-	.string "The SAFARI ZONE has a zoo in front\n"
-	.string "of the entrance.\p"
-	.string "Out back is the SAFARI GAME for\n"
-	.string "catching POKéMON.$"
-
-FervorFieldCity_ARHU_Text_WheresSara::
-	.string "ERIK: Where's SARA?\n"
-	.string "I said I'd meet her here.$"
-
-FervorFieldCity_ARHU_Text_ItemBallInThere::
-	.string "That item ball in there…\n"
-	.string "Were you wanting that?\p"
-	.string "Me, too!\n"
-	.string "…Huh? That's a POKéMON?$"
-
-FervorFieldCity_ARHU_Text_SubstituteTutor::
-	.string "I can teach a POKéMON how to use\n"
-	.string "SUBSTITUTE…\p"
-	.string "But I'm taking a break right now.$"
 
 FervorFieldCity_ARHU_Text_CitySign::
 	.string "FUCHSIA CITY\n"
