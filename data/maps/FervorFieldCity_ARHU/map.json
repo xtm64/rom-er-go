@@ -3,7 +3,7 @@
   "name": "FervorFieldCity_ARHU",
   "layout": "LAYOUT_FERVOR_FIELD_CITY_ARHU",
   "music": "MUS_RG_FUCHSIA",
-  "region_map_section": "MAPSEC_FUCHSIA_CITY",
+  "region_map_section": "MAPSEC_FERVOR_FIELD",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
@@ -107,7 +107,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD"
     },
     {
       "local_id": "LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER",
@@ -198,6 +198,15 @@
     }
   ],
   "coord_events": [
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeech"
+    },
     {
       "type": "trigger",
       "x": 12,

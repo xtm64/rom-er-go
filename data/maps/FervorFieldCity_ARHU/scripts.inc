@@ -3,10 +3,19 @@ FervorFieldCity_ARHU_MapScripts::
 	.byte 0
 
 FervorFieldCity_ARHU_OnTransition::
+	call_if_eq VAR_FERVOR_FIELD_STARTER_SPEECH_STATE, 1, FervorFieldCity_ARHU_EventScript_PlaceExitSpeechCast
 	goto_if_ne VAR_FERVOR_FIELD_RIVAL_INTRO_STATE, 0, FervorFieldCity_ARHU_OnTransition_End
 	setflag FLAG_HIDE_FERVOR_FIELD_CITY_RIVAL_FRIEND
 FervorFieldCity_ARHU_OnTransition_End::
 	end
+
+@ The player is about to walk out of the Safari gate: Tanglewood waits at (25,7) and Mira, who finished
+@ first, is already beside him at (25,8).
+FervorFieldCity_ARHU_EventScript_PlaceExitSpeechCast::
+	clearflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA
+	setobjectxyperm LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, 25, 7
+	setobjectxyperm LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, 25, 8
+	return
 
 @ Meet the Rival cutscene (ported from HMA script "meet_the_rival").
 @ Fires once when the player steps on (12,28), (13,28) or (14,28) on the main road.
@@ -44,12 +53,12 @@ FervorFieldCity_ARHU_EventScript_MeetTheRival_Main::
 	call_if_eq VAR_0x8008, 0, FervorFieldCity_ARHU_EventScript_MeetTheRival_PlayerLeft
 	call_if_eq VAR_0x8008, 1, FervorFieldCity_ARHU_EventScript_MeetTheRival_PlayerCenter
 	call_if_eq VAR_0x8008, 2, FervorFieldCity_ARHU_EventScript_MeetTheRival_PlayerRight
-	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_Rival_TheyMakeAllKinds, MSGBOX_DEFAULT
-	applymovement LOCALID_FERVOR_FIELD_CITY_RIVAL, Common_Movement_FaceDown
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_FERVOR_FIELD_CITY_RIVAL, FervorFieldCity_ARHU_Movement_RivalFaceDownExclaim
 	waitmovement 0
+	delay 20
 	msgbox FervorFieldCity_ARHU_Text_Rival_YouHadMeWaiting, MSGBOX_DEFAULT
 	closemessage
 	msgbox FervorFieldCity_ARHU_Text_Friend_EvenAfterHePushedYou, MSGBOX_DEFAULT
@@ -79,6 +88,16 @@ FervorFieldCity_ARHU_EventScript_MeetTheRival_Main::
 	applymovement LOCALID_FERVOR_FIELD_CITY_RIVAL, FervorFieldCity_ARHU_Movement_RivalFaceDownExclaim
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_Rival_PokeblockCase, MSGBOX_DEFAULT
+	giveitem ITEM_POKEBLOCK_CASE
+	special GiveFervorFieldStarterPokeblocks
+	playfanfare MUS_OBTAIN_ITEM
+	message FervorFieldCity_ARHU_Text_ReceivedPokeblocks
+	waitmessage
+	waitfanfare
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_Rival_UseThose, MSGBOX_DEFAULT
+	closemessage
 	msgbox FervorFieldCity_ARHU_Text_Rival_HeadingToSafariGate, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_FERVOR_FIELD_CITY_RIVAL, FervorFieldCity_ARHU_Movement_RivalLeaves
@@ -270,6 +289,19 @@ FervorFieldCity_ARHU_Text_Rival_AllKinds::
 	.string "…\l"
 	.string "…!$"
 
+FervorFieldCity_ARHU_Text_Rival_PokeblockCase::
+	.string "Westin: Oh yeah, I remembered to get\n"
+	.string "you a case as well!\p"
+	.string "I could only find 10 blocks,\n"
+	.string "so I gave you half of mine.$"
+
+FervorFieldCity_ARHU_Text_ReceivedPokeblocks::
+	.string "{PLAYER} received 5 POKéBLOCKs!$"
+
+FervorFieldCity_ARHU_Text_Rival_UseThose::
+	.string "Westin: Use those to make it easier\n"
+	.string "to catch Pokémon when we get in!$"
+
 FervorFieldCity_ARHU_Text_Rival_HeadingToSafariGate::
 	.string "Wait! If she's late, we're late!\n"
 	.string "I'm heading to the Safari Gate!\l"
@@ -363,13 +395,214 @@ FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Main::
 	releaseall
 	end
 
+@ Tanglewood's exit speech. Fires once at (24,7) after the Safari challenge is finished (the player has
+@ their starter in VAR_FERVOR_FIELD_PLAYER_STARTER). While that is pending, OnTransition places Tanglewood
+@ at (25,7) and Mira at (25,8): Mira left the Safari first and already has her (secret) partner.
+@ Tanglewood talks to the player and hands over the POKéDEX, then Westin walks out of the Safari gate
+@ door last and receives his own.
+@ Westin's starter counters the player's type. Then the player battles Westin, is healed, and battles Mira.
+@ Mira runs off first, then Westin, win or lose.
+FervorFieldCity_ARHU_EventScript_StarterSpeech::
+	lockall
+	setvar VAR_FERVOR_FIELD_STARTER_SPEECH_STATE, 2
+	bufferspeciesname STR_VAR_1, VAR_FERVOR_FIELD_PLAYER_STARTER
+	special FervorFieldGetRivalStarterGroup
+	call_if_eq VAR_RESULT, 0, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinSquirtle
+	call_if_eq VAR_RESULT, 1, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinChimchar
+	call_if_eq VAR_RESULT, 2, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinSprigatito
+	bufferspeciesname STR_VAR_2, VAR_FERVOR_FIELD_WESTIN_STARTER
+	applymovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, Common_Movement_FaceLeft
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	bufferspeciesname STR_VAR_1, VAR_FERVOR_FIELD_PLAYER_STARTER
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_WellWhatDoWeHaveHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GotMineToo, MSGBOX_DEFAULT
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_Pokedex, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message FervorFieldCity_ARHU_Text_ExitSpeech_ReceivedPokedex
+	waitmessage
+	waitfanfare
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_CatchingTools, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HowToUseBalls, MSGBOX_DEFAULT
+	closemessage
+	setobjectxyperm LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, 24, 5
+	clearflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_WESTIN
+	call FervorFieldCity_ARHU_EventScript_SafariGate_OpenDoor
+	addobject LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, FervorFieldCity_ARHU_Movement_WestinComesOut
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
+	call FervorFieldCity_ARHU_EventScript_SafariGate_CloseDoor
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_MadeIt, MSGBOX_DEFAULT
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_WhatDidYouGet, MSGBOX_DEFAULT
+	closemessage
+	bufferspeciesname STR_VAR_1, VAR_FERVOR_FIELD_PLAYER_STARTER
+	bufferspeciesname STR_VAR_2, VAR_FERVOR_FIELD_WESTIN_STARTER
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GotMine, MSGBOX_DEFAULT
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_WestinPokedex, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message FervorFieldCity_ARHU_Text_ExitSpeech_WestinReceivedPokedex
+	waitmessage
+	waitfanfare
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_LetsBattle, MSGBOX_DEFAULT
+	closemessage
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterHim, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT
+	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SQUIRTLE, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSquirtle
+	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_CHIMCHAR, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleChimchar
+	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SPRIGATITO, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSprigatito
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_ne VAR_RESULT, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinWon
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HealThem, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_HEAL
+	fadescreen FADE_TO_WHITE
+	special HealPlayerParty
+	fadescreen FADE_FROM_WHITE
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	waitfanfare
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraStepUp
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_MyTurn, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_FERVOR_MIRA_EEVEE, FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Defeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_ne VAR_RESULT, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraWon
+	clearflag FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT
+	special HealPlayerParty
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GoodLuck, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraRunsOff
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
+	removeobject LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
+	setflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, FervorFieldCity_ARHU_Movement_WestinRunsOff
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
+	removeobject LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
+	setflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_WESTIN
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, FervorFieldCity_ARHU_Movement_TanglewoodToDoor
+	waitmovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD
+	call FervorFieldCity_ARHU_EventScript_SafariGate_OpenDoor
+	applymovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, FervorFieldCity_ARHU_Movement_EnterDoor
+	waitmovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD
+	call FervorFieldCity_ARHU_EventScript_SafariGate_CloseDoor
+	removeobject LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD
+	setflag FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_PlayerPastGate
+	waitmovement 0
+	releaseall
+	end
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinSquirtle::
+	setvar VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SQUIRTLE
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinChimchar::
+	setvar VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_CHIMCHAR
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinSprigatito::
+	setvar VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SPRIGATITO
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSquirtle::
+	trainerbattle_no_intro TRAINER_FERVOR_WESTIN_SQUIRTLE, FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Defeat
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleChimchar::
+	trainerbattle_no_intro TRAINER_FERVOR_WESTIN_CHIMCHAR, FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Defeat
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSprigatito::
+	trainerbattle_no_intro TRAINER_FERVOR_WESTIN_SPRIGATITO, FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Defeat
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinWon::
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Victory, MSGBOX_DEFAULT
+	closemessage
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraWon::
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Victory, MSGBOX_DEFAULT
+	closemessage
+	return
+
+@ Out of the Safari gate door at (24,5), then around the player to stand beside them at (23,7)
+FervorFieldCity_ARHU_Movement_WestinComesOut:
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down
+	face_right
+	step_end
+
+@ (25,8) -> (24,8), directly below the player
+FervorFieldCity_ARHU_Movement_MiraStepUp:
+	walk_left
+	face_up
+	step_end
+
+@ (25,7) -> (24,6), in front of the Safari gate door
+FervorFieldCity_ARHU_Movement_TanglewoodToDoor:
+	walk_up
+	walk_left
+	step_end
+
+@ (24,7) -> (23,13): down the plaza and out through the south gate, past the camper
+FervorFieldCity_ARHU_Movement_PlayerPastGate:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+@ (23,7) -> (23,12), just off screen
+FervorFieldCity_ARHU_Movement_WestinRunsOff:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+@ (24,8) -> (25,12), just off screen
+FervorFieldCity_ARHU_Movement_MiraRunsOff:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	step_end
+
 @ The camper guards (23,12)/(25,12). VAR_FERVOR_FIELD_TANGLEWOOD_STATE:
 @   1 = speech seen, challenge not done: nobody gets past him, player is pushed back north.
 @   2 = challenge done: player is pushed one tile south, so heading out is allowed and
 @       heading back in is always refused.
 FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone::
 	lockall
-	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FaceUp
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_SafariGate_ChallengeNotDone, MSGBOX_DEFAULT
 	closemessage
@@ -380,7 +613,7 @@ FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone::
 
 FervorFieldCity_ARHU_EventScript_SafariGate_AlreadyPassed::
 	lockall
-	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FaceUp
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_SafariGate_AlreadyPassed, MSGBOX_DEFAULT
 	closemessage
@@ -558,11 +791,17 @@ FervorFieldCity_ARHU_Text_SafariGate_ChallengeNotDone::
 	.string "Hold it! Nobody gets past me until\n"
 	.string "they've completed the challenge.$"
 
-@ Camper guarding the gate before Tanglewood. Congratulates players who finished the Safari challenge.
+@ Camper guarding the gate. VAR_FERVOR_FIELD_TANGLEWOOD_STATE: 0 = not been through yet, 1 = challenge in progress, 2 = finished.
 FervorFieldCity_ARHU_EventScript_GateCamper::
 	lock
 	faceplayer
 	goto_if_eq VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2, FervorFieldCity_ARHU_EventScript_GateCamper_Passed
+	goto_if_eq VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 1, FervorFieldCity_ARHU_EventScript_GateCamper_InProgress
+	msgbox FervorFieldCity_ARHU_Text_GateCamper_Welcome, MSGBOX_DEFAULT
+	release
+	end
+
+FervorFieldCity_ARHU_EventScript_GateCamper_InProgress::
 	msgbox FervorFieldCity_ARHU_Text_GateCamper_NotYet, MSGBOX_DEFAULT
 	release
 	end
@@ -572,17 +811,28 @@ FervorFieldCity_ARHU_EventScript_GateCamper_Passed::
 	release
 	end
 
+FervorFieldCity_ARHU_Text_GateCamper_Welcome::
+	.string "Hey there! Are you here for the\n"
+	.string "Safari challenge?\p"
+	.string "The Safari Grounds are just north\n"
+	.string "of here, past this gate.\p"
+	.string "Professor Tanglewood will explain\n"
+	.string "everything.\p"
+	.string "Nobody gets through the Safari\n"
+	.string "challenge without completing it,\l"
+	.string "so take your time and do your best!$"
+
 FervorFieldCity_ARHU_Text_GateCamper_Passed::
-	.string "Hold on there, are you here for the\n"
-	.string "safari challenge?\p"
-	.string "Oh, then congratulations.\n"
-	.string "You may move along.$"
+	.string "You're back from the Safari\n"
+	.string "challenge, right?\p"
+	.string "Congratulations! You may move along.$"
 
 FervorFieldCity_ARHU_Text_GateCamper_NotYet::
-	.string "Hold on there, are you here for the\n"
-	.string "safari challenge?\p"
-	.string "Nobody gets past me until they've\n"
-	.string "completed it.$"
+	.string "Hey there! Are you here for the\n"
+	.string "Safari challenge?\p"
+	.string "The challenge has to be completed\n"
+	.string "before anyone can move along.\p"
+	.string "Good luck out there!$"
 
 @ Local copies of FuchsiaCity_Frlg sign scripts (FRLG originals are IS_FRLG-only)
 
@@ -626,3 +876,163 @@ FervorFieldCity_ARHU_Text_GymSign::
 	.string "FUCHSIA CITY POKéMON GYM\n"
 	.string "LEADER: KOGA\l"
 	.string "The Poisonous Ninja Master$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_WellWhatDoWeHaveHere::
+	.string "Tanglewood: Well, what do we have\n"
+	.string "here?\p"
+	.string "A {STR_VAR_1}!\n"
+	.string "Now look at that, you have a partner.\p"
+	.string "If a wild Pokémon appears,\n"
+	.string "you don't have to be alone!\l"
+	.string "Your Pokémon can battle it.\p"
+	.string "With it at your side, you should be\n"
+	.string "able to start your journey.\p"
+	.string "Tanglewood: {PLAYER}, Pokémon gain\n"
+	.string "valuable experience by battle.\l"
+	.string "Don't be too hard on it.\l"
+	.string "It has to battle for it to grow.\p"
+	.string "Now it's your job to rely on your\n"
+	.string "Pokémon!\l"
+	.string "And with friends you can go far!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GotMineToo::
+	.string "Mira: Heh, I beat you out by a bit.\n"
+	.string "I've got my partner too!\p"
+	.string "No, I won't tell you what it is.\n"
+	.string "You'll see it soon enough!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_MadeIt::
+	.string "Westin: Phew! Finally made it out!\p"
+	.string "Looks like you two beat me again.\n"
+	.string "Mira, you're fast!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_WhatDidYouGet::
+	.string "Tanglewood: Ah, Westin! Right on\n"
+	.string "time.\p"
+	.string "Now then, out loud for everyone.\n"
+	.string "What did the Safari give you?$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GotMine::
+	.string "Westin: A {STR_VAR_2}!\p"
+	.string "And you got a {STR_VAR_1}, {PLAYER}?\n"
+	.string "Nice pick!\p"
+	.string "I think mine has a slight edge on\n"
+	.string "yours, though. Just saying!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_WestinPokedex::
+	.string "Tanglewood: Hah! That's the spirit.\p"
+	.string "Here, Westin. The same POKéDEX I\n"
+	.string "gave the other two.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_WestinReceivedPokedex::
+	.string "Westin received the POKéDEX\n"
+	.string "from PROF. TANGLEWOOD!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_Pokedex::
+	.string "Tanglewood: Now, in my hands, I have\n"
+	.string "an invention called the POKéDEX.\p"
+	.string "It automatically records data on\n"
+	.string "Pokémon you've seen or caught.\p"
+	.string "This tool can help you to bridge\n"
+	.string "the gap when understanding Pokémon!\p"
+	.string "Mira already has hers, so this one\n"
+	.string "is yours. Take it with you.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_ReceivedPokedex::
+	.string "{PLAYER} received the POKéDEX\n"
+	.string "from PROF. TANGLEWOOD!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_CatchingTools::
+	.string "Tanglewood: Sadly, you can't get\n"
+	.string "detailed data on Pokémon\l"
+	.string "just by seeing them.\p"
+	.string "You must catch them to obtain\n"
+	.string "complete data.\p"
+	.string "So, here are some tools for\n"
+	.string "catching wild Pokémon.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HowToUseBalls::
+	.string "Tanglewood: It's not normally the\n"
+	.string "ranger way, but that's just how I\l"
+	.string "chose my life.\p"
+	.string "They aren't hard to use.\n"
+	.string "When a wild Pokémon appears,\l"
+	.string "catch it!\p"
+	.string "This won't always work, however.\n"
+	.string "A healthy Pokémon can escape.\l"
+	.string "You have to be lucky!\p"
+	.string "I've traveled the world and\n"
+	.string "seen a lot!\p"
+	.string "I get a sense of wonder from you!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_LetsBattle::
+	.string "Westin: Alright, we've all got a\n"
+	.string "partner now!\p"
+	.string "{PLAYER}, how about a battle?\n"
+	.string "Let's see what we can do together!\p"
+	.string "I'll go first, and no holding back!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterHim::
+	.string "Mira: We just met and you want to\n"
+	.string "battle already!?\p"
+	.string "Fine… I'll battle the winner.\n"
+	.string "Or the loser!\p"
+	.string "Tanglewood: Hah! Go on, then.\n"
+	.string "Battle is the best teacher.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Defeat::
+	.string "Westin: Whoa! You're good!\p"
+	.string "Alright, you got me this time.\n"
+	.string "I'll get you next time!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Victory::
+	.string "Westin: Yes! That was close!\p"
+	.string "Great battle, {PLAYER}.\n"
+	.string "You'll get me next time!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HealThem::
+	.string "Tanglewood: Nicely fought, both of\n"
+	.string "you!\p"
+	.string "Let me restore your Pokémon\n"
+	.string "before the next battle.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_MyTurn::
+	.string "Mira: Alright, my turn!\p"
+	.string "You've been waiting to see what\n"
+	.string "I picked. Here it is!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Defeat::
+	.string "Mira: Wow, you're good…\p"
+	.string "Eevee and I still have a lot\n"
+	.string "to learn!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Victory::
+	.string "Mira: Yes! We did it!\p"
+	.string "We still have a lot to learn,\n"
+	.string "though.$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GoodLuck::
+	.string "Mira: Win or lose, that was fun!\p"
+	.string "Good luck out there, {PLAYER}.\n"
+	.string "May the best Trainer win!\p"
+	.string "See you on the road!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck::
+	.string "Westin: Mira's already gone?\n"
+	.string "Then I'd better hurry too!\p"
+	.string "That was a great battle, {PLAYER}.\n"
+	.string "Win or lose, I'm glad we're in this\l"
+	.string "together.\p"
+	.string "Good luck out there.\n"
+	.string "May the best Trainer win!\p"
+	.string "See you on the road!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney::
+	.string "Tanglewood: Well, {PLAYER}, you're\n"
+	.string "off to a fine start!\p"
+	.string "I have a few more Trainers to look\n"
+	.string "after in the Safari, so I'll leave\l"
+	.string "you here.\p"
+	.string "Good luck out there, and don't give\n"
+	.string "up! Every Pokémon has more to\l"
+	.string "teach you.$"

@@ -148,7 +148,7 @@ FervorField_PlayersHouse_1F_ARHU_Text_PlayerReceived500::
 PalletTown_PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
-	goto_if_set FLAG_BEAT_RIVAL_IN_OAKS_LAB, PalletTown_PlayersHouse_1F_EventScript_MomHeal
+	goto_if_eq VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2, PalletTown_PlayersHouse_1F_EventScript_MomHeal
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale
 	call_if_eq VAR_RESULT, FEMALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale
@@ -199,12 +199,14 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
 	.string "MOM: …Right.\nAll boys leave home someday.\l"
 	.string "It said so on TV.\p"
-	.string "Oh, yes. PROF. OAK, next door, was\nlooking for you.$"
+	.string "Oh, yes. PROF. TANGLEWOOD is waiting\nat the SAFARI ZONE.\l"
+	.string "The Trainer Challenge starts there!$"
 
 PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
 	.string "MOM: …Right.\nAll girls dream of traveling.\l"
 	.string "It said so on TV.\p"
-	.string "Oh, yes. PROF. OAK, next door, was\nlooking for you.$"
+	.string "Oh, yes. PROF. TANGLEWOOD is waiting\nat the SAFARI ZONE.\l"
+	.string "The Trainer Challenge starts there!$"
 
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
 	.string "MOM: {PLAYER}!\nYou should take a quick rest.$"

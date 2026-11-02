@@ -27,7 +27,10 @@ FervorFieldCity_SafariZone_Entrance_EventScript_ExitRetired::
 	end
 
 FervorFieldCity_SafariZone_Entrance_EventScript_GiveChikorita::
+	setvar VAR_FERVOR_FIELD_PLAYER_STARTER, SPECIES_CHIKORITA
+	setvar VAR_FERVOR_FIELD_STARTER_SPEECH_STATE, 1
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIKORITA
+	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
 	givemon SPECIES_CHIKORITA, 5
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToPC

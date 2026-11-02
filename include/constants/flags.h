@@ -71,8 +71,8 @@
 #define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_POTION  0x31 // Fervor Safari West item ball (ITEM_MAX_POTION), set once picked up
 #define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_REVIVE  0x32 // Fervor Safari West item ball (ITEM_MAX_REVIVE), set once picked up
 #define FLAG_RECEIVED_FERVOR_SAFARI_HM03         0x33 // HM03 (Surf) prize from the Fervor Safari secret house
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT 0x34 // Set only during the rival battles after Tanglewood's exit speech so losing to Westin/Mira doesn't white out (B_FLAG_NO_WHITEOUT)
+#define FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD 0x35 // Tanglewood at the Safari gate, hidden after he heads inside at the end of the exit speech
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag

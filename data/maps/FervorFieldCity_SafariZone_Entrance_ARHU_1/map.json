@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_SIDE_ROOM_ARHU",
-      "offset": 1,
+      "offset": 0,
       "direction": "right"
     }
   ],

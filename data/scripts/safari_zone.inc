@@ -63,6 +63,7 @@ SafariZone_EventScript_FervorFieldChallengeComplete::
 	waitmessage
 	waitbuttonpress
 	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2
+	setvar VAR_FERVOR_FIELD_STARTER_SPEECH_STATE, 1
 	releaseall
 	goto SafariZone_EventScript_ExitToFervorField
 

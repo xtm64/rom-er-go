@@ -10,7 +10,10 @@
 #include "string_util.h"
 #include "tv.h"
 #include "constants/game_stat.h"
+#include "constants/pokemon.h"
+#include "constants/vars.h"
 #include "field_screen_effect.h"
+#include "pokemon.h"
 
 struct PokeblockFeeder
 {
@@ -108,7 +111,8 @@ void CB2_EndSafariBattle(void)
 #if !IS_FRLG
     if (gBattleOutcome == B_OUTCOME_CAUGHT && VarGet(VAR_FERVOR_FIELD_SAFARI_STATE) == 2)
     {
-        // Fervor Field's Safari challenge ends after the first catch
+        // Fervor Field's Safari challenge ends after the first catch, which becomes the player's starter
+        VarSet(VAR_FERVOR_FIELD_PLAYER_STARTER, gBattleResults.caughtMonSpecies);
         ScriptContext_SetupScript(SafariZone_EventScript_FervorFieldChallengeComplete);
         ScriptContext_Stop();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
@@ -132,6 +136,21 @@ void CB2_EndSafariBattle(void)
         ScriptContext_Stop();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
+}
+
+// Westin always counters the player's starter: 0 = player is fire (Squirtle), 1 = grass (Chimchar), 2 = water (Sprigatito)
+void FervorFieldGetRivalStarterGroup(void)
+{
+    u16 species = VarGet(VAR_FERVOR_FIELD_PLAYER_STARTER);
+    u8 type1 = gSpeciesInfo[species].types[0];
+    u8 type2 = gSpeciesInfo[species].types[1];
+
+    if (type1 == TYPE_FIRE || type2 == TYPE_FIRE)
+        gSpecialVar_Result = 0;
+    else if (type1 == TYPE_WATER || type2 == TYPE_WATER)
+        gSpecialVar_Result = 2;
+    else
+        gSpecialVar_Result = 1;
 }
 
 static void ClearPokeblockFeeder(u8 index)

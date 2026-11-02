@@ -270,9 +270,9 @@
 #define VAR_FERVOR_FIELD_RIVAL_INTRO_STATE               0x40F8 // 0 = Meet the Rival cutscene on the city main road not yet seen, 1 = seen
 #define VAR_FERVOR_FIELD_TANGLEWOOD_STATE                0x40F9 // 0 = Tanglewood gate speech not seen, 1 = seen, 2 = player has already passed the Safari challenge (gate refuses re-entry)
 #define VAR_FERVOR_FIELD_SAFARI_STATE                    0x40FA // 0 = outside, 1 = exited (warp in), 2 = inside the Safari, 3 = out of balls mid-battle (walk in), 4 = left without a catch (retired, out of time or balls; gets CHIKORITA)
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
+#define VAR_FERVOR_FIELD_PLAYER_STARTER                  0x40FB // Species of the player's starter (caught in the Safari challenge or the CHIKORITA consolation gift)
+#define VAR_FERVOR_FIELD_STARTER_SPEECH_STATE            0x40FC // 0 = challenge not finished, 1 = finished, Tanglewood's exit speech pending (trigger at (24,7)), 2 = seen
+#define VAR_FERVOR_FIELD_WESTIN_STARTER                  0x40FD // Species of Westin's starter, chosen to counter the player's starter type
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
