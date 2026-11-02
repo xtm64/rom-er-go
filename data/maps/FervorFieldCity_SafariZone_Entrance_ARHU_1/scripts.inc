@@ -8,15 +8,67 @@ FervorFieldCity_SafariZone_Entrance_OnFrame::
 	map_script_2 VAR_FERVOR_FIELD_SAFARI_STATE, 1, FervorFieldCity_SafariZone_Entrance_EventScript_ExitWarpIn
 	map_script_2 VAR_FERVOR_FIELD_SAFARI_STATE, 2, FervorFieldCity_SafariZone_Entrance_EventScript_ExitEarly
 	map_script_2 VAR_FERVOR_FIELD_SAFARI_STATE, 3, FervorFieldCity_SafariZone_Entrance_EventScript_ExitWalkIn
+	map_script_2 VAR_FERVOR_FIELD_SAFARI_STATE, 4, FervorFieldCity_SafariZone_Entrance_EventScript_ExitRetired
 	.2byte 0
+
+@ When player retires early, runs out of time, or runs out of balls: consolation CHIKORITA,
+@ and the challenge counts as done
+FervorFieldCity_SafariZone_Entrance_EventScript_ExitRetired::
+	lockall
+	msgbox FervorFieldCity_SafariZone_Entrance_Text_GivingUpTakeThis
+	closemessage
+	call FervorFieldCity_SafariZone_Entrance_EventScript_GiveChikorita
+	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2
+	applymovement LOCALID_PLAYER, FervorFieldCity_SafariZone_Entrance_Movement_Exit
+	waitmovement 0
+	special ExitSafariMode
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 0
+	releaseall
+	end
+
+FervorFieldCity_SafariZone_Entrance_EventScript_GiveChikorita::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIKORITA
+	givemon SPECIES_CHIKORITA, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToPC
+	return
+
+FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToParty::
+	call FervorFieldCity_SafariZone_Entrance_EventScript_ReceivedChikorita
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_NopReturn
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+FervorFieldCity_SafariZone_Entrance_EventScript_ChikoritaToPC::
+	call FervorFieldCity_SafariZone_Entrance_EventScript_ReceivedChikorita
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, FervorFieldCity_SafariZone_Entrance_EventScript_NameChikoritaBox
+	call Common_EventScript_TransferredToPC
+	return
+
+FervorFieldCity_SafariZone_Entrance_EventScript_NameChikoritaBox::
+	call Common_EventScript_NameReceivedBoxMon
+	call Common_EventScript_TransferredToPC
+	return
+
+FervorFieldCity_SafariZone_Entrance_EventScript_ReceivedChikorita::
+	playfanfare MUS_OBTAIN_ITEM
+	message FervorFieldCity_SafariZone_Entrance_Text_ReceivedChikorita
+	waitmessage
+	waitfanfare
+	return
 
 @ When player runs out of balls mid-battle
 FervorFieldCity_SafariZone_Entrance_EventScript_ExitWalkIn::
 	lockall
 	applymovement LOCALID_PLAYER, FervorFieldCity_SafariZone_Entrance_Movement_ApproachCounter
 	waitmovement 0
-	msgbox FervorFieldCity_SafariZone_Entrance_Text_CatchFairShareComeAgain
+	msgbox FervorFieldCity_SafariZone_Entrance_Text_GivingUpTakeThis
 	closemessage
+	call FervorFieldCity_SafariZone_Entrance_EventScript_GiveChikorita
+	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2
 	applymovement LOCALID_PLAYER, FervorFieldCity_SafariZone_Entrance_Movement_Exit2
 	waitmovement 0
 	special ExitSafariMode
@@ -43,6 +95,10 @@ FervorFieldCity_SafariZone_Entrance_EventScript_ExitEarly::
 	goto_if_eq VAR_RESULT, NO, FervorFieldCity_SafariZone_Entrance_EventScript_ReturnToSafariZone
 	msgbox FervorFieldCity_SafariZone_Entrance_Text_PleaseReturnSafariBalls
 	closemessage
+	msgbox FervorFieldCity_SafariZone_Entrance_Text_GivingUpTakeThis
+	closemessage
+	call FervorFieldCity_SafariZone_Entrance_EventScript_GiveChikorita
+	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2
 	applymovement LOCALID_PLAYER, FervorFieldCity_SafariZone_Entrance_Movement_Exit
 	waitmovement 0
 	special ExitSafariMode
@@ -241,6 +297,14 @@ FervorFieldCity_SafariZone_Entrance_Text_GoingToLeaveSafariZoneEarly::
 FervorFieldCity_SafariZone_Entrance_Text_PleaseReturnSafariBalls::
 	.string "Please return any SAFARI BALLS\n"
 	.string "you may have left.$"
+
+FervorFieldCity_SafariZone_Entrance_Text_GivingUpTakeThis::
+	.string "Giving up already?\p"
+	.string "Don't look so glum.\n"
+	.string "Here, take this with you.$"
+
+FervorFieldCity_SafariZone_Entrance_Text_ReceivedChikorita::
+	.string "{PLAYER} received a CHIKORITA!$"
 
 FervorFieldCity_SafariZone_Entrance_Text_GoodLuck::
 	.string "Good luck!$"

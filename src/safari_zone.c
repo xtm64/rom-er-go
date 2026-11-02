@@ -27,6 +27,9 @@ extern const u8 SafariZone_EventScript_TimesUp[];
 extern const u8 SafariZone_EventScript_RetirePrompt[];
 extern const u8 SafariZone_EventScript_OutOfBallsMidBattle[];
 extern const u8 SafariZone_EventScript_OutOfBalls[];
+#if !IS_FRLG
+extern const u8 SafariZone_EventScript_FervorFieldChallengeComplete[];
+#endif
 
 EWRAM_DATA u8 gNumSafariBalls = 0;
 EWRAM_DATA u16 gSafariZoneStepCounter = 0;
@@ -102,6 +105,16 @@ void CB2_EndSafariBattle(void)
     sSafariZonePkblkUses += gBattleResults.pokeblockThrows;
     if (gBattleOutcome == B_OUTCOME_CAUGHT)
         sSafariZoneCaughtMons++;
+#if !IS_FRLG
+    if (gBattleOutcome == B_OUTCOME_CAUGHT && VarGet(VAR_FERVOR_FIELD_SAFARI_STATE) == 2)
+    {
+        // Fervor Field's Safari challenge ends after the first catch
+        ScriptContext_SetupScript(SafariZone_EventScript_FervorFieldChallengeComplete);
+        ScriptContext_Stop();
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        return;
+    }
+#endif
     if (gNumSafariBalls != 0)
     {
         SetMainCallback2(CB2_ReturnToField);

@@ -120,7 +120,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FervorFieldCity_ARHU_EventScript_GateCamper",
       "flag": "0"
     },
     {
@@ -242,6 +242,24 @@
       "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
       "var_value": "0",
       "script": "FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone"
     },
     {
       "type": "trigger",

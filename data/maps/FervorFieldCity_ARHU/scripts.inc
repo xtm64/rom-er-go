@@ -362,9 +362,25 @@ FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Main::
 	releaseall
 	end
 
-@ Gate refuses re-entry once VAR_FERVOR_FIELD_TANGLEWOOD_STATE == 2 (player already passed the challenge).
+@ The camper guards (23,12)/(25,12). VAR_FERVOR_FIELD_TANGLEWOOD_STATE:
+@   1 = speech seen, challenge not done: nobody gets past him, player is pushed back north.
+@   2 = challenge done: player is pushed one tile south, so heading out is allowed and
+@       heading back in is always refused.
+FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone::
+	lockall
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_SafariGate_ChallengeNotDone, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
 FervorFieldCity_ARHU_EventScript_SafariGate_AlreadyPassed::
 	lockall
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER, Common_Movement_FaceUp
+	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_SafariGate_AlreadyPassed, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -533,7 +549,39 @@ FervorFieldCity_ARHU_Text_Westin_ThatsOurCue::
 	.string "Tagging in!$"
 
 FervorFieldCity_ARHU_Text_SafariGate_AlreadyPassed::
-	.string "Hey! You've already passed!$"
+	.string "Congratulations on completing the\n"
+	.string "challenge!\p"
+	.string "Good luck on your journey!$"
+
+FervorFieldCity_ARHU_Text_SafariGate_ChallengeNotDone::
+	.string "Hold it! Nobody gets past me until\n"
+	.string "they've completed the challenge.$"
+
+@ Camper guarding the gate before Tanglewood. Congratulates players who finished the Safari challenge.
+FervorFieldCity_ARHU_EventScript_GateCamper::
+	lock
+	faceplayer
+	goto_if_eq VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2, FervorFieldCity_ARHU_EventScript_GateCamper_Passed
+	msgbox FervorFieldCity_ARHU_Text_GateCamper_NotYet, MSGBOX_DEFAULT
+	release
+	end
+
+FervorFieldCity_ARHU_EventScript_GateCamper_Passed::
+	msgbox FervorFieldCity_ARHU_Text_GateCamper_Passed, MSGBOX_DEFAULT
+	release
+	end
+
+FervorFieldCity_ARHU_Text_GateCamper_Passed::
+	.string "Hold on there, are you here for the\n"
+	.string "safari challenge?\p"
+	.string "Oh, then congratulations.\n"
+	.string "You may move along.$"
+
+FervorFieldCity_ARHU_Text_GateCamper_NotYet::
+	.string "Hold on there, are you here for the\n"
+	.string "safari challenge?\p"
+	.string "Nobody gets past me until they've\n"
+	.string "completed it.$"
 
 @ Local copies of FuchsiaCity_Frlg sign scripts (FRLG originals are IS_FRLG-only)
 
