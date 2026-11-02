@@ -359,6 +359,7 @@ FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Main::
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 1
+	setflag FLAG_SYS_POKEMON_GET
 	releaseall
 	end
 
