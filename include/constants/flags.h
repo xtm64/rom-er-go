@@ -58,19 +58,19 @@
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_HIKER   0x24 // "I got here first" trainer at the Safari gate, hidden after the Tanglewood speech
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA    0x25 // Mira at the Safari gate, hidden after the Tanglewood speech
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_WESTIN  0x26 // Westin at the Safari gate, hidden after the Tanglewood speech
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_ITEM_FERVOR_SAFARI_CENTER_NUGGET    0x27 // Fervor Safari Center item ball (ITEM_NUGGET), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_MAX_POTION  0x28 // Fervor Safari East item ball (ITEM_MAX_POTION), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_FULL_RESTORE 0x29 // Fervor Safari East item ball (ITEM_FULL_RESTORE), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_TM11        0x2A // Fervor Safari East item ball (ITEM_TM11), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_LEAF_STONE  0x2B // Fervor Safari East item ball (ITEM_LEAF_STONE), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_PROTEIN    0x2C // Fervor Safari North item ball (ITEM_PROTEIN), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_TM47       0x2D // Fervor Safari North item ball (ITEM_TM47), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_QUICK_CLAW 0x2E // Fervor Safari North item ball (ITEM_QUICK_CLAW), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_GOLD_TEETH  0x2F // Fervor Safari West item ball (ITEM_GOLD_TEETH), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_TM32        0x30 // Fervor Safari West item ball (ITEM_TM32), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_POTION  0x31 // Fervor Safari West item ball (ITEM_MAX_POTION), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_REVIVE  0x32 // Fervor Safari West item ball (ITEM_MAX_REVIVE), set once picked up
+#define FLAG_RECEIVED_FERVOR_SAFARI_HM03         0x33 // HM03 (Surf) prize from the Fervor Safari secret house
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
@@ -664,8 +664,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_CENTER_LEAF_STONE (FLAG_HIDDEN_ITEMS_START + 0x71) // Fervor Safari Center hidden item (27,15)
+#define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_WEST_REVIVE      (FLAG_HIDDEN_ITEMS_START + 0x72) // Fervor Safari West hidden item (13,11)
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag

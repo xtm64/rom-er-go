@@ -9383,6 +9383,114 @@
       "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU/map.bin",
       "border_height": 2,
       "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_CENTER_ARHU",
+      "name": "FervorFieldCity_SafariZone_Center_ARHU_Layout",
+      "width": 51,
+      "height": 36,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_FuchsiaCity",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_Center_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_Center_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_EAST_ARHU",
+      "name": "FervorFieldCity_SafariZone_East_ARHU_Layout",
+      "width": 54,
+      "height": 35,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_FuchsiaCity",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_East_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_East_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_NORTH_ARHU",
+      "name": "FervorFieldCity_SafariZone_North_ARHU_Layout",
+      "width": 57,
+      "height": 40,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_FuchsiaCity",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_North_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_North_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_WEST_ARHU",
+      "name": "FervorFieldCity_SafariZone_West_ARHU_Layout",
+      "width": 48,
+      "height": 36,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_FuchsiaCity",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_West_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_West_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_CENTER_REST_HOUSE_ARHU",
+      "name": "FervorFieldCity_SafariZone_Center_RestHouse_ARHU_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_Center_RestHouse_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_Center_RestHouse_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_EAST_REST_HOUSE_ARHU",
+      "name": "FervorFieldCity_SafariZone_East_RestHouse_ARHU_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_East_RestHouse_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_East_RestHouse_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_NORTH_REST_HOUSE_ARHU",
+      "name": "FervorFieldCity_SafariZone_North_RestHouse_ARHU_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_North_RestHouse_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_North_RestHouse_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_WEST_REST_HOUSE_ARHU",
+      "name": "FervorFieldCity_SafariZone_West_RestHouse_ARHU_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_West_RestHouse_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_West_RestHouse_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_SECRET_HOUSE_ARHU",
+      "name": "FervorFieldCity_SafariZone_SecretHouse_ARHU_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SafariZoneBuilding",
+      "border_filepath": "data/layouts/FervorFieldCity_SafariZone_SecretHouse_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/FervorFieldCity_SafariZone_SecretHouse_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
     }
   ]
 }

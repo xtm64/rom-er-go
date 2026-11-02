@@ -269,7 +269,7 @@
 #define VAR_FERVOR_FIELD_TRAINER_CHALLENGE_STATE         0x40F7 // 0 = TV/Mom intro cutscene in Player's House 1F not yet seen, 1 = seen
 #define VAR_FERVOR_FIELD_RIVAL_INTRO_STATE               0x40F8 // 0 = Meet the Rival cutscene on the city main road not yet seen, 1 = seen
 #define VAR_FERVOR_FIELD_TANGLEWOOD_STATE                0x40F9 // 0 = Tanglewood gate speech not seen, 1 = seen, 2 = player has already passed the Safari challenge (gate refuses re-entry)
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_FERVOR_FIELD_SAFARI_STATE                    0x40FA // 0 = outside, 1 = exited (warp in), 2 = inside the Safari, 3 = out of balls mid-battle (walk in)
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

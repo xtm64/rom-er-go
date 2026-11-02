@@ -35,7 +35,17 @@ What was registered by hand (the tool now does the first four):
   `setflag FLAG_HIDE_*` + `removeobject` once their scene is over.
 
 Open issues `validate` reports on Fervor today (2026-10-29), so you know what's already there:
-- ERROR: entrance warp 0 -> `MAP_SAFARI_ZONE_CENTER` (FRLG-only map). Playbook step 3 fixes it.
+- Fixed 2026-11-02: playbook steps 1-4 were run. The Safari is `FervorFieldCity_SafariZone_{Center,East,North,West}_ARHU`
+  plus rest houses and the secret house (group `gMapGroup_SafariZone_ARHU`). The entrance runs the FRLG attendant flow
+  on `VAR_FERVOR_FIELD_SAFARI_STATE` (0x40FA), and Mom gives ¥500 at the end of the TV cutscene (new games start
+  with ¥0). The East rest house Rocker is now `OBJ_EVENT_GFX_MAN_2`. Steps 5 and 5b were then done too:
+  - Item balls use flags 0x27-0x32 (`FLAG_ITEM_FERVOR_SAFARI_*`).
+  - Hidden items use `FLAG_HIDDEN_ITEMS_START + 0x71/0x72` (they must stay in the hidden-item range).
+  - The secret-house HM03 uses 0x33 (`FLAG_RECEIVED_FERVOR_SAFARI_HM03`).
+  - Rest-house doors (`METATILE_FuchsiaCity_Door`) animate with FRLG Fuchsia door art through the Emerald door system. Emerald door art is two
+    metatiles tall and uses Emerald palettes, so it can't sit on these FRLG tilesets.
+
+  Still open: step 6 (Porymap cleanup).
 - Entrance warps (3,7) and (5,7) and house 1F (3,9) are arrival-only (`MB_NORMAL`). Only the entrance's
   middle exit (4,7) can be walked through.
 - `FervorField_PlayersHouse_1F_ARHU` Mom script still uses the copied FRLG logic

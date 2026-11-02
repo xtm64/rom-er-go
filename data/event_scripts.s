@@ -1747,3 +1747,21 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/FervorField_PlayersHouse_2F_ARHU/scripts.inc"
 
         .include "data/maps/FervorField_PlayersHouse_1F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Center_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_East_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_North_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_West_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Center_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_East_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_North_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_West_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_SecretHouse_ARHU/scripts.inc"

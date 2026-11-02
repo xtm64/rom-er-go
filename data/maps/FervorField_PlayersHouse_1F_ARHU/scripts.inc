@@ -35,6 +35,11 @@ FervorField_PlayersHouse_1F_ARHU_EventScript_TrainerChallengeIntro_Broadcast::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement LOCALID_PLAYERS_HOUSE_1F_MOM
 	msgbox FervorField_PlayersHouse_1F_ARHU_Text_MomSoYoureReallyGoing, MSGBOX_DEFAULT
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_MomTakeThisMoney, MSGBOX_DEFAULT
+	addmoney 500
+	playse SE_SHOP
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_PlayerReceived500, MSGBOX_DEFAULT
+	waitse
 	closemessage
 	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, FervorField_PlayersHouse_1F_ARHU_Movement_MomReturnToSpot
 	waitmovement 0
@@ -132,6 +137,13 @@ FervorField_PlayersHouse_1F_ARHU_Text_MomSoYoureReallyGoing::
 	.string "And don't forget to rest sometimes.\p"
 	.string "No matter how far you go\n"
 	.string "this will always be home.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_MomTakeThisMoney::
+	.string "Mom: Oh, and take this.\n"
+	.string "It should cover the Safari fee.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_PlayerReceived500::
+	.string "{PLAYER} received ¥500 from Mom.$"
 
 PalletTown_PlayersHouse_1F_EventScript_Mom::
 	lock

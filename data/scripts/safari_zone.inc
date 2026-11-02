@@ -2,6 +2,7 @@ SafariZone_EventScript_OutOfBallsMidBattle::
 #if IS_FRLG
 	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 3
 #else
+	goto_if_eq VAR_FERVOR_FIELD_SAFARI_STATE, 2, SafariZone_EventScript_OutOfBallsMidBattleFervorField
 	setvar VAR_SAFARI_ZONE_STATE, 1
 #endif
 	special ExitSafariMode
@@ -16,6 +17,7 @@ SafariZone_EventScript_Exit::
 #if IS_FRLG
 	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 1
 #else
+	goto_if_eq VAR_FERVOR_FIELD_SAFARI_STATE, 2, SafariZone_EventScript_ExitToFervorField
 	setvar VAR_SAFARI_ZONE_STATE, 1
 #endif
 	special ExitSafariMode
@@ -26,6 +28,22 @@ SafariZone_EventScript_Exit::
 #endif
 	waitstate
 	end
+
+#if !IS_FRLG
+@ Fervor Field's Safari (FervorFieldCity_SafariZone_*_ARHU) returns to its own entrance
+SafariZone_EventScript_OutOfBallsMidBattleFervorField::
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 3
+	special ExitSafariMode
+	setwarp MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1, 4, 1
+	end
+
+SafariZone_EventScript_ExitToFervorField::
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 1
+	special ExitSafariMode
+	warp MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1, 4, 1
+	waitstate
+	end
+#endif
 
 SafariZone_EventScript_RetirePrompt::
 	lockall

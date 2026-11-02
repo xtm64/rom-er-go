@@ -76,7 +76,8 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_TownsAndRoutes_ARHU",
-    "gMapGroup_IndoorFervorField_ARHU"
+    "gMapGroup_IndoorFervorField_ARHU",
+    "gMapGroup_SafariZone_ARHU"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1171,5 +1172,16 @@
     "FervorField_PlayersHouse_2F_ARHU",
     "FervorField_PlayersHouse_1F_ARHU",
     "FervorFieldCity_SafariZone_Entrance_SideRoom_ARHU"
+  ],
+  "gMapGroup_SafariZone_ARHU": [
+    "FervorFieldCity_SafariZone_Center_ARHU",
+    "FervorFieldCity_SafariZone_East_ARHU",
+    "FervorFieldCity_SafariZone_North_ARHU",
+    "FervorFieldCity_SafariZone_West_ARHU",
+    "FervorFieldCity_SafariZone_Center_RestHouse_ARHU",
+    "FervorFieldCity_SafariZone_East_RestHouse_ARHU",
+    "FervorFieldCity_SafariZone_North_RestHouse_ARHU",
+    "FervorFieldCity_SafariZone_West_RestHouse_ARHU",
+    "FervorFieldCity_SafariZone_SecretHouse_ARHU"
   ]
 }

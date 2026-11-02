@@ -144,6 +144,7 @@ static const u16 sDoorNullPalette49[16] = {};
 // Used by FRLG maps and by the Fervor Field (ARHU) maps in the Emerald build.
 static const u8 sDoorAnimTiles_GeneralFrlg[] = INCGFX_U8("graphics/door_anims/general_frlg.png", ".4bpp");
 static const u8 sDoorAnimTiles_SafariZoneFrlg[] = INCGFX_U8("graphics/door_anims/safari_zone_frlg.png", ".4bpp");
+static const u8 sDoorAnimTiles_Fuchsia[] = INCGFX_U8("graphics/door_anims/fuchsia.png", ".4bpp");
 
 #if IS_FRLG
 
@@ -160,7 +161,6 @@ static const u8 sDoorAnimTiles_Lavender[] = INCGFX_U8("graphics/door_anims/laven
 static const u8 sDoorAnimTiles_Vermilion[] = INCGFX_U8("graphics/door_anims/vermilion.png", ".4bpp");
 static const u8 sDoorAnimTiles_PokemonFanClub[] = INCGFX_U8("graphics/door_anims/pokemon_fan_club.png", ".4bpp");
 static const u8 sDoorAnimTiles_DeptStore[] = INCGFX_U8("graphics/door_anims/dept_store.png", ".4bpp");
-static const u8 sDoorAnimTiles_Fuchsia[] = INCGFX_U8("graphics/door_anims/fuchsia.png", ".4bpp");
 static const u8 sDoorAnimTiles_CinnabarLab[] = INCGFX_U8("graphics/door_anims/cinnabar_lab.png", ".4bpp");
 static const u8 sDoorAnimTiles_DeptStoreElevator[] = INCGFX_U8("graphics/door_anims/dept_store_elevator.png", ".4bpp");
 static const u8 sDoorAnimTiles_CableClubFrlg[] = INCGFX_U8("graphics/door_anims/cable_club_frlg.png", ".4bpp");
@@ -303,6 +303,7 @@ static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7,
 // Used by FRLG maps and by the Fervor Field (ARHU) maps in the Emerald build.
 static const u8 sDoorAnimPalettes_GeneralFrlg[] = {2, 2, 2, 2, 2, 2, 2, 2};
 static const u8 sDoorAnimPalettes_SafariZoneFrlg[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_Fuchsia[] = {8, 8, 8, 8, 8, 8, 8, 8};
 
 #if IS_FRLG
 
@@ -319,7 +320,6 @@ static const u8 sDoorAnimPalettes_Lavender[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_Vermilion[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_PokemonFanClub[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_DeptStore[] = {3, 3, 3, 3, 3, 3, 3, 3};
-static const u8 sDoorAnimPalettes_Fuchsia[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_CinnabarLab[] = {3, 3, 3, 3, 3, 3, 3, 3};
 static const u8 sDoorAnimPalettes_DeptStoreElevator[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_CableClubFrlg[] = {8, 8, 8, 8, 8, 8, 8, 8};
@@ -397,9 +397,10 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleTent_Door,                              &gTileset_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
     {METATILE_TrainerHill_Door_Elevator_Lobby,              &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
     {METATILE_TrainerHill_Door_Elevator_Roof,               &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
-    // Fervor Field City: FRLG door art driven by the Emerald door system
+    // Fervor Field (ARHU) maps: FRLG door art driven by the Emerald door system
     {ARHU_METATILE(METATILE_GeneralFrlg_Door),              &gTileset_General_Frlg, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_GeneralFrlg, sDoorAnimPalettes_GeneralFrlg, TRUE},
     {ARHU_METATILE(METATILE_FuchsiaCity_SafariZoneDoor),    &gTileset_FuchsiaCity,  DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SafariZoneFrlg, sDoorAnimPalettes_SafariZoneFrlg, TRUE},
+    {ARHU_METATILE(METATILE_FuchsiaCity_Door),             &gTileset_FuchsiaCity,  DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Fuchsia, sDoorAnimPalettes_Fuchsia, TRUE},
 #else
     {METATILE_GeneralFrlg_Door,                             &gTileset_General_Frlg, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_GeneralFrlg, sDoorAnimPalettes_GeneralFrlg},
     {METATILE_GeneralFrlg_SlidingSingleDoor,                &gTileset_General_Frlg, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SlidingSingle, sDoorAnimPalettes_SlidingSingle},
