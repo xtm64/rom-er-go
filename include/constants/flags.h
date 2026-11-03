@@ -73,9 +73,9 @@
 #define FLAG_RECEIVED_FERVOR_SAFARI_HM03         0x33 // HM03 (Surf) prize from the Fervor Safari secret house
 #define FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT 0x34 // Set only during the rival battles after Tanglewood's exit speech so losing to Westin/Mira doesn't white out (B_FLAG_NO_WHITEOUT)
 #define FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD 0x35 // Tanglewood at the Safari gate, hidden after he heads inside at the end of the exit speech
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE 0x36 // Set when the Safari challenge is completed; lets the player leave the Fisherman's House through the back exit
+#define FLAG_RECEIVED_WILLOWSVILLE_RARE_CANDY 0x37 // Rare Candy gift from the Willowsville lab researcher
+#define FLAG_RECEIVED_WILLOWSVILLE_TM_ROCK_TOMB 0x38 // TM Rock Tomb gift from the Willowsville lab researcher
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

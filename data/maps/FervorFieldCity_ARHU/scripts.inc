@@ -439,6 +439,7 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech::
 	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, FervorFieldCity_ARHU_Movement_WestinComesOut
 	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
 	call FervorFieldCity_ARHU_EventScript_SafariGate_CloseDoor
+	setobjectxyperm LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, 23, 7
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_MadeIt, MSGBOX_DEFAULT
@@ -457,14 +458,32 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech::
 	closemessage
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_LetsBattle, MSGBOX_DEFAULT
 	closemessage
-	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterHim, MSGBOX_DEFAULT
+	@ Mira steps in under the player so she faces them for the rest of the scene
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, Common_Movement_ExclamationMark
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraStepUp
+	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
+	setobjectxyperm LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, 24, 8
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_WantIn, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_GoOnThen, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 	setflag FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT
 	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SQUIRTLE, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSquirtle
 	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_CHIMCHAR, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleChimchar
 	call_if_eq VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SPRIGATITO, FervorFieldCity_ARHU_EventScript_StarterSpeech_BattleSprigatito
 	specialvar VAR_RESULT, GetBattleOutcome
-	call_if_ne VAR_RESULT, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinWon
+	copyvar VAR_0x8009, VAR_RESULT
+	call FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceWestin
+	call_if_ne VAR_0x8009, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinWon
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HealThem, MSGBOX_DEFAULT
 	closemessage
 	playfanfare MUS_HEAL
@@ -474,30 +493,31 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech::
 	fadescreen FADE_TO_WHITE
 	fadescreen FADE_FROM_WHITE
 	waitfanfare
-	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraStepUp
-	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-	waitmovement 0
+	call FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceMira
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_MyTurn, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_FERVOR_MIRA_EEVEE, FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Defeat
 	specialvar VAR_RESULT, GetBattleOutcome
-	call_if_ne VAR_RESULT, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraWon
+	copyvar VAR_0x8009, VAR_RESULT
 	clearflag FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT
 	special HealPlayerParty
-	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GoodLuck, MSGBOX_DEFAULT
-	closemessage
+	call FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceMira
+	call_if_eq VAR_0x8009, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraLost
+	call_if_ne VAR_0x8009, B_OUTCOME_WON, FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraWon
 	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraRunsOff
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
 	removeobject LOCALID_FERVOR_FIELD_CITY_GATE_MIRA
 	setflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA
+	call FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceWestin
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, FervorFieldCity_ARHU_Movement_WestinRunsOff
 	waitmovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
 	removeobject LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN
 	setflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_WESTIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, Common_Movement_FaceLeft
+	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD, FervorFieldCity_ARHU_Movement_TanglewoodToDoor
@@ -508,10 +528,101 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech::
 	call FervorFieldCity_ARHU_EventScript_SafariGate_CloseDoor
 	removeobject LOCALID_FERVOR_FIELD_CITY_TANGLEWOOD
 	setflag FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD
+	setflag FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE
+	removeobject LOCALID_FERVOR_FIELD_CITY_MART_BLOCKER
+	removeobject LOCALID_FERVOR_FIELD_CITY_POKEMON_CENTER_BLOCKER
+	removeobject LOCALID_FERVOR_FIELD_CITY_MOVE_DELETER_BLOCKER
 	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_PlayerPastGate
 	waitmovement 0
 	releaseall
 	end
+
+@ The speech trigger is only on (24,7). Triggers on the row above (y=6) pull the player onto it
+@ so they can't sidestep around Tanglewood and Mira.
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X21::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X21
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X22::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X22
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X23::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X23
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X25::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X25
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X26::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X26
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X27::
+	lockall
+	applymovement LOCALID_PLAYER, FervorFieldCity_ARHU_Movement_StarterSpeechPull_X27
+	waitmovement 0
+	goto FervorFieldCity_ARHU_EventScript_StarterSpeech
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X21:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X22:
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X23:
+	walk_right
+	walk_down
+	step_end
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X25:
+	walk_left
+	walk_down
+	step_end
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X26:
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
+FervorFieldCity_ARHU_Movement_StarterSpeechPull_X27:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
+@ Battles can reload the scene, so faces are set again after each one, whatever the outcome
+FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceWestin::
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceMira::
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	return
 
 FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinSquirtle::
 	setvar VAR_FERVOR_FIELD_WESTIN_STARTER, SPECIES_SQUIRTLE
@@ -544,6 +655,11 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech_WestinWon::
 
 FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraWon::
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Victory, MSGBOX_DEFAULT
+	closemessage
+	return
+
+FervorFieldCity_ARHU_EventScript_StarterSpeech_MiraLost::
+	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterLoss, MSGBOX_DEFAULT
 	closemessage
 	return
 
@@ -856,6 +972,64 @@ FervorFieldCity_ARHU_EventScript_GymSign::
 	msgbox FervorFieldCity_ARHU_Text_GymSign, MSGBOX_SIGN
 	end
 
+@ Door blockers. The Mart, Pokémon Center and Move Deleter blockers are hidden by
+@ FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE (set at the end of Tanglewood's exit speech).
+@ The Gym blocker has no flag yet: the Gym stays shut until its leader is designed.
+FervorFieldCity_ARHU_EventScript_GymBlocker::
+	msgbox FervorFieldCity_ARHU_Text_GymBlocker, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_EventScript_MartBlocker::
+	msgbox FervorFieldCity_ARHU_Text_MartBlocker, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_EventScript_PokemonCenterBlocker::
+	msgbox FervorFieldCity_ARHU_Text_PokemonCenterBlocker, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_EventScript_MoveDeleterBlocker::
+	msgbox FervorFieldCity_ARHU_Text_MoveDeleterBlocker, MSGBOX_NPC
+	end
+
+@ Only reachable while the challenge is running (VAR_FERVOR_FIELD_TANGLEWOOD_STATE 1): he waits by the gate.
+FervorFieldCity_ARHU_EventScript_Tanglewood::
+	msgbox FervorFieldCity_ARHU_Text_Tanglewood_GoOnIn, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_Text_GymBlocker::
+	.string "The GYM is closed until further\n"
+	.string "notice.\p"
+	.string "Our LEADER only takes on Trainers\n"
+	.string "who've already earned a few BADGES.$"
+
+FervorFieldCity_ARHU_Text_MartBlocker::
+	.string "Sorry, we're closed today!\p"
+	.string "Everyone in town is over at the\n"
+	.string "SAFARI challenge.\p"
+	.string "Come back once you have a partner\n"
+	.string "of your own!$"
+
+FervorFieldCity_ARHU_Text_PokemonCenterBlocker::
+	.string "The POKéMON CENTER is closed for\n"
+	.string "the SAFARI challenge.\p"
+	.string "We're getting everything ready for\n"
+	.string "the challengers' new partners.\p"
+	.string "Please come back when you've\n"
+	.string "finished!$"
+
+FervorFieldCity_ARHU_Text_MoveDeleterBlocker::
+	.string "Grandpa's taking a nap inside.\p"
+	.string "He said no visitors until the\n"
+	.string "SAFARI challenge is over.$"
+
+FervorFieldCity_ARHU_Text_Tanglewood_GoOnIn::
+	.string "Tanglewood: What are you waiting\n"
+	.string "for? Your partner is somewhere in\l"
+	.string "the Safari Zone!\p"
+	.string "Head through the gate behind me.\n"
+	.string "Remember, you only get to keep one,\l"
+	.string "so choose the one you connect with.$"
+
 FervorFieldCity_ARHU_Text_CitySign::
 	.string "FUCHSIA CITY\n"
 	.string "Behold! It's Passion Pink!$"
@@ -873,9 +1047,9 @@ FervorFieldCity_ARHU_Text_WardensHomeSign::
 	.string "WARDEN'S HOME$"
 
 FervorFieldCity_ARHU_Text_GymSign::
-	.string "FUCHSIA CITY POKéMON GYM\n"
-	.string "LEADER: KOGA\l"
-	.string "The Poisonous Ninja Master$"
+	.string "FERVOR FIELD CITY POKéMON GYM\n"
+	.string "LEADER: RIN\l"
+	.string "Flow Like Water$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_WellWhatDoWeHaveHere::
 	.string "Tanglewood: Well, what do we have\n"
@@ -972,11 +1146,13 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Westin_LetsBattle::
 	.string "Let's see what we can do together!\p"
 	.string "I'll go first, and no holding back!$"
 
-FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterHim::
-	.string "Mira: We just met and you want to\n"
-	.string "battle already!?\p"
-	.string "Fine… I'll battle the winner.\n"
-	.string "Or the loser!\p"
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_WantIn::
+	.string "Mira: Hey! Don't leave me out!\n"
+	.string "I wanna get in on this too!\p"
+	.string "{PLAYER}, once you're done with\n"
+	.string "Westin, you're battling me next!$"
+
+FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_GoOnThen::
 	.string "Tanglewood: Hah! Go on, then.\n"
 	.string "Battle is the best teacher.$"
 
@@ -1007,25 +1183,28 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Defeat::
 	.string "to learn!$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Victory::
-	.string "Mira: Yes! We did it!\p"
-	.string "We still have a lot to learn,\n"
-	.string "though.$"
+	.string "Mira: Yes! We did it, Eevee!\p"
+	.string "Don't look so down, {PLAYER}.\n"
+	.string "You and your partner only just met.\p"
+	.string "Get stronger together, and I'll be\n"
+	.string "waiting for a rematch.\p"
+	.string "See you on the road!$"
 
-FervorFieldCity_ARHU_Text_ExitSpeech_Mira_GoodLuck::
-	.string "Mira: Win or lose, that was fun!\p"
-	.string "Good luck out there, {PLAYER}.\n"
-	.string "May the best Trainer win!\p"
+FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterLoss::
+	.string "Mira: Okay, you win this round,\n"
+	.string "{PLAYER}.\p"
+	.string "Next time, Eevee and I will be\n"
+	.string "ready for you.\p"
 	.string "See you on the road!$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck::
 	.string "Westin: Mira's already gone?\n"
 	.string "Then I'd better hurry too!\p"
 	.string "That was a great battle, {PLAYER}.\n"
-	.string "Win or lose, I'm glad we're in this\l"
+	.string "I'm glad we're starting out\l"
 	.string "together.\p"
 	.string "Good luck out there.\n"
-	.string "May the best Trainer win!\p"
-	.string "See you on the road!$"
+	.string "May the best Trainer win!$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney::
 	.string "Tanglewood: Well, {PLAYER}, you're\n"
@@ -1033,6 +1212,10 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney::
 	.string "I have a few more Trainers to look\n"
 	.string "after in the Safari, so I'll leave\l"
 	.string "you here.\p"
+	.string "Oh, and the Safari's east exit\n"
+	.string "was being monitored for the\l"
+	.string "challenge. It should be open by\l"
+	.string "now.\p"
 	.string "Good luck out there, and don't give\n"
 	.string "up! Every Pokémon has more to\l"
 	.string "teach you.$"

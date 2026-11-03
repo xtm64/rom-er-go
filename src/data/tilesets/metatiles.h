@@ -211,12 +211,6 @@ const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_roo
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
 
 #else
-
-
-
-const u16 gMetatiles_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatiles.bin");
-const u16 gMetatileAttributes_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatile_attributes.bin");
-
 const u16 gMetatiles_ViridianCity[] = INCBIN_U16("data/tilesets/secondary/viridian_city_frlg/metatiles.bin");
 const u16 gMetatileAttributes_ViridianCity[] = INCBIN_U16("data/tilesets/secondary/viridian_city_frlg/metatile_attributes.bin");
 
@@ -289,9 +283,6 @@ const u16 gMetatileAttributes_Cave_Frlg[] = INCBIN_U16("data/tilesets/secondary/
 const u16 gMetatiles_GameCorner[] = INCBIN_U16("data/tilesets/secondary/game_corner_frlg/metatiles.bin");
 const u16 gMetatileAttributes_GameCorner[] = INCBIN_U16("data/tilesets/secondary/game_corner_frlg/metatile_attributes.bin");
 
-const u16 gMetatiles_Lab_Frlg[] = INCBIN_U16("data/tilesets/secondary/lab_frlg/metatiles.bin");
-const u16 gMetatileAttributes_Lab_Frlg[] = INCBIN_U16("data/tilesets/secondary/lab_frlg/metatile_attributes.bin");
-
 const u16 gMetatiles_SSAnne[] = INCBIN_U16("data/tilesets/secondary/ss_anne_frlg/metatiles.bin");
 const u16 gMetatileAttributes_SSAnne[] = INCBIN_U16("data/tilesets/secondary/ss_anne_frlg/metatile_attributes.bin");
 
@@ -319,9 +310,6 @@ const u16 gMetatileAttributes_CeruleanCave[] = INCBIN_U16("data/tilesets/seconda
 const u16 gMetatiles_DepartmentStore[] = INCBIN_U16("data/tilesets/secondary/department_store_frlg/metatiles.bin");
 const u16 gMetatileAttributes_DepartmentStore[] = INCBIN_U16("data/tilesets/secondary/department_store_frlg/metatile_attributes.bin");
 
-const u16 gMetatiles_GenericBuilding2[] = INCBIN_U16("data/tilesets/secondary/generic_building_2_frlg/metatiles.bin");
-const u16 gMetatileAttributes_GenericBuilding2[] = INCBIN_U16("data/tilesets/secondary/generic_building_2_frlg/metatile_attributes.bin");
-
 const u16 gMetatiles_PowerPlant[] = INCBIN_U16("data/tilesets/secondary/power_plant_frlg/metatiles.bin");
 const u16 gMetatileAttributes_PowerPlant[] = INCBIN_U16("data/tilesets/secondary/power_plant_frlg/metatile_attributes.bin");
 
@@ -340,9 +328,6 @@ const u16 gMetatileAttributes_PokemonTower[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/pokemon_mansion_frlg/metatiles.bin");
 const u16 gMetatileAttributes_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/pokemon_mansion_frlg/metatile_attributes.bin");
-
-const u16 gMetatiles_Museum[] = INCBIN_U16("data/tilesets/secondary/museum_frlg/metatiles.bin");
-const u16 gMetatileAttributes_Museum[] = INCBIN_U16("data/tilesets/secondary/museum_frlg/metatile_attributes.bin");
 
 const u16 gMetatiles_CableClub_Frlg[] = INCBIN_U16("data/tilesets/secondary/cable_club_frlg/metatiles.bin");
 const u16 gMetatileAttributes_CableClub_Frlg[] = INCBIN_U16("data/tilesets/secondary/cable_club_frlg/metatile_attributes.bin");
@@ -398,6 +383,12 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 #endif // IS_FRLG
 
 // Used by custom ARHU maps - needed in both Emerald and FRLG builds
+const u16 gMetatiles_Lab_Frlg[] = INCBIN_U16("data/tilesets/secondary/lab_frlg/metatiles.bin");
+const u16 gMetatileAttributes_Lab_Frlg[] = INCBIN_U16("data/tilesets/secondary/lab_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatiles.bin");
+const u16 gMetatileAttributes_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town_frlg/metatile_attributes.bin");
+
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
 const u16 gMetatileAttributes_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatile_attributes.bin");
 
@@ -406,6 +397,12 @@ const u16 gMetatileAttributes_GenericBuilding1[] = INCBIN_U16("data/tilesets/sec
 
 const u16 gMetatiles_SafariZoneBuilding[] = INCBIN_U16("data/tilesets/secondary/safari_zone_building_frlg/metatiles.bin");
 const u16 gMetatileAttributes_SafariZoneBuilding[] = INCBIN_U16("data/tilesets/secondary/safari_zone_building_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_Museum[] = INCBIN_U16("data/tilesets/secondary/museum_frlg/metatiles.bin");
+const u16 gMetatileAttributes_Museum[] = INCBIN_U16("data/tilesets/secondary/museum_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_GenericBuilding2[] = INCBIN_U16("data/tilesets/secondary/generic_building_2_frlg/metatiles.bin");
+const u16 gMetatileAttributes_GenericBuilding2[] = INCBIN_U16("data/tilesets/secondary/generic_building_2_frlg/metatile_attributes.bin");
 
 const u16 gMetatiles_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatiles.bin");
 const u16 gMetatileAttributes_General_Frlg[] = INCBIN_U16("data/tilesets/primary/general_frlg/metatile_attributes.bin");

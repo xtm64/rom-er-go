@@ -1765,3 +1765,47 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/FervorFieldCity_SafariZone_West_RestHouse_ARHU/scripts.inc"
 
         .include "data/maps/FervorFieldCity_SafariZone_SecretHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_Mart_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PokemonCenter_1F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PokemonCenter_2F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_FishermansHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_TanglewoodsHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House1_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House2_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_SafariOffice_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House3_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House4_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House5_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_Gym_ARHU/scripts.inc"
+
+        .include "data/maps/Route1_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_ARHU/scripts.inc"
+
+        .include "data/maps/Route1_EastGate_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_WestGate_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_North_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_WestinsHouse_1F_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_WestinsHouse_2F_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_Cottage_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_Lab_ARHU/scripts.inc"

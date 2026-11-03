@@ -357,6 +357,22 @@
       "y": 4,
       "respawn_map": "MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU",
       "respawn_npc": "0"
+    },
+    {
+      "id": "HEAL_LOCATION_FERVOR_FIELD_POKEMON_CENTER",
+      "map": "MAP_FERVOR_FIELD_CITY_ARHU",
+      "x": 29,
+      "y": 22,
+      "respawn_map": "MAP_FERVOR_FIELD_POKEMON_CENTER_1F_ARHU",
+      "respawn_npc": "LOCALID_FERVOR_FIELD_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_WILLOWSVILLE",
+      "map": "MAP_WILLOWSVILLE_ARHU",
+      "x": 6,
+      "y": 8,
+      "respawn_map": "MAP_WILLOWSVILLE_WESTINS_HOUSE_2F_ARHU",
+      "respawn_npc": "0"
     }
   ]
 }

@@ -1,0 +1,130 @@
+{
+  "id": "MAP_WILLOWSVILLE_LAB_ARHU",
+  "name": "Willowsville_Lab_ARHU",
+  "layout": "LAYOUT_WILLOWSVILLE_LAB_ARHU",
+  "music": "MUS_RG_OAK_LAB",
+  "region_map_section": "MAPSEC_WILLOWSVILLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_WILLOWSVILLE_LAB_RESEARCHER",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 6,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Willowsville_Lab_ARHU_EventScript_Researcher",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 3,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Willowsville_Lab_ARHU_EventScript_Aide1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 2,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Willowsville_Lab_ARHU_EventScript_Aide3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 11,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Willowsville_Lab_ARHU_EventScript_Aide2",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_WILLOWSVILLE_ARHU",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_WILLOWSVILLE_ARHU",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 5,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_WILLOWSVILLE_ARHU",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Willowsville_Lab_ARHU_EventScript_Computer"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Willowsville_Lab_ARHU_EventScript_Computer"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Willowsville_Lab_ARHU_EventScript_Bookshelf"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Willowsville_Lab_ARHU_EventScript_Bookshelf"
+    }
+  ],
+  "floor_number": 0
+}

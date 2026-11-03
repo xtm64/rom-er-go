@@ -23,7 +23,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_GOLD_TEETH",
+      "trainer_sight_or_berry_tree_id": "ITEM_ORAN_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_WEST_GOLD_TEETH"
     },
@@ -36,7 +36,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM32",
+      "trainer_sight_or_berry_tree_id": "ITEM_PERSIM_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_WEST_TM32"
     },
@@ -49,7 +49,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_POTION",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_POTION"
     },
@@ -62,7 +62,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "trainer_sight_or_berry_tree_id": "ITEM_CHERI_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_REVIVE"
     }

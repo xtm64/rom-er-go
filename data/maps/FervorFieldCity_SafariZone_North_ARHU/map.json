@@ -23,7 +23,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PROTEIN",
+      "trainer_sight_or_berry_tree_id": "ITEM_RAWST_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_NORTH_PROTEIN"
     },
@@ -36,7 +36,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM47",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_NORTH_TM47"
     },
@@ -49,7 +49,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_QUICK_CLAW",
+      "trainer_sight_or_berry_tree_id": "ITEM_ASPEAR_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_NORTH_QUICK_CLAW"
     }

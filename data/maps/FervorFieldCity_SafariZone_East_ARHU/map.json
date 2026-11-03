@@ -23,7 +23,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_POTION",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_EAST_MAX_POTION"
     },
@@ -36,7 +36,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_FULL_RESTORE",
+      "trainer_sight_or_berry_tree_id": "ITEM_CHERI_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_EAST_FULL_RESTORE"
     },
@@ -49,7 +49,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM11",
+      "trainer_sight_or_berry_tree_id": "ITEM_CHESTO_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_EAST_TM11"
     },
@@ -62,7 +62,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_LEAF_STONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_PECHA_BERRY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FERVOR_SAFARI_EAST_LEAF_STONE"
     }

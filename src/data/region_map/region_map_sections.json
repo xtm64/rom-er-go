@@ -1630,6 +1630,10 @@
     {
       "id": "MAPSEC_FERVOR_FIELD",
       "name": "FERVOR FIELD"
+    },
+    {
+      "id": "MAPSEC_WILLOWSVILLE",
+      "name": "WILLOWSVILLE"
     }
   ]
 }
