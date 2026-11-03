@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_WILLOW_WOODS_ARHU",
+      "offset": -25,
+      "direction": "left"
+    },
+    {
       "map": "MAP_ROUTE2_NORTH_ARHU",
       "offset": 0,
       "direction": "down"

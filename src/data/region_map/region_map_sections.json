@@ -1634,6 +1634,18 @@
     {
       "id": "MAPSEC_WILLOWSVILLE",
       "name": "WILLOWSVILLE"
+    },
+    {
+      "id": "MAPSEC_WILLOW_WOODS",
+      "name": "WILLOW WOODS"
+    },
+    {
+      "id": "MAPSEC_WILLOW_RANCH",
+      "name": "WILLOW RANCH"
+    },
+    {
+      "id": "MAPSEC_WILLOW_LAKE",
+      "name": "WILLOW LAKE"
     }
   ]
 }

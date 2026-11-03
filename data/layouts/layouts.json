@@ -9598,6 +9598,19 @@
       "border_width": 2
     },
     {
+      "id": "LAYOUT_ROUTE1_CYCLING_ROAD_ARHU",
+      "name": "Route1_CyclingRoad_ARHU_Layout",
+      "width": 48,
+      "height": 100,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route1_CyclingRoad_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/Route1_CyclingRoad_ARHU/map.bin",
+      "layout_version": "emerald",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
       "id": "LAYOUT_ROUTE2_ARHU",
       "name": "Route2_ARHU_Layout",
       "width": 32,
@@ -9702,6 +9715,66 @@
       "secondary_tileset": "gTileset_Lab_Frlg",
       "border_filepath": "data/layouts/Willowsville_Lab_ARHU/border.bin",
       "blockdata_filepath": "data/layouts/Willowsville_Lab_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_WILLOW_WOODS_ARHU",
+      "name": "WillowWoods_ARHU_Layout",
+      "width": 48,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/WillowWoods_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/WillowWoods_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_WILLOW_RANCH_ARHU",
+      "name": "WillowRanch_ARHU_Layout",
+      "width": 36,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/WillowRanch_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/WillowRanch_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_WILLOW_RANCH_DAY_CARE_ARHU",
+      "name": "WillowRanch_DayCare_ARHU_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonDayCare",
+      "border_filepath": "data/layouts/WillowRanch_DayCare_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/WillowRanch_DayCare_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_WILLOW_RANCH_SEED_SHOP_ARHU",
+      "name": "WillowRanch_SeedShop_ARHU_Layout",
+      "width": 15,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
+      "border_filepath": "data/layouts/WillowRanch_SeedShop_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/WillowRanch_SeedShop_ARHU/map.bin",
+      "border_height": 2,
+      "border_width": 2
+    },
+    {
+      "id": "LAYOUT_WILLOW_LAKE_ARHU",
+      "name": "WillowLake_ARHU_Layout",
+      "width": 36,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/WillowLake_ARHU/border.bin",
+      "blockdata_filepath": "data/layouts/WillowLake_ARHU/map.bin",
       "border_height": 2,
       "border_width": 2
     }

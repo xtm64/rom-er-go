@@ -76,10 +76,10 @@
 #define FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE 0x36 // Set when the Safari challenge is completed; lets the player leave the Fisherman's House through the back exit
 #define FLAG_RECEIVED_WILLOWSVILLE_RARE_CANDY 0x37 // Rare Candy gift from the Willowsville lab researcher
 #define FLAG_RECEIVED_WILLOWSVILLE_TM_ROCK_TOMB 0x38 // TM Rock Tomb gift from the Willowsville lab researcher
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_ITEM_WILLOW_WOODS_GREAT_BALL 0x39 // Willow Woods item ball (ITEM_GREAT_BALL), set once picked up
+#define FLAG_ITEM_WILLOW_WOODS_ETHER 0x3A // Willow Woods item ball (ITEM_ETHER), set once picked up
+#define FLAG_ITEM_WILLOW_WOODS_X_ATTACK 0x3B // Willow Woods item ball (ITEM_X_ATTACK), set once picked up
+#define FLAG_ITEM_WILLOW_LAKE_ISLAND 0x3C // Willow Lake island item ball (ITEM_SUPER_POTION), set once picked up
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
@@ -1556,24 +1556,16 @@
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
-#define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
-#define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
-#define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
-#define FLAG_UNUSED_0x91E                           (SYSTEM_FLAGS + 0xBE) // Unused Flag
-#define FLAG_UNUSED_0x91F                           (SYSTEM_FLAGS + 0xBF) // Unused Flag
+// Nine trailing unused flags (0x917-0x91F) were removed to make room for nine more trainer flags (MAX_TRAINERS_COUNT 864 -> 873).
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
+#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x916 + (8 - FLAG_UNUSED_0x916 % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_WILLOW_RANCH_BERRIES             (DAILY_FLAGS_START + 0x3)  // Bought today's 10 berries at the Willow Ranch seed shop
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag

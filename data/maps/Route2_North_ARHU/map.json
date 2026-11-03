@@ -19,8 +19,8 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE2_ARHU",
-      "offset": 2,
+      "map": "MAP_ROUTE1_ARHU",
+      "offset": 1,
       "direction": "down"
     }
   ],

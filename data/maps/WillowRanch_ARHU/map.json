@@ -1,0 +1,75 @@
+{
+  "id": "MAP_WILLOW_RANCH_ARHU",
+  "name": "WillowRanch_ARHU",
+  "layout": "LAYOUT_WILLOW_RANCH_ARHU",
+  "music": "MUS_ROUTE110",
+  "region_map_section": "MAPSEC_WILLOW_RANCH",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_WILLOW_WOODS_ARHU",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_WILLOW_LAKE_ARHU",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 7, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_1", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 8, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_2", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 9, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_3", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 10, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_4", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 11, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_5", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 12, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_6", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 13, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_7", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 19, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_8", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 20, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_9", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 21, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_10", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 22, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_11", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 23, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_12", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 24, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_13", "script": "BerryTreeScript", "flag": "0" },
+    { "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE", "x": 25, "y": 15, "elevation": 3, "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH", "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "BERRY_TREE_WILLOW_RANCH_14", "script": "BerryTreeScript", "flag": "0" },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 21,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WillowRanch_ARHU_EventScript_Rancher",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 27,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_WILLOW_RANCH_DAY_CARE_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_WILLOW_RANCH_SEED_SHOP_ARHU",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "floor_number": 0
+}

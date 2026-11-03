@@ -1,0 +1,7 @@
+WillowRanch_DayCare_ARHU_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, WillowRanch_DayCare_ARHU_OnTransition
+	.byte 0
+
+WillowRanch_DayCare_ARHU_OnTransition:
+	setflag FLAG_LANDMARK_POKEMON_DAYCARE
+	end

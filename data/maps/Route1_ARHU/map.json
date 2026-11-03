@@ -17,6 +17,16 @@
       "map": "MAP_FERVOR_FIELD_CITY_ARHU",
       "offset": -11,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE2_NORTH_ARHU",
+      "offset": -1,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "offset": -8,
+      "direction": "down"
     }
   ],
   "object_events": [],

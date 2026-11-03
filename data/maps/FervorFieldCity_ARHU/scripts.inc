@@ -486,13 +486,7 @@ FervorFieldCity_ARHU_EventScript_StarterSpeech::
 	waitmovement 0
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HealThem, MSGBOX_DEFAULT
 	closemessage
-	playfanfare MUS_HEAL
-	fadescreen FADE_TO_WHITE
-	special HealPlayerParty
-	fadescreen FADE_FROM_WHITE
-	fadescreen FADE_TO_WHITE
-	fadescreen FADE_FROM_WHITE
-	waitfanfare
+	call Common_EventScript_OutOfCenterPartyHeal
 	call FervorFieldCity_ARHU_EventScript_StarterSpeech_FaceMira
 	msgbox FervorFieldCity_ARHU_Text_ExitSpeech_Mira_MyTurn, MSGBOX_DEFAULT
 	closemessage

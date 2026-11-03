@@ -142,6 +142,21 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_ROUTE_123_PECHA    87
 #define BERRY_TREE_ROUTE_123_SITRUS   88
 #define BERRY_TREE_ROUTE_123_RAWST    89
+// Willow Ranch planting plots (all start empty)
+#define BERRY_TREE_WILLOW_RANCH_1     90
+#define BERRY_TREE_WILLOW_RANCH_2     91
+#define BERRY_TREE_WILLOW_RANCH_3     92
+#define BERRY_TREE_WILLOW_RANCH_4     93
+#define BERRY_TREE_WILLOW_RANCH_5     94
+#define BERRY_TREE_WILLOW_RANCH_6     95
+#define BERRY_TREE_WILLOW_RANCH_7     96
+#define BERRY_TREE_WILLOW_RANCH_8     97
+#define BERRY_TREE_WILLOW_RANCH_9     98
+#define BERRY_TREE_WILLOW_RANCH_10    99
+#define BERRY_TREE_WILLOW_RANCH_11    100
+#define BERRY_TREE_WILLOW_RANCH_12    101
+#define BERRY_TREE_WILLOW_RANCH_13    102
+#define BERRY_TREE_WILLOW_RANCH_14    103
 
 // Remainder are unused
 

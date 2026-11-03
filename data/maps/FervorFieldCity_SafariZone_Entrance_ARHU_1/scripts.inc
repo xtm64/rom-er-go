@@ -266,8 +266,8 @@ FervorFieldCity_SafariZone_Entrance_Text_WelcomeToSafariZone::
 FervorFieldCity_SafariZone_Entrance_Text_PlaySafariGameFor500::
 	.string "For just ¥500, you can play the\n"
 	.string "SAFARI GAME.\p"
-	.string "You can roam the wide-open safari\n"
-	.string "and catch what you like.\p"
+	.string "You can roam the wide-open safari,\n"
+	.string "but you may only catch one POKéMON.\p"
 	.string "Would you like to play?$"
 
 FervorFieldCity_SafariZone_Entrance_Text_ThatllBe500WeOnlyUseSpecialBalls::
@@ -303,8 +303,10 @@ FervorFieldCity_SafariZone_Entrance_Text_PleaseReturnSafariBalls::
 
 FervorFieldCity_SafariZone_Entrance_Text_GivingUpTakeThis::
 	.string "Giving up already?\p"
-	.string "Don't look so glum.\n"
-	.string "Here, take this with you.$"
+	.string "Don't look so glum.\p"
+	.string "You can only take one POKéMON\n"
+	.string "from the SAFARI ZONE, so here,\l"
+	.string "take this one with you.$"
 
 FervorFieldCity_SafariZone_Entrance_Text_ReceivedChikorita::
 	.string "{PLAYER} received a CHIKORITA!$"
@@ -313,8 +315,8 @@ FervorFieldCity_SafariZone_Entrance_Text_GoodLuck::
 	.string "Good luck!$"
 
 FervorFieldCity_SafariZone_Entrance_Text_CatchFairShareComeAgain::
-	.string "Did you catch your fair share?\n"
-	.string "Come again!$"
+	.string "You caught your POKéMON!\n"
+	.string "Take good care of it!$"
 
 FervorFieldCity_SafariZone_Entrance_Text_FirstTimeAtSafariZone::
 	.string "Hi! Is it your first time here at\n"
@@ -326,7 +328,8 @@ FervorFieldCity_SafariZone_Entrance_Text_ExplainSafariZone::
 	.string "Each zone has different kinds of\n"
 	.string "POKéMON, even some rare ones.\p"
 	.string "Use the supplied SAFARI BALLS to\n"
-	.string "catch them.\p"
+	.string "catch one. You may only keep one\n"
+	.string "POKéMON from the SAFARI ZONE.\p"
 	.string "You can also throw BAIT or ROCKS\n"
 	.string "besides the SAFARI BALLS.\p"
 	.string "If you throw BAIT, the POKéMON\n"

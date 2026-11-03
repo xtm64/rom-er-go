@@ -1169,7 +1169,11 @@
     "Route1_ARHU",
     "Route2_ARHU",
     "Route2_North_ARHU",
-    "Willowsville_ARHU"
+    "Willowsville_ARHU",
+    "WillowWoods_ARHU",
+    "WillowRanch_ARHU",
+    "WillowLake_ARHU",
+    "Route1_CyclingRoad_ARHU"
   ],
   "gMapGroup_IndoorFervorField_ARHU": [
     "FervorFieldCity_SafariZone_Entrance_ARHU_1",
@@ -1190,7 +1194,9 @@
     "Willowsville_WestinsHouse_1F_ARHU",
     "Willowsville_WestinsHouse_2F_ARHU",
     "Willowsville_Cottage_ARHU",
-    "Willowsville_Lab_ARHU"
+    "Willowsville_Lab_ARHU",
+    "WillowRanch_DayCare_ARHU",
+    "WillowRanch_SeedShop_ARHU"
   ],
   "gMapGroup_SafariZone_ARHU": [
     "FervorFieldCity_SafariZone_Center_ARHU",

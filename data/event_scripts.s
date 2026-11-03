@@ -1800,6 +1800,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
         .include "data/maps/Route2_North_ARHU/scripts.inc"
 
+        .include "data/maps/Route1_CyclingRoad_ARHU/scripts.inc"
+
         .include "data/maps/Willowsville_ARHU/scripts.inc"
 
         .include "data/maps/Willowsville_WestinsHouse_1F_ARHU/scripts.inc"
@@ -1809,3 +1811,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/Willowsville_Cottage_ARHU/scripts.inc"
 
         .include "data/maps/Willowsville_Lab_ARHU/scripts.inc"
+        .include "data/maps/WillowWoods_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_ARHU/scripts.inc"
+        .include "data/maps/WillowLake_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_DayCare_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_SeedShop_ARHU/scripts.inc"

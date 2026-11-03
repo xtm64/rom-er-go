@@ -863,13 +863,27 @@
 #define TRAINER_FERVOR_WESTIN_CHIMCHAR      856
 #define TRAINER_FERVOR_WESTIN_SPRIGATITO    857
 #define TRAINER_FERVOR_MIRA_EEVEE           858
+#define TRAINER_CYCLING_ROAD_RHYS           859
+#define TRAINER_CYCLING_ROAD_NOVA           860
+#define TRAINER_CYCLING_ROAD_TOBIAS         861
+#define TRAINER_CYCLING_ROAD_SUMI           862
+#define TRAINER_CYCLING_ROAD_PIPER          863
+#define TRAINER_CYCLING_ROAD_ENZO           864
+#define TRAINER_CYCLING_ROAD_COLE           865
+#define TRAINER_CYCLING_ROAD_DREW           866
+#define TRAINER_CYCLING_ROAD_LENA           867
+#define TRAINER_CYCLING_ROAD_GRANT          868
+#define TRAINER_CYCLING_ROAD_ISAAC          869
+#define TRAINER_CYCLING_ROAD_MARISOL        870
+#define TRAINER_CYCLING_ROAD_NICO           871
+#define TRAINER_CYCLING_ROAD_ASHER          872
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
-//       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
-//       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, trainer flag space is shared with the system flags that follow it
+//       (constants/flags.h). Raising MAX_TRAINERS_COUNT shifts them up, so unused flags at the end of the system block were removed to compensate.
+//       Any further trainers need more unused flags removed there, or more saveblock space.
 
-#define TRAINERS_COUNT_EMERALD     859
-#define MAX_TRAINERS_COUNT_EMERALD 864
+#define TRAINERS_COUNT_EMERALD     873
+#define MAX_TRAINERS_COUNT_EMERALD 873
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
