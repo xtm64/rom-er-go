@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "offset": -26,
+      "offset": -30,
       "direction": "right"
     }
   ],
@@ -222,6 +222,34 @@
       "elevation": 0,
       "dest_map": "MAP_EARNEST_STATE_CAMPUS_GYMNASIUM_ARHU",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 44,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 44,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 44,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 44,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [],

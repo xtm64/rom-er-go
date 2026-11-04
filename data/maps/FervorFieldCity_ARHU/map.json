@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE1_ARHU",
-      "offset": 11,
+      "offset": 4,
       "direction": "left"
     },
     {
@@ -292,7 +292,7 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 35,
+      "x": 9,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_FERVOR_FIELD_TANGLEWOODS_HOUSE_ARHU",
@@ -353,6 +353,20 @@
       "elevation": 3,
       "dest_map": "MAP_FERVOR_FIELD_FISHERMANS_HOUSE_ARHU",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_EAST_GATE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 46,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_WEST_GATE_ARHU",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

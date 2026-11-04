@@ -3,7 +3,6 @@
   "name": "EarnestStateCampus_AdminHall_ARHU",
   "layout": "LAYOUT_RUSTBORO_CITY_DEVON_CORP_1F",
   "music": "MUS_RUSTBORO",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_EARNEST_STATE_CAMPUS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -115,5 +114,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EarnestStateCampus_AdminHall_ARHU_EventScript_Charter"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

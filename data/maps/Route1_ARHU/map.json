@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_FERVOR_FIELD_CITY_ARHU",
-      "offset": -11,
+      "offset": -4,
       "direction": "right"
     },
     {
       "map": "MAP_ROUTE2_NORTH_ARHU",
-      "offset": -1,
+      "offset": -2,
       "direction": "up"
     },
     {
@@ -32,18 +32,67 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 38,
-      "y": 8,
+      "x": 44,
+      "y": 16,
       "elevation": 3,
       "dest_map": "MAP_ROUTE1_EAST_GATE_ARHU",
       "dest_warp_id": "0"
     },
     {
-      "x": 45,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE1_EAST_GATE_ARHU",
-      "dest_warp_id": "1"
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 24,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 26,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 27,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

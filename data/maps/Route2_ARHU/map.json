@@ -22,14 +22,7 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 2,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE2_WEST_GATE_ARHU",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 9,
+      "x": 5,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_ROUTE2_WEST_GATE_ARHU",

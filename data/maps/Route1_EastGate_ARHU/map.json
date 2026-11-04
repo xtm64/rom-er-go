@@ -40,8 +40,8 @@
       "x": 11,
       "y": 6,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE1_ARHU",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_FERVOR_FIELD_CITY_ARHU",
+      "dest_warp_id": "15"
     }
   ],
   "coord_events": [

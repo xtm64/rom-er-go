@@ -3,7 +3,6 @@
   "name": "Earnest_PokemonCenter_1F_ARHU",
   "layout": "LAYOUT_POKEMON_CENTER_1F",
   "music": "MUS_POKE_CENTER",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_EARNEST_TOWNSHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -80,5 +79,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }
