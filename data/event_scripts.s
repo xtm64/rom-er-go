@@ -1801,6 +1801,21 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/Route2_North_ARHU/scripts.inc"
 
         .include "data/maps/Route1_CyclingRoad_ARHU/scripts.inc"
+	.include "data/maps/Route1_CyclingRoad_NorthGate_ARHU/scripts.inc"
+	.include "data/maps/Route1_CyclingRoad_SouthGate_ARHU/scripts.inc"
+
+        .include "data/maps/EarnestStateCampus_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_AdminHall_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_LectureHall_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_MediaCenter_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_CampusStore_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Library_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_HealthCenter_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_ScienceTower_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Dorm_1F_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Dorm_2F_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Museum_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Gymnasium_ARHU/scripts.inc"
 
         .include "data/maps/Willowsville_ARHU/scripts.inc"
 
@@ -1816,3 +1831,15 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/WillowLake_ARHU/scripts.inc"
         .include "data/maps/WillowRanch_DayCare_ARHU/scripts.inc"
         .include "data/maps/WillowRanch_SeedShop_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Township_ARHU/scripts.inc"
+        .include "data/maps/Earnest_PokemonCenter_1F_ARHU/scripts.inc"
+        .include "data/maps/Earnest_PokemonCenter_2F_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Mart_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Gym_ARHU/scripts.inc"
+        .include "data/maps/Earnest_ContestHall_ARHU/scripts.inc"
+        .include "data/maps/Earnest_NameRatersHouse_ARHU/scripts.inc"
+        .include "data/maps/Earnest_House_ARHU/scripts.inc"
+
+	.include "data/maps/Route3_ARHU/scripts.inc"
+
+	.include "data/maps/Route4_ARHU/scripts.inc"

@@ -877,13 +877,27 @@
 #define TRAINER_CYCLING_ROAD_MARISOL        870
 #define TRAINER_CYCLING_ROAD_NICO           871
 #define TRAINER_CYCLING_ROAD_ASHER          872
+#define TRAINER_EARNEST_STATE_QUINN         873
+#define TRAINER_EARNEST_STATE_ELLIOT        874
+#define TRAINER_EARNEST_STATE_REMY          875
+#define TRAINER_EARNEST_STATE_HOLLIS        876
+#define TRAINER_EARNEST_STATE_TASHA         877
+#define TRAINER_EARNEST_STATE_DARIUS        878
+#define TRAINER_EARNEST_STATE_MALIK         879
+#define TRAINER_EARNEST_GYM_THRESH          880
+#define TRAINER_EARNEST_GYM_HARLAN          881
+#define TRAINER_EARNEST_GYM_KAIA            882
+#define TRAINER_EARNEST_GYM_ISAMU           883
+#define TRAINER_EARNEST_GYM_WESTIN_SQUIRTLE   884
+#define TRAINER_EARNEST_GYM_WESTIN_CHIMCHAR   885
+#define TRAINER_EARNEST_GYM_WESTIN_SPRIGATITO 886
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, trainer flag space is shared with the system flags that follow it
 //       (constants/flags.h). Raising MAX_TRAINERS_COUNT shifts them up, so unused flags at the end of the system block were removed to compensate.
 //       Any further trainers need more unused flags removed there, or more saveblock space.
 
-#define TRAINERS_COUNT_EMERALD     873
-#define MAX_TRAINERS_COUNT_EMERALD 873
+#define TRAINERS_COUNT_EMERALD     887
+#define MAX_TRAINERS_COUNT_EMERALD 887
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

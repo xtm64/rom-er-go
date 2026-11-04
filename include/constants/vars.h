@@ -273,8 +273,8 @@
 #define VAR_FERVOR_FIELD_PLAYER_STARTER                  0x40FB // Species of the player's starter (caught in the Safari challenge or the CHIKORITA consolation gift)
 #define VAR_FERVOR_FIELD_STARTER_SPEECH_STATE            0x40FC // 0 = challenge not finished, 1 = finished, Tanglewood's exit speech pending (trigger at (24,7)), 2 = seen
 #define VAR_FERVOR_FIELD_WESTIN_STARTER                  0x40FD // Species of Westin's starter, chosen to counter the player's starter type
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_EARNEST_GYM_RIVAL_STATE                      0x40FE // 0 = Earnest Gym not cleared, 1 = badge earned, Westin waits outside, 2 = rival battle done
+#define VAR_EARNEST_CONTEST_STATE                        0x40FF // Earnest Contest Hall progress; values are EARNEST_CONTEST_STATE_* in constants/contest.h
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

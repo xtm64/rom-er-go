@@ -80,17 +80,17 @@
 #define FLAG_ITEM_WILLOW_WOODS_ETHER 0x3A // Willow Woods item ball (ITEM_ETHER), set once picked up
 #define FLAG_ITEM_WILLOW_WOODS_X_ATTACK 0x3B // Willow Woods item ball (ITEM_X_ATTACK), set once picked up
 #define FLAG_ITEM_WILLOW_LAKE_ISLAND 0x3C // Willow Lake island item ball (ITEM_SUPER_POTION), set once picked up
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_ITEM_EARNEST_STATE_GARDEN_MIRACLE_SEED 0x3D // Earnest State garden item ball (ITEM_MIRACLE_SEED), set once picked up
+#define FLAG_RECEIVED_EARNEST_STATE_AMULET_COIN 0x3E // Earnest State Admin Hall bursar "scholarship" gift
+#define FLAG_RECEIVED_EARNEST_STATE_WISE_GLASSES 0x3F // Earnest State Lecture Hall professor pop quiz reward
+#define FLAG_RECEIVED_EARNEST_STATE_TWISTED_SPOON 0x40 // Earnest State Library, Elliot post-battle gift
+#define FLAG_RECEIVED_EARNEST_STATE_THROAT_SPRAY 0x41 // Earnest State Media Center, Remy post-battle gift
+#define FLAG_RECEIVED_EARNEST_STATE_MYSTIC_WATER 0x42 // Earnest State Science Tower field quiz reward
+#define FLAG_RECEIVED_EARNEST_STATE_MUSCLE_BAND 0x43 // Earnest State Gymnasium, Captain Malik post-battle gift
+#define FLAG_HIDE_EARNEST_TOWNSHIP_RIVAL 0x44 // Westin outside the Earnest Gym; hidden except during the post-gym rival battle
+#define FLAG_HIDE_EARNEST_TOWNSHIP_THRESH 0x45 // Thresh in the Earnest Gym doorway; hidden except during the post-gym rival scene
+#define FLAG_HIDE_EARNEST_CONTEST_HALL_MIRA 0x46 // Mira in the Earnest Contest Hall lobby; shown only for her intro and post-contest scenes
+#define FLAG_RECEIVED_EARNEST_CONTEST_SILK_SCARF 0x47 // Earnest Contest Hall prize for clearing its NORMAL RANK (handed over at the counter if the bag was full)
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
@@ -666,9 +666,9 @@
 
 #define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_CENTER_LEAF_STONE (FLAG_HIDDEN_ITEMS_START + 0x71) // Fervor Safari Center hidden item (27,15)
 #define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_WEST_REVIVE      (FLAG_HIDDEN_ITEMS_START + 0x72) // Fervor Safari West hidden item (13,11)
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_MUSEUM_RARE_BONE   (FLAG_HIDDEN_ITEMS_START + 0x73) // Earnest State Museum hidden item (20,12)
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_DORM_RARE_CANDY    (FLAG_HIDDEN_ITEMS_START + 0x74) // Earnest State Dorm 2F hidden item (13,7)
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_GARDEN_REVIVAL_HERB (FLAG_HIDDEN_ITEMS_START + 0x75) // Earnest State garden hidden item (29,8)
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
@@ -1542,26 +1542,13 @@
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
 #define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
 #define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-// Nine trailing unused flags (0x917-0x91F) were removed to make room for nine more trainer flags (MAX_TRAINERS_COUNT 864 -> 873).
+// Twenty-three trailing unused flags (0x909-0x91F) were removed to make room for twenty-three more trainer flags (MAX_TRAINERS_COUNT 864 -> 887).
+
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x916 + (8 - FLAG_UNUSED_0x916 % 8))
+#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x908 + (8 - FLAG_UNUSED_0x908 % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)

@@ -365,12 +365,60 @@
       "var_value": "1",
       "script": "FervorFieldCity_ARHU_EventScript_StarterSpeech"
     },
-    { "type": "trigger", "x": 21, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X21" },
-    { "type": "trigger", "x": 22, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X22" },
-    { "type": "trigger", "x": 23, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X23" },
-    { "type": "trigger", "x": 25, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X25" },
-    { "type": "trigger", "x": 26, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X26" },
-    { "type": "trigger", "x": 27, "y": 6, "elevation": 0, "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE", "var_value": "1", "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X27" },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X21"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X22"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X23"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X25"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X26"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X27"
+    },
     {
       "type": "trigger",
       "x": 12,

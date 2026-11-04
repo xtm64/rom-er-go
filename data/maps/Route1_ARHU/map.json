@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "offset": -8,
+      "offset": 8,
       "direction": "down"
     }
   ],

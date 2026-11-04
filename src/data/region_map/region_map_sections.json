@@ -1646,6 +1646,14 @@
     {
       "id": "MAPSEC_WILLOW_LAKE",
       "name": "WILLOW LAKE"
+    },
+    {
+      "id": "MAPSEC_EARNEST_STATE_CAMPUS",
+      "name": "EARNEST STATE"
+    },
+    {
+      "id": "MAPSEC_EARNEST_TOWNSHIP",
+      "name": "EARNEST TWP."
     }
   ]
 }

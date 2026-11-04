@@ -1173,7 +1173,13 @@
     "WillowWoods_ARHU",
     "WillowRanch_ARHU",
     "WillowLake_ARHU",
-    "Route1_CyclingRoad_ARHU"
+    "Route1_CyclingRoad_ARHU",
+    "Route1_CyclingRoad_NorthGate_ARHU",
+    "Route1_CyclingRoad_SouthGate_ARHU",
+    "EarnestStateCampus_ARHU",
+    "Earnest_Township_ARHU",
+    "Route3_ARHU",
+    "Route4_ARHU"
   ],
   "gMapGroup_IndoorFervorField_ARHU": [
     "FervorFieldCity_SafariZone_Entrance_ARHU_1",
@@ -1196,7 +1202,25 @@
     "Willowsville_Cottage_ARHU",
     "Willowsville_Lab_ARHU",
     "WillowRanch_DayCare_ARHU",
-    "WillowRanch_SeedShop_ARHU"
+    "WillowRanch_SeedShop_ARHU",
+    "Earnest_PokemonCenter_1F_ARHU",
+    "Earnest_PokemonCenter_2F_ARHU",
+    "Earnest_Mart_ARHU",
+    "Earnest_Gym_ARHU",
+    "Earnest_ContestHall_ARHU",
+    "Earnest_NameRatersHouse_ARHU",
+    "Earnest_House_ARHU",
+    "EarnestStateCampus_AdminHall_ARHU",
+    "EarnestStateCampus_LectureHall_ARHU",
+    "EarnestStateCampus_MediaCenter_ARHU",
+    "EarnestStateCampus_CampusStore_ARHU",
+    "EarnestStateCampus_Library_ARHU",
+    "EarnestStateCampus_HealthCenter_ARHU",
+    "EarnestStateCampus_ScienceTower_ARHU",
+    "EarnestStateCampus_Dorm_1F_ARHU",
+    "EarnestStateCampus_Dorm_2F_ARHU",
+    "EarnestStateCampus_Museum_ARHU",
+    "EarnestStateCampus_Gymnasium_ARHU"
   ],
   "gMapGroup_SafariZone_ARHU": [
     "FervorFieldCity_SafariZone_Center_ARHU",

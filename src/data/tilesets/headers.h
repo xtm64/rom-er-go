@@ -837,17 +837,6 @@ const struct Tileset gTileset_UnionRoom =
 
 // FRLG tilesets
 
-const struct Tileset gTileset_ViridianCity =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_ViridianCity,
-    .palettes = gTilesetPalettes_ViridianCity,
-    .metatiles = gMetatiles_ViridianCity,
-    .metatileAttributes = gMetatileAttributes_ViridianCity,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_PewterCity =
 {
     .isCompressed = TRUE,
@@ -1552,5 +1541,16 @@ const struct Tileset gTileset_FuchsiaCity =
     .palettes = gTilesetPalettes_FuchsiaCity,
     .metatiles = gMetatiles_FuchsiaCity,
     .metatileAttributes = gMetatileAttributes_FuchsiaCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_ViridianCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ViridianCity,
+    .palettes = gTilesetPalettes_ViridianCity,
+    .metatiles = gMetatiles_ViridianCity,
+    .metatileAttributes = gMetatileAttributes_ViridianCity,
     .callback = NULL,
 };

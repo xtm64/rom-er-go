@@ -98,7 +98,8 @@ enum {
     CONTEST_OPPONENT_CLARA,
     CONTEST_OPPONENT_JAKOB,
     CONTEST_OPPONENT_TREY,
-    CONTEST_OPPONENT_LANE
+    CONTEST_OPPONENT_LANE,
+    CONTEST_OPPONENT_MIRA,
 };
 
 // All contest opponents have a common set of AI flags (which contains all of the actually
@@ -3000,6 +3001,37 @@ const struct ContestPokemon gContestOpponents[] =
         .smart = 80,
         .tough = 190,
         .sheen = 255,
+        .personality = 0,
+        .otId = CONTEST_AI_TRAINER_ID,
+    },
+    // Rival from Tanglewood's Safari class. Never drawn at random (no AI pools): SetContestants
+    // seats her in every NORMAL RANK contest entered at the Earnest Contest Hall until the player clears it.
+    [CONTEST_OPPONENT_MIRA] = {
+        .filter = CONTEST_FILTER_NONE,
+        .species = SPECIES_EEVEE,
+        .nickname = _("EEVEE"),
+        .trainerName = _("MIRA"),
+        .trainerGfxId = OBJ_EVENT_GFX_LEAF,
+        .aiFlags = CONTEST_AI_SET_5,
+        .whichRank = CONTEST_RANK_NORMAL,
+        .aiPool_Cool = FALSE,
+        .aiPool_Beauty = FALSE,
+        .aiPool_Cute = FALSE,
+        .aiPool_Smart = FALSE,
+        .aiPool_Tough = FALSE,
+        .moves =
+        {
+            MOVE_CHARM,
+            MOVE_QUICK_ATTACK,
+            MOVE_TAIL_WHIP,
+            MOVE_SAND_ATTACK
+        },
+        .cool = 15,
+        .beauty = 20,
+        .cute = 35,
+        .smart = 15,
+        .tough = 10,
+        .sheen = 60,
         .personality = 0,
         .otId = CONTEST_AI_TRAINER_ID,
     }
