@@ -245,42 +245,42 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "8"
     },
     {
       "x": 11,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "13"
+      "dest_warp_id": "9"
     },
     {
       "x": 13,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "15"
+      "dest_warp_id": "11"
     },
     {
       "x": 14,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "16"
+      "dest_warp_id": "12"
     },
     {
       "x": 10,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "14"
+      "dest_warp_id": "10"
     },
     {
       "x": 9,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "17"
+      "dest_warp_id": "13"
     }
   ],
   "coord_events": [],

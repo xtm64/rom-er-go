@@ -22,8 +22,9 @@ Route1_ARHU_OnFrame::
 
 @ Holt ambush: a tag battle (player + partner vs two of Holt's crew).
 @ The only way onto Route 1 before this scene is the east gate, so the player arrives on the gate
-@ warp (44,16) and steps out to (43,16), facing left.
-@ Cast: Westin (39,15) and Mira (39,17) are cornered by Holt (40,16), Rook (41,15) and Dash (41,17).
+@ warp (44,16) and walks out to (41,16), facing left. That leaves (42-43,15-17) free for Tanglewood
+@ and Mom to come out of the gate later.
+@ Cast: Westin (37,15) and Mira (37,17) are cornered by Holt (38,16), Rook (39,15) and Dash (39,17).
 @ The player picks a partner (VAR_TEMP_2: 0 = Westin, 1 = Mira). Holt only fights Westin:
 @   Westin: player + Westin vs Holt + Rook. Mira squares off with Dash on the side.
 @   Mira:   player + Mira vs Rook + Dash. Westin squares off with Holt on the side.
@@ -36,11 +37,15 @@ Route1_ARHU_EventScript_HoltAmbush::
 	setvar VAR_TEMP_1, 0
 	call Route1_ARHU_EventScript_HoltAmbush_BufferNames
 	playbgm MUS_ENCOUNTER_SUSPICIOUS, FALSE
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Route1_ARHU_Movement_PlayerWalkOut
 	waitmovement 0
 	applymovement LOCALID_ROUTE1_HOLT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox Route1_ARHU_Text_Holt_GimmeYourPokemon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE1_HOLT, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox Route1_ARHU_Text_Holt_WhyOnlyOne, MSGBOX_DEFAULT
 	closemessage
 	msgbox Route1_ARHU_Text_Westin_CatchTheRealThing, MSGBOX_DEFAULT
 	closemessage
@@ -84,7 +89,7 @@ Route1_ARHU_EventScript_HoltAmbush::
 	goto_if_eq VAR_TEMP_2, 1, Route1_ARHU_EventScript_HoltAmbush_PickMira
 	goto Route1_ARHU_EventScript_HoltAmbush_PickWestin
 
-@ Westin jumps over Rook to (43,15); Mira takes Dash. Holt (42,16) and Rook (42,15) line up.
+@ Westin jumps over Rook to (41,15); Mira takes Dash. Holt (40,16) and Rook (40,15) line up.
 Route1_ARHU_EventScript_HoltAmbush_PickWestin::
 	msgbox Route1_ARHU_Text_Westin_ImIn, MSGBOX_DEFAULT
 	closemessage
@@ -112,7 +117,7 @@ Route1_ARHU_EventScript_HoltAmbush_PickWestin::
 	call_if_ne VAR_0x8009, B_OUTCOME_WON, Route1_ARHU_EventScript_HoltAmbush_TeamLost
 	goto Route1_ARHU_EventScript_HoltAmbush_Rescue
 
-@ Mira jumps over Dash to (43,17); Westin takes Holt. Rook (42,16) and Dash (42,17) line up.
+@ Mira jumps over Dash to (41,17); Westin takes Holt. Rook (40,16) and Dash (40,17) line up.
 Route1_ARHU_EventScript_HoltAmbush_PickMira::
 	msgbox Route1_ARHU_Text_Mira_ImIn, MSGBOX_DEFAULT
 	closemessage
@@ -213,8 +218,8 @@ Route1_ARHU_EventScript_HoltAmbush_TeamLost::
 	closemessage
 	return
 
-@ Tanglewood comes out of the gate (44,16) and steps up to (44,15); Mom follows and stays on (44,16),
-@ right beside the player.
+@ Tanglewood comes out of the gate (44,16) and walks over to (42,15); Mom follows to (42,16), right
+@ beside the player at (41,16).
 Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	msgbox Route1_ARHU_Text_Tanglewood_ThatIsEnough, MSGBOX_DEFAULT
 	closemessage
@@ -231,7 +236,8 @@ Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	waitmovement 0
 	playse SE_EXIT
 	addobject LOCALID_ROUTE1_MOM
-	delay 16
+	applymovement LOCALID_ROUTE1_MOM, Route1_ARHU_Movement_MomArrive
+	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox Route1_ARHU_Text_Tanglewood_ItChoseYou, MSGBOX_DEFAULT
@@ -274,9 +280,14 @@ Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	closemessage
 	msgbox Route1_ARHU_Text_Westin_DontMakeMeFeelBad, MSGBOX_DEFAULT
 	closemessage
-	call_if_eq VAR_TEMP_2, 0, Route1_ARHU_EventScript_HoltAmbush_FriendsLeave_Westin
-	call_if_eq VAR_TEMP_2, 1, Route1_ARHU_EventScript_HoltAmbush_FriendsLeave_Mira
+	@ They only just met, so they head out separately: Westin races off first, Mira takes her time
+	call_if_eq VAR_TEMP_2, 0, Route1_ARHU_EventScript_HoltAmbush_WestinLeaves_FromPlayer
+	call_if_eq VAR_TEMP_2, 1, Route1_ARHU_EventScript_HoltAmbush_WestinLeaves_FromSide
 	removeobject LOCALID_ROUTE1_WESTIN
+	msgbox Route1_ARHU_Text_Mira_OwnPace, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE1_MIRA, Route1_ARHU_Movement_MiraLeave
+	waitmovement 0
 	removeobject LOCALID_ROUTE1_MIRA
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
@@ -284,7 +295,7 @@ Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	closemessage
 	msgbox Route1_ARHU_Text_Mom_BeSafe, MSGBOX_DEFAULT
 	closemessage
-	@ Both head back into the gate at (44,16)
+	@ Both head back into the gate at (44,16), Mom first
 	applymovement LOCALID_ROUTE1_MOM, Route1_ARHU_Movement_EnterGate
 	waitmovement 0
 	playse SE_EXIT
@@ -301,8 +312,8 @@ Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	releaseall
 	end
 
-@ Westin pick: Holt (42,16), Rook (42,15), Dash (40,17). Everyone leaves west along row 16
-@ (row 15 has the Youngster at (38,15), row 17 has Mira at (39,17)).
+@ Westin pick: Holt (40,16), Rook (40,15), Dash (38,17). Everyone leaves west along row 16
+@ (row 17 has Mira at (37,17)).
 Route1_ARHU_EventScript_HoltAmbush_CrewFlees_Westin::
 	applymovement LOCALID_ROUTE1_HOLT, Route1_ARHU_Movement_FleeWest
 	applymovement LOCALID_ROUTE1_ROOK, Route1_ARHU_Movement_RookFlee_Westin
@@ -310,8 +321,8 @@ Route1_ARHU_EventScript_HoltAmbush_CrewFlees_Westin::
 	waitmovement 0
 	return
 
-@ Mira pick: Holt (40,15), Rook (42,16), Dash (42,17). Rook leaves along row 16, Dash along row 17,
-@ Holt drops to row 16 behind Rook (Westin is at (39,15)).
+@ Mira pick: Holt (38,15), Rook (40,16), Dash (40,17). Rook leaves along row 16, Dash along row 17,
+@ Holt drops to row 16 behind Rook (Westin is at (37,15)).
 Route1_ARHU_EventScript_HoltAmbush_CrewFlees_Mira::
 	applymovement LOCALID_ROUTE1_ROOK, Route1_ARHU_Movement_FleeWest
 	applymovement LOCALID_ROUTE1_DASH, Route1_ARHU_Movement_FleeWest
@@ -319,7 +330,7 @@ Route1_ARHU_EventScript_HoltAmbush_CrewFlees_Mira::
 	waitmovement 0
 	return
 
-@ Westin pick: Westin is at (43,15); Mira comes over from (39,17) to (42,17)
+@ Westin pick: Westin is at (41,15); Mira comes over from (37,17) to (40,17)
 Route1_ARHU_EventScript_HoltAmbush_FriendsGather_Westin::
 	applymovement LOCALID_ROUTE1_MIRA, Route1_ARHU_Movement_MiraComeOver
 	waitmovement 0
@@ -327,7 +338,7 @@ Route1_ARHU_EventScript_HoltAmbush_FriendsGather_Westin::
 	waitmovement 0
 	return
 
-@ Mira pick: Mira is at (43,17); Westin comes over from (39,15) to (42,15)
+@ Mira pick: Mira is at (41,17); Westin comes over from (37,15) to (40,15)
 Route1_ARHU_EventScript_HoltAmbush_FriendsGather_Mira::
 	applymovement LOCALID_ROUTE1_WESTIN, Route1_ARHU_Movement_WestinComeOver
 	waitmovement 0
@@ -335,17 +346,28 @@ Route1_ARHU_EventScript_HoltAmbush_FriendsGather_Mira::
 	waitmovement 0
 	return
 
-Route1_ARHU_EventScript_HoltAmbush_FriendsLeave_Westin::
+@ Westin pick: Westin leaves from beside the player; Mira, at (40,17), turns to the player
+Route1_ARHU_EventScript_HoltAmbush_WestinLeaves_FromPlayer::
 	applymovement LOCALID_ROUTE1_WESTIN, Route1_ARHU_Movement_WestinLeave_FromPlayer
-	applymovement LOCALID_ROUTE1_MIRA, Route1_ARHU_Movement_MiraLeave_FromSide
+	waitmovement 0
+	applymovement LOCALID_ROUTE1_MIRA, Common_Movement_FaceRight
 	waitmovement 0
 	return
 
-Route1_ARHU_EventScript_HoltAmbush_FriendsLeave_Mira::
+@ Mira pick: Westin leaves from the side; Mira, at (41,17) just below the player, looks up
+Route1_ARHU_EventScript_HoltAmbush_WestinLeaves_FromSide::
 	applymovement LOCALID_ROUTE1_WESTIN, Route1_ARHU_Movement_WestinLeave_FromSide
-	applymovement LOCALID_ROUTE1_MIRA, Route1_ARHU_Movement_MiraLeave_FromPlayer
+	waitmovement 0
+	applymovement LOCALID_ROUTE1_MIRA, Common_Movement_FaceUp
 	waitmovement 0
 	return
+
+@ (44,16) -> three steps out of the gate to (41,16)
+Route1_ARHU_Movement_PlayerWalkOut:
+	walk_left
+	walk_left
+	walk_left
+	step_end
 
 Route1_ARHU_Movement_HoltSnapAtRook:
 	face_up
@@ -357,7 +379,7 @@ Route1_ARHU_Movement_FaceRightExclaim:
 	emote_exclamation_mark
 	step_end
 
-@ (39,15) -> jump over Rook (41,15) -> (43,15), just above the player
+@ (37,15) -> jump over Rook (39,15) -> (41,15), just above the player
 Route1_ARHU_Movement_WestinJoinPlayer:
 	walk_fast_right
 	jump_2_right
@@ -365,7 +387,7 @@ Route1_ARHU_Movement_WestinJoinPlayer:
 	face_left
 	step_end
 
-@ (39,17) -> jump over Dash (41,17) -> (43,17), just below the player
+@ (37,17) -> jump over Dash (39,17) -> (41,17), just below the player
 Route1_ARHU_Movement_MiraJoinPlayer:
 	walk_fast_right
 	jump_2_right
@@ -373,47 +395,56 @@ Route1_ARHU_Movement_MiraJoinPlayer:
 	face_left
 	step_end
 
-@ Westin pick: Dash (41,17) -> (40,17), facing Mira (39,17)
+@ Westin pick: Dash (39,17) -> (38,17), facing Mira (37,17)
 Route1_ARHU_Movement_DashToMira:
 	walk_left
 	face_left
 	step_end
 
-@ Westin pick: Holt (40,16) -> (42,16), facing the player
+@ Westin pick: Holt (38,16) -> (40,16), facing the player
 Route1_ARHU_Movement_HoltToPlayer:
 	walk_right
 	walk_right
 	face_right
 	step_end
 
-@ Westin pick: Rook (41,15) -> (42,15), facing Westin
+@ Westin pick: Rook (39,15) -> (40,15), facing Westin
 Route1_ARHU_Movement_RookToWestin:
 	walk_right
 	face_right
 	step_end
 
-@ Mira pick: Holt (40,16) -> (40,15), facing Westin (39,15)
+@ Mira pick: Holt (38,16) -> (38,15), facing Westin (37,15)
 Route1_ARHU_Movement_HoltToWestin:
 	walk_up
 	face_left
 	step_end
 
-@ Mira pick: Rook (41,15) -> (42,16), facing the player
+@ Mira pick: Rook (39,15) -> (40,16), facing the player
 Route1_ARHU_Movement_RookToPlayer:
 	walk_down
 	walk_right
 	face_right
 	step_end
 
-@ Mira pick: Dash (41,17) -> (42,17), facing Mira
+@ Mira pick: Dash (39,17) -> (40,17), facing Mira
 Route1_ARHU_Movement_DashToMiraSide:
 	walk_right
 	face_right
 	step_end
 
-@ (44,16) -> (44,15)
+@ (44,16) -> (43,16) -> (43,15) -> (42,15)
 Route1_ARHU_Movement_TanglewoodArrive:
+	walk_left
 	walk_up
+	walk_left
+	face_left
+	step_end
+
+@ (44,16) -> (42,16), right beside the player
+Route1_ARHU_Movement_MomArrive:
+	walk_left
+	walk_left
 	face_left
 	step_end
 
@@ -432,7 +463,7 @@ Route1_ARHU_Movement_FleeWest:
 	set_invisible
 	step_end
 
-@ Westin pick: Rook (42,15) drops to row 16 once Holt is clear, then west
+@ Westin pick: Rook (40,15) drops to row 16 once Holt is clear, then west
 Route1_ARHU_Movement_RookFlee_Westin:
 	delay_16
 	delay_16
@@ -450,7 +481,7 @@ Route1_ARHU_Movement_RookFlee_Westin:
 	set_invisible
 	step_end
 
-@ Westin pick: Dash (40,17) steps up to row 16 once Rook is past, then west
+@ Westin pick: Dash (38,17) steps up to row 16 once Rook is past, then west
 Route1_ARHU_Movement_DashFlee_Westin:
 	delay_16
 	delay_16
@@ -468,7 +499,7 @@ Route1_ARHU_Movement_DashFlee_Westin:
 	set_invisible
 	step_end
 
-@ Mira pick: Holt (40,15) drops to row 16 once Rook is past, then west
+@ Mira pick: Holt (38,15) drops to row 16 once Rook is past, then west
 Route1_ARHU_Movement_HoltFlee_Mira:
 	delay_16
 	delay_16
@@ -484,7 +515,7 @@ Route1_ARHU_Movement_HoltFlee_Mira:
 	set_invisible
 	step_end
 
-@ (39,17) -> (42,17)
+@ (37,17) -> (40,17)
 Route1_ARHU_Movement_MiraComeOver:
 	walk_right
 	walk_right
@@ -492,7 +523,7 @@ Route1_ARHU_Movement_MiraComeOver:
 	face_up
 	step_end
 
-@ (39,15) -> (42,15)
+@ (37,15) -> (40,15)
 Route1_ARHU_Movement_WestinComeOver:
 	walk_right
 	walk_right
@@ -500,7 +531,7 @@ Route1_ARHU_Movement_WestinComeOver:
 	face_down
 	step_end
 
-@ Westin pick: Westin (43,15) -> (42,15) -> down to row 16 -> west
+@ Westin pick: Westin (41,15) -> (40,15) -> down to row 16 -> west
 Route1_ARHU_Movement_WestinLeave_FromPlayer:
 	walk_fast_left
 	walk_fast_down
@@ -516,23 +547,7 @@ Route1_ARHU_Movement_WestinLeave_FromPlayer:
 	set_invisible
 	step_end
 
-@ Westin pick: Mira (42,17) west along row 17
-Route1_ARHU_Movement_MiraLeave_FromSide:
-	delay_16
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	set_invisible
-	step_end
-
-@ Mira pick: Westin (42,15) down to row 16 -> west
+@ Mira pick: Westin (40,15) down to row 16 -> west
 Route1_ARHU_Movement_WestinLeave_FromSide:
 	walk_fast_down
 	walk_fast_left
@@ -548,33 +563,36 @@ Route1_ARHU_Movement_WestinLeave_FromSide:
 	set_invisible
 	step_end
 
-@ Mira pick: Mira (43,17) west along row 17
-Route1_ARHU_Movement_MiraLeave_FromPlayer:
-	delay_16
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+@ Mira, from (40,17) or (41,17), heads off west along row 17 at her own pace
+Route1_ARHU_Movement_MiraLeave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	set_invisible
 	step_end
 
-@ Mom is already on the gate warp (44,16)
+@ Mom (42,16) -> back through the gate at (44,16)
 Route1_ARHU_Movement_EnterGate:
+	walk_right
+	walk_right
 	face_right
 	delay_8
 	set_invisible
 	step_end
 
-@ (44,15) -> back through the gate at (44,16)
+@ (42,15) -> (43,15) -> (43,16) -> back through the gate at (44,16)
 Route1_ARHU_Movement_TanglewoodLeave:
+	walk_right
 	walk_down
+	walk_right
 	face_right
 	delay_8
 	set_invisible
@@ -603,29 +621,35 @@ Route1_ARHU_Text_CoolMonsLass:
 @ Holt ambush text. STR_VAR_1 = Westin's starter, STR_VAR_2 = the player's starter.
 
 Route1_ARHU_Text_Holt_GimmeYourPokemon::
-	.string "Holt: Gimme your Pokémon!\n"
-	.string "Why should I only have one…\p"
-	.string "Heh.\n"
-	.string "That {STR_VAR_1} would look\l"
-	.string "better on my belt anyway.$"
+	.string "Holt: Hand it over, Westin!\n"
+	.string "Gimme your Pokémon!$"
+
+Route1_ARHU_Text_Holt_WhyOnlyOne::
+	.string "Holt: Why should I only have one\n"
+	.string "Pokémon when I can have two?\p"
+	.string "Heh. That {STR_VAR_1} of yours\n"
+	.string "would look better on my belt\l"
+	.string "anyway.$"
 
 Route1_ARHU_Text_Westin_CatchTheRealThing::
-	.string "Westin: Try catching the real thing\n"
-	.string "from the challenge next time!$"
+	.string "Westin: Then go catch your own!\n"
+	.string "Oh wait, you couldn't!$"
 
 Route1_ARHU_Text_Holt_ThirtyBalls::
 	.string "Holt: Thirty Poké Balls!\n"
 	.string "Twenty-seven starters!\p"
-	.string "And the only thing that would sit\n"
-	.string "still for me was this walking\l"
-	.string "trash can!$"
+	.string "And not ONE of them would let me\n"
+	.string "catch it!\p"
+	.string "The old man had to hand me this\n"
+	.string "walking trash can so I wouldn't\l"
+	.string "leave empty-handed!$"
 
 Route1_ARHU_Text_Mira_ItsForTheBerry::
-	.string "Mira: Maybe because you yelled at\n"
-	.string "every bush in the Safari.\p"
-	.string "And that Zigzagoon isn't following\n"
-	.string "you, Holt.\l"
-	.string "It's following your Oran Berry.$"
+	.string "Mira: Maybe because you swung your\n"
+	.string "fists at every bush in the Safari.\p"
+	.string "And that Zigzagoon was a gift from\n"
+	.string "Professor Tanglewood, Holt.\l"
+	.string "You could at least be grateful.$"
 
 Route1_ARHU_Text_Rook_SheHasAPoint::
 	.string "Rook: …She kinda has a point,\n"
@@ -747,10 +771,10 @@ Route1_ARHU_Text_Tanglewood_ItChoseYou::
 	.string "I watched you in my Safari.\p"
 	.string "You chased every Pokémon in there\n"
 	.string "with your fists balled up.\l"
-	.string "Not one would go near you.\p"
-	.string "Yet that Zigzagoon followed you\n"
-	.string "out anyway.\p"
-	.string "It chose you, Holt.\n"
+	.string "Not one would let you near it.\p"
+	.string "So I gave you my own Zigzagoon,\n"
+	.string "so you would not leave alone.\p"
+	.string "It has stood by you ever since.\n"
 	.string "And this is how you thank it?\l"
 	.string "By taking someone else's partner?$"
 
@@ -808,18 +832,28 @@ Route1_ARHU_Text_Mira_ItKeptLookingBack::
 	.string "But his Zigzagoon…\n"
 	.string "Did you see it?\l"
 	.string "It kept looking back at him.\p"
-	.string "Maybe the Professor's right.\n"
-	.string "Maybe it picked him for a reason.$"
+	.string "Maybe the Professor knew what he\n"
+	.string "was doing when he gave it to him.$"
 
 Route1_ARHU_Text_Westin_DontMakeMeFeelBad::
 	.string "Westin: Ugh, don't make me feel bad\n"
 	.string "for the guy!\p"
-	.string "Come on, Mira, the road won't wait!\n"
-	.string "See ya, {PLAYER}!$"
+	.string "Anyway, I'm gonna be the first one\n"
+	.string "to the next town!\l"
+	.string "See ya, {PLAYER}! Later, Mira!$"
+
+Route1_ARHU_Text_Mira_OwnPace::
+	.string "Mira: …He didn't even ask which way\n"
+	.string "I was headed.\p"
+	.string "That's fine. Eevee and I are taking\n"
+	.string "our time. We only just met, too.\p"
+	.string "Thanks for picking a side back\n"
+	.string "there, {PLAYER}. See you around.$"
 
 Route1_ARHU_Text_Tanglewood_OffYouGo::
-	.string "Tanglewood: Hmhm. Those two will\n"
-	.string "keep each other honest.\p"
+	.string "Tanglewood: Hmhm. Those two only\n"
+	.string "just met, and already they're\l"
+	.string "going their own ways.\p"
 	.string "As for Holt… some partnerships take\n"
 	.string "longer to grow than others.\p"
 	.string "Now then, {PLAYER}.\n"

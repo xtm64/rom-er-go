@@ -17519,7 +17519,8 @@ Linoone
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-/* Route 1 ambush (Route1_ARHU). Holt came out of the Safari challenge with one partner and two goons.
+/* Route 1 ambush (Route1_ARHU). Holt flunked the Safari challenge; Tanglewood gave him a Zigzagoon
+   so he wouldn't leave empty-handed, and now he wants a second Pokemon by taking Westin's.
    Tag battle, partner picked by the player: with Westin it's Holt + Rook, with Mira it's Rook + Dash
    (partners in battle_partners.party). */
 === TRAINER_ROUTE1_GOON_DASH ===
@@ -17532,7 +17533,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_RATTATA_ALOLA
-Level: 3
+Level: 5
 Ability: Hustle
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -17546,7 +17547,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_ZIGZAGOON_GALAR @ Oran Berry
-Level: 3
+Level: 5
 Ability: Gluttony
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -17560,6 +17561,6 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_MEOWTH_ALOLA
-Level: 3
+Level: 5
 Ability: Rattled
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
