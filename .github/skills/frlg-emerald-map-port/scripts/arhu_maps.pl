@@ -675,8 +675,11 @@ sub audit_events {
             ($v) = remap_block($v) if $is_frlg_layout;
             my $mid = $v & 0x3FF;
             my $b = mb_name(behavior_of($mid, $prim, $sec, $NUM_PRIMARY_EM));
-            warn_("$tag stands on $b: the player can arrive here but cannot walk into it (needs a door/arrow/stair behavior)")
-                unless mb_class($b) eq 'warp';
+            # TryMapEdgeWarp (src/field_control_avatar.c) fires any warp on the outermost row/column
+            # when the player presses toward that edge, so edge warps need no special behavior.
+            my $on_edge = $wp->{x} == 0 || $wp->{y} == 0 || $wp->{x} == $w - 1 || $wp->{y} == $h - 1;
+            warn_("$tag stands on $b: the player can arrive here but cannot walk into it (needs a door/arrow/stair behavior, or put it on the map's outer edge for an edge warp)")
+                unless mb_class($b) eq 'warp' || $on_edge;
             if ($b eq 'MB_NON_ANIMATED_DOOR' && ($j->{map_type} // '') !~ /INDOOR/) {
                 warn_(sprintf('%s is an outdoor door on MB_NON_ANIMATED_DOOR (metatile 0x%03X): it warps without opening; use MB_ANIMATED_DOOR plus a door entry for an Emerald door animation',
                     $tag, $mid));

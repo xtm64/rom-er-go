@@ -33,6 +33,26 @@ Every rule here was checked against the code in this repo (`tools/mapjson/mapjso
   - a **2x2 border**, always. An FRLG 3x2 border is cut to its top-left 2x2.
 - Block data (`map.bin`) entries are u16: metatile id in bits 0-9, collision in 10-11, elevation in 12-15.
 
+### Connections between maps on different tilesets
+
+- Vanilla `LoadMapFromCameraTransition` (`src/overworld.c`) only reloaded the **secondary** tileset when
+  walking across a connection. It now also reloads the primary tiles/palettes/animations when the
+  primary tileset differs (added for `Route1_ARHU` (General_Frlg) <-> `Route1_CyclingRoad_ARHU` (General)).
+  Before that, the Cycling Road drew with Route 1's FRLG primary art.
+- The GBA holds one tileset pair in VRAM, so the strip of the **neighbouring** map that is on screen near
+  the seam is always drawn with the current map's tilesets. Seams between maps that share the primary
+  tileset look right (Game Freak keeps seam rows to primary tiles). Seams between an FRLG-primary map and
+  an Emerald-primary map show a garbage strip. So **don't connect FRLG-primary maps to Emerald-primary
+  maps; use an edge warp** (below), or repaint one side on the other's tilesets.
+- **Edge warps** (`TryMapEdgeWarp`, `src/field_control_avatar.c`): a warp event on the outermost
+  row/column fires with a fade when the player presses toward that edge, on any tile behavior. Bike and
+  facing carry over. Pair each edge tile with the matching edge tile on the other map (each warp's
+  `dest_warp_id` points at its partner). Example: `Route1_ARHU` (24-27,33) <-> `Route1_CyclingRoad_ARHU` (26-29,0).
+- Warps on `MB_NORMAL` tiles anywhere else never fire (`IsWarpMetatileBehavior`). Use a connection,
+  an edge warp, or an arrow-warp/door behavior.
+- Elevation must match across the seam: 3 -> 5 is blocked. Put a row of elevation-0 tiles at the seam
+  when the two sides differ (done on `Earnest_Township_ARHU` row 0).
+
 ### Converting FRLG block data to Emerald (what `port` does)
 
 | FRLG metatile id | Emerald id | Why |

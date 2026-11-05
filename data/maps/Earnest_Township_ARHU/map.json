@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE4_ARHU",
       "offset": 15,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "offset": -19,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -239,48 +244,6 @@
       "elevation": 0,
       "dest_map": "MAP_EARNEST_HOUSE_ARHU",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 12,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "8"
-    },
-    {
-      "x": 11,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "9"
-    },
-    {
-      "x": 13,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "11"
-    },
-    {
-      "x": 14,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
-    },
-    {
-      "x": 10,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "10"
-    },
-    {
-      "x": 9,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "13"
     }
   ],
   "coord_events": [],

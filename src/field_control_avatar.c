@@ -62,6 +62,7 @@ static bool32 TrySetupDiveDownScript(void);
 static bool32 TrySetupDiveEmergeScript(void);
 static bool8 CheckStandardWildEncounter(u16);
 static bool8 TryArrowWarp(struct MapPosition *, u16, enum Direction);
+static bool8 TryMapEdgeWarp(struct MapPosition *, u16, enum Direction);
 static bool8 IsWarpMetatileBehavior(u16);
 static bool8 IsArrowWarpMetatileBehavior(u16, enum Direction);
 static s8 GetWarpEventAtMapPosition(struct MapHeader *, struct MapPosition *);
@@ -204,6 +205,8 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->heldDirection && input->dpadDirection == playerDirection)
     {
         if (TryArrowWarp(&position, metatileBehavior, playerDirection) == TRUE)
+            return TRUE;
+        if (TryMapEdgeWarp(&position, metatileBehavior, playerDirection) == TRUE)
             return TRUE;
     }
 
@@ -966,6 +969,50 @@ static bool8 TryArrowWarp(struct MapPosition *position, u16 metatileBehavior, en
         return TRUE;
     }
     return FALSE;
+}
+
+// ARHU: a warp event on the outermost row/column of a map fires (with a fade) when the player
+// presses toward that edge, like an arrow warp but without needing an arrow tile.
+// Used where a connection can't look right because the two maps use different primary
+// tilesets, e.g. Route1_ARHU (FRLG tiles) <-> Route1_CyclingRoad_ARHU (Emerald tiles).
+// Bike and facing direction carry over like any other walked-into warp.
+static bool8 TryMapEdgeWarp(struct MapPosition *position, u16 metatileBehavior, enum Direction direction)
+{
+    s32 x = position->x - MAP_OFFSET;
+    s32 y = position->y - MAP_OFFSET;
+    s32 warpEventId;
+    bool32 atEdge;
+
+    if (IsWarpMetatileBehavior(metatileBehavior) == TRUE || IsArrowWarpMetatileBehavior(metatileBehavior, direction) == TRUE)
+        return FALSE;
+
+    switch (direction)
+    {
+    case DIR_NORTH:
+        atEdge = (y == 0);
+        break;
+    case DIR_SOUTH:
+        atEdge = (y == gMapHeader.mapLayout->height - 1);
+        break;
+    case DIR_WEST:
+        atEdge = (x == 0);
+        break;
+    case DIR_EAST:
+        atEdge = (x == gMapHeader.mapLayout->width - 1);
+        break;
+    default:
+        return FALSE;
+    }
+    if (!atEdge)
+        return FALSE;
+
+    warpEventId = GetWarpEventAtMapPosition(&gMapHeader, position);
+    if (warpEventId == WARP_ID_NONE)
+        return FALSE;
+
+    StorePlayerStateAndSetupWarp(position, warpEventId);
+    DoWarp();
+    return TRUE;
 }
 
 static bool8 TryStartWarpEventScript(struct MapPosition *position, u16 metatileBehavior)

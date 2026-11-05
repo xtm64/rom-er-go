@@ -13,6 +13,11 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
+    {
+      "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "offset": -34,
+      "direction": "right"
+    }
   ],
   "object_events": [
     {
@@ -217,34 +222,6 @@
       "elevation": 0,
       "dest_map": "MAP_EARNEST_STATE_CAMPUS_GYMNASIUM_ARHU",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 44,
-      "y": 21,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "4"
-    },
-    {
-      "x": 44,
-      "y": 22,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "5"
-    },
-    {
-      "x": 44,
-      "y": 23,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "6"
-    },
-    {
-      "x": 44,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "7"
     }
   ],
   "coord_events": [],

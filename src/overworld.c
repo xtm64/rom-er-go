@@ -877,6 +877,12 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+    // Vanilla assumes connected maps share a primary tileset and only swaps the secondary.
+    // ARHU maps on FRLG tilesets (e.g. Route1_ARHU) connect to maps on Emerald tilesets
+    // (e.g. Route1_CyclingRoad_ARHU), so remember the old layout and reload the primary too when it differs.
+    const struct MapLayout *prevLayout = gMapHeader.mapLayout;
+    bool32 primaryChanged;
+
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -905,12 +911,32 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
+    {
+        const struct Tileset *prevPrimary = prevLayout ? prevLayout->primaryTileset : NULL;
+        const struct Tileset *newPrimary = gMapHeader.mapLayout->primaryTileset;
+        bool32 layoutKindChanged = (prevLayout == NULL || prevLayout->isFrlg != gMapHeader.mapLayout->isFrlg);
+
+        primaryChanged = (layoutKindChanged || prevPrimary != newPrimary);
+        if (primaryChanged)
+        {
+            // Tilesets such as gTileset_General_Frlg_North share tile art and only swap palettes.
+            if (layoutKindChanged || prevPrimary == NULL || newPrimary == NULL || prevPrimary->tiles != newPrimary->tiles)
+                CopyPrimaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
+            LoadPrimaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
+        }
+    }
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
 
-    ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout)); // palettes [6,12]
+    if (primaryChanged)
+        ApplyWeatherColorMapToPals(0, NUM_PALS_TOTAL);
+    else
+        ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout)); // palettes [6,12]
 
-    InitSecondaryTilesetAnimation();
+    if (primaryChanged)
+        InitTilesetAnimations();
+    else
+        InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
     MoveAllRoamers();
     DoCurrentWeather();
