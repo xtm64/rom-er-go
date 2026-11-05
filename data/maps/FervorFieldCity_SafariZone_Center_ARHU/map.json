@@ -125,6 +125,14 @@
   "bg_events": [
     {
       "type": "sign",
+      "x": 25,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorFieldCity_SafariZone_Center_ARHU_EventScript_DirectionsSign"
+    },
+    {
+      "type": "sign",
       "x": 30,
       "y": 26,
       "elevation": 0,

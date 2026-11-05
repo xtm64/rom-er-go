@@ -20,3 +20,10 @@ WillowLake_ARHU_Text_Fisherman::
 WillowLake_ARHU_Text_Sign::
 	.string "WILLOW LAKE\n"
 	.string "No swimming past the sandbars.$"
+
+WillowLake_ARHU_EventScript_DirectionsSign::
+	msgbox WillowLake_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+WillowLake_ARHU_Text_Directions::
+	.string "SOUTH: WILLOW RANCH$"

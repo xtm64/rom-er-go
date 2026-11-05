@@ -544,6 +544,14 @@
   "bg_events": [
     {
       "type": "sign",
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorFieldCity_ARHU_EventScript_DirectionsSign"
+    },
+    {
+      "type": "sign",
       "x": 37,
       "y": 9,
       "elevation": 3,

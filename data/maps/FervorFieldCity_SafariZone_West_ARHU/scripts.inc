@@ -38,3 +38,11 @@ FervorFieldCity_SafariZone_West_ARHU_Text_AreaSign::
 	.string "AREA 3\n"
 	.string "EAST: CENTER AREA$"
 
+FervorFieldCity_SafariZone_West_ARHU_EventScript_DirectionsSign::
+	msgbox FervorFieldCity_SafariZone_West_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+FervorFieldCity_SafariZone_West_ARHU_Text_Directions::
+	.string "NORTH: AREA 2\n"
+	.string "SOUTH: CENTER AREA$"
+

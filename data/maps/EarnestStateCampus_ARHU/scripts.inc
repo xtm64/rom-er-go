@@ -218,3 +218,10 @@ EarnestStateCampus_ARHU_Text_SteamPlantSign:
 EarnestStateCampus_ARHU_Text_GardenSign:
 	.string "SEED TO BLOOM BOTANICAL GARDEN\n"
 	.string "Please don't pick the flowers!$"
+
+EarnestStateCampus_ARHU_EventScript_DirectionsSign::
+	msgbox EarnestStateCampus_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+EarnestStateCampus_ARHU_Text_Directions::
+	.string "EAST: ROUTE 1 CYCLING ROAD$"

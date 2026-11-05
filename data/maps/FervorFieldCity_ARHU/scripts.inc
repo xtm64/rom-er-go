@@ -1292,3 +1292,11 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney::
 	.string "Good luck out there, and don't give\n"
 	.string "up! Every Pokémon has more to\l"
 	.string "teach you.$"
+
+FervorFieldCity_ARHU_EventScript_DirectionsSign::
+	msgbox FervorFieldCity_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+FervorFieldCity_ARHU_Text_Directions::
+	.string "WEST: ROUTE 1\n"
+	.string "EAST: ROUTE 2$"

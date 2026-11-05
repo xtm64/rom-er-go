@@ -43,3 +43,12 @@ FervorFieldCity_SafariZone_North_ARHU_Text_WinFreeHMFindSecretHouse::
 	.string "Win a free HM for finding the\n"
 	.string "SECRET HOUSE.$"
 
+FervorFieldCity_SafariZone_North_ARHU_EventScript_DirectionsSign::
+	msgbox FervorFieldCity_SafariZone_North_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+FervorFieldCity_SafariZone_North_ARHU_Text_Directions::
+	.string "WEST: AREA 3\n"
+	.string "EAST: AREA 1\p"
+	.string "SOUTH: CENTER AREA$"
+

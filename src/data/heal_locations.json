@@ -369,7 +369,7 @@
     {
       "id": "HEAL_LOCATION_WILLOWSVILLE",
       "map": "MAP_WILLOWSVILLE_ARHU",
-      "x": 6,
+      "x": 8,
       "y": 8,
       "respawn_map": "MAP_WILLOWSVILLE_WESTINS_HOUSE_2F_ARHU",
       "respawn_npc": "0"

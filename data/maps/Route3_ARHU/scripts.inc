@@ -31,3 +31,10 @@ Route3_ARHU_Text_NoTrainersAllowed:
 	.string "Hold it right there, Trainer!\n"
 	.string "We aren't allowing Trainers to pass\l"
 	.string "right now.$"
+
+Route3_ARHU_EventScript_DirectionsSign::
+	msgbox Route3_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Route3_ARHU_Text_Directions::
+	.string "WEST: EARNEST TOWNSHIP$"

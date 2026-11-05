@@ -29,3 +29,12 @@ FervorFieldCity_SafariZone_Center_ARHU_Text_PressStartToCheckTime::
 FervorFieldCity_SafariZone_Center_ARHU_Text_CenterArea::
 	.string "CENTER AREA$"
 
+FervorFieldCity_SafariZone_Center_ARHU_EventScript_DirectionsSign::
+	msgbox FervorFieldCity_SafariZone_Center_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+FervorFieldCity_SafariZone_Center_ARHU_Text_Directions::
+	.string "NORTH: AREA 2\n"
+	.string "EAST: AREA 1\p"
+	.string "WEST: AREA 3$"
+

@@ -36,3 +36,11 @@ WillowWoods_ARHU_Text_EntranceSign::
 WillowWoods_ARHU_Text_OrchardSign::
 	.string "WILLOW ORCHARD\n"
 	.string "Please don't pick the apples!$"
+
+WillowWoods_ARHU_EventScript_DirectionsSign::
+	msgbox WillowWoods_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+WillowWoods_ARHU_Text_Directions::
+	.string "SOUTH: WILLOWSVILLE\n"
+	.string "NORTH: WILLOW RANCH$"

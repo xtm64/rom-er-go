@@ -12,12 +12,12 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [],
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_WILLOWSVILLE_FAT_MAN",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 13,
+      "x": 15,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -31,70 +31,70 @@
   ],
   "warp_events": [
     {
-      "x": 6,
+      "x": 8,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_WESTINS_HOUSE_1F_ARHU",
       "dest_warp_id": "1"
     },
     {
-      "x": 15,
+      "x": 17,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_COTTAGE_ARHU",
       "dest_warp_id": "0"
     },
     {
-      "x": 16,
+      "x": 18,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_LAB_ARHU",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
+      "x": 12,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2_NORTH_ARHU",
       "dest_warp_id": "4"
     },
     {
-      "x": 11,
+      "x": 13,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2_NORTH_ARHU",
       "dest_warp_id": "5"
     },
     {
-      "x": 12,
+      "x": 14,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2_NORTH_ARHU",
       "dest_warp_id": "6"
     },
     {
-      "x": 13,
+      "x": 15,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2_NORTH_ARHU",
       "dest_warp_id": "7"
     },
     {
-      "x": 0,
+      "x": 2,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_WOODS_ARHU",
       "dest_warp_id": "0"
     },
     {
-      "x": 0,
+      "x": 2,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_WOODS_ARHU",
       "dest_warp_id": "1"
     },
     {
-      "x": 0,
+      "x": 2,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_WOODS_ARHU",
@@ -105,7 +105,15 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 4,
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Willowsville_ARHU_EventScript_DirectionsSign"
+    },
+    {
+      "type": "sign",
+      "x": 6,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -113,7 +121,7 @@
     },
     {
       "type": "sign",
-      "x": 13,
+      "x": 15,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -121,7 +129,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 18,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -129,7 +137,7 @@
     },
     {
       "type": "sign",
-      "x": 9,
+      "x": 11,
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -137,7 +145,7 @@
     },
     {
       "type": "sign",
-      "x": 5,
+      "x": 7,
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

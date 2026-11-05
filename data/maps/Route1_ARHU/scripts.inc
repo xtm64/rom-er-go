@@ -863,3 +863,12 @@ Route1_ARHU_Text_Tanglewood_OffYouGo::
 Route1_ARHU_Text_Mom_BeSafe::
 	.string "Mom: Be safe, sweetie!\n"
 	.string "And come home if anything happens!$"
+
+Route1_ARHU_EventScript_DirectionsSign::
+	msgbox Route1_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Route1_ARHU_Text_Directions::
+	.string "EAST: FERVOR FIELD CITY\n"
+	.string "SOUTH: ROUTE 1 CYCLING ROAD\p"
+	.string "NORTH: ROUTE 2 NORTH$"

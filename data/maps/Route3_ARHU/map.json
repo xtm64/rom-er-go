@@ -80,5 +80,14 @@
       "script": "Route3_ARHU_EventScript_GuardTrigger"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route3_ARHU_EventScript_DirectionsSign"
+    }
+  ]
 }

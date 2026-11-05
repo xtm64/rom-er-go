@@ -288,6 +288,15 @@ Earnest_Township_ARHU_Text_EastGateSign:
 	.string "EAST GATE\n"
 	.string "“Closed for now.”$"
 
+Earnest_Township_ARHU_EventScript_DirectionsSign::
+	msgbox Earnest_Township_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Earnest_Township_ARHU_Text_Directions::
+	.string "EAST: ROUTE 3\n"
+	.string "WEST: ROUTE 4\p"
+	.string "NORTH: ROUTE 1 CYCLING ROAD$"
+
 Earnest_Township_ARHU_Text_ContestHallSign:
 	.string "EARNEST CONTEST HALL\n"
 	.string "“NORMAL RANK: Now open!”$"

@@ -21,3 +21,11 @@ Route2_North_ARHU_Text_RouteSign::
 	.string "ROUTE 2\n"
 	.string "FERVOR FIELD - WILLOWSVILLE$"
 
+Route2_North_ARHU_EventScript_DirectionsSign::
+	msgbox Route2_North_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Route2_North_ARHU_Text_Directions::
+	.string "SOUTH: ROUTE 1\n"
+	.string "NORTH: WILLOWSVILLE$"
+

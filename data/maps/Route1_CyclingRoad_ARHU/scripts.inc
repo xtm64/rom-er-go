@@ -223,3 +223,12 @@ Route1_CyclingRoad_ARHU_Text_AsherDefeated:
 Route1_CyclingRoad_ARHU_Text_AsherPostBattle:
 	.string "The road ahead is long, but the\n"
 	.string "view is magnificent.$"
+
+Route1_CyclingRoad_ARHU_EventScript_DirectionsSign::
+	msgbox Route1_CyclingRoad_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Route1_CyclingRoad_ARHU_Text_Directions::
+	.string "SOUTH: EARNEST TOWNSHIP\n"
+	.string "NORTH: ROUTE 1\p"
+	.string "WEST: EARNEST STATE CAMPUS$"

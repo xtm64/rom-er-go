@@ -10,3 +10,11 @@ WillowRanch_ARHU_Text_Rancher::
 	.string "water it every day.\p"
 	.string "Trees out here grow tall and sweet\n"
 	.string "in the cold. Folks say apples too!$"
+
+WillowRanch_ARHU_EventScript_DirectionsSign::
+	msgbox WillowRanch_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+WillowRanch_ARHU_Text_Directions::
+	.string "EAST: WILLOW WOODS\n"
+	.string "NORTH: WILLOW LAKE$"

@@ -51,3 +51,11 @@ Willowsville_ARHU_Text_TownSign::
 Willowsville_ARHU_Text_PressStartToOpenMenu::
 	.string "TRAINER TIPS\p"
 	.string "Press START to open the MENU!$"
+
+Willowsville_ARHU_EventScript_DirectionsSign::
+	msgbox Willowsville_ARHU_Text_Directions, MSGBOX_SIGN
+	end
+
+Willowsville_ARHU_Text_Directions::
+	.string "SOUTH: ROUTE 2 NORTH\n"
+	.string "WEST: WILLOW WOODS$"
