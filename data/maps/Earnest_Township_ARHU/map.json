@@ -15,17 +15,17 @@
   "connections": [
     {
       "map": "MAP_ROUTE3_ARHU",
-      "offset": 25,
+      "offset": 18,
       "direction": "right"
     },
     {
       "map": "MAP_ROUTE4_ARHU",
-      "offset": 15,
+      "offset": 8,
       "direction": "left"
     },
     {
       "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "offset": -19,
+      "offset": -9,
       "direction": "up"
     }
   ],
@@ -33,7 +33,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 16,
-      "y": 16,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -46,7 +46,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 16,
-      "y": 24,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -59,7 +59,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 23,
-      "y": 15,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -72,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 16,
-      "y": 30,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -85,7 +85,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 28,
-      "y": 24,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 32,
-      "y": 23,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -111,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 44,
-      "y": 33,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -124,7 +124,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 43,
-      "y": 33,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -137,7 +137,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_COOK",
       "x": 32,
-      "y": 33,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -150,7 +150,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 31,
-      "y": 33,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -163,7 +163,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 50,
-      "y": 14,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -177,7 +177,7 @@
       "local_id": "LOCALID_EARNEST_TOWNSHIP_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 38,
-      "y": 34,
+      "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -191,7 +191,7 @@
       "local_id": "LOCALID_EARNEST_TOWNSHIP_THRESH",
       "graphics_id": "OBJ_EVENT_GFX_BRAWLY",
       "x": 38,
-      "y": 31,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -205,42 +205,42 @@
   "warp_events": [
     {
       "x": 24,
-      "y": 21,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_POKEMON_CENTER_1F_ARHU",
       "dest_warp_id": "0"
     },
     {
       "x": 26,
-      "y": 13,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_MART_ARHU",
       "dest_warp_id": "0"
     },
     {
       "x": 38,
-      "y": 31,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_GYM_ARHU",
       "dest_warp_id": "1"
     },
     {
       "x": 23,
-      "y": 31,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_CONTEST_HALL_ARHU",
       "dest_warp_id": "0"
     },
     {
       "x": 11,
-      "y": 29,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_NAME_RATERS_HOUSE_ARHU",
       "dest_warp_id": "0"
     },
     {
       "x": 42,
-      "y": 13,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_HOUSE_ARHU",
       "dest_warp_id": "0"
@@ -251,7 +251,7 @@
     {
       "type": "sign",
       "x": 14,
-      "y": 29,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_NameRatersHouseSign"
@@ -259,7 +259,7 @@
     {
       "type": "sign",
       "x": 25,
-      "y": 21,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -267,7 +267,7 @@
     {
       "type": "sign",
       "x": 26,
-      "y": 21,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -275,7 +275,7 @@
     {
       "type": "sign",
       "x": 29,
-      "y": 13,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -283,7 +283,7 @@
     {
       "type": "sign",
       "x": 41,
-      "y": 31,
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_GymSign"
@@ -291,7 +291,7 @@
     {
       "type": "sign",
       "x": 14,
-      "y": 7,
+      "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_CitySign"
@@ -299,7 +299,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 22,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_WestGateSign"
@@ -307,7 +307,7 @@
     {
       "type": "sign",
       "x": 57,
-      "y": 32,
+      "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_EastGateSign"
@@ -315,7 +315,7 @@
     {
       "type": "sign",
       "x": 29,
-      "y": 31,
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Earnest_Township_ARHU_EventScript_ContestHallSign"

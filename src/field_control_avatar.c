@@ -1006,6 +1006,21 @@ static bool8 TryMapEdgeWarp(struct MapPosition *position, u16 metatileBehavior, 
     if (!atEdge)
         return FALSE;
 
+    // A real connection on this side wins: the player scrolls into the next map instead.
+    if (gMapHeader.connections != NULL)
+    {
+        s32 i;
+        u8 connDir = (direction == DIR_NORTH) ? CONNECTION_NORTH
+                   : (direction == DIR_SOUTH) ? CONNECTION_SOUTH
+                   : (direction == DIR_WEST)  ? CONNECTION_WEST
+                   : CONNECTION_EAST;
+        for (i = 0; i < gMapHeader.connections->count; i++)
+        {
+            if (gMapHeader.connections->connections[i].direction == connDir)
+                return FALSE;
+        }
+    }
+
     warpEventId = GetWarpEventAtMapPosition(&gMapHeader, position);
     if (warpEventId == WARP_ID_NONE)
         return FALSE;

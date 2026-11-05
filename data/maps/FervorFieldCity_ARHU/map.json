@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE1_ARHU",
-      "offset": 4,
+      "offset": 12,
       "direction": "left"
     },
     {

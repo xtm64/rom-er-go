@@ -12,18 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_WILLOW_WOODS_ARHU",
-      "offset": -25,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_ROUTE2_NORTH_ARHU",
-      "offset": 0,
-      "direction": "down"
-    }
-  ],
+  "connections": [],
   "object_events": [
     {
       "local_id": "LOCALID_WILLOWSVILLE_FAT_MAN",
@@ -61,6 +50,55 @@
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_LAB_ARHU",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 12,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 13,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_WILLOW_WOODS_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_WILLOW_WOODS_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_WILLOW_WOODS_ARHU",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

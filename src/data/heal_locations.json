@@ -378,7 +378,7 @@
       "id": "HEAL_LOCATION_EARNEST_TOWNSHIP",
       "map": "MAP_EARNEST_TOWNSHIP_ARHU",
       "x": 24,
-      "y": 22,
+      "y": 15,
       "respawn_map": "MAP_EARNEST_POKEMON_CENTER_1F_ARHU",
       "respawn_npc": "LOCALID_EARNEST_NURSE"
     }

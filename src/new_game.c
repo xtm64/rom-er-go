@@ -25,6 +25,7 @@
 #include "coins.h"
 #include "text.h"
 #include "overworld.h"
+#include "constants/heal_locations.h"
 #include "mail.h"
 #include "battle_records.h"
 #include "item.h"
@@ -210,6 +211,8 @@ void NewGameInitData(void)
     ResetLotteryCorner();
     UpdateDailySeed();
     WarpToTruck();
+    // Default whiteout respawn: Fervor Field (outside the player's house) until a Pokemon Center is visited
+    SetLastHealLocationWarp(HEAL_LOCATION_FERVOR_FIELD);
     if (IS_FRLG)
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
     else

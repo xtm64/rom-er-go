@@ -47,7 +47,16 @@ Every rule here was checked against the code in this repo (`tools/mapjson/mapjso
 - **Edge warps** (`TryMapEdgeWarp`, `src/field_control_avatar.c`): a warp event on the outermost
   row/column fires with a fade when the player presses toward that edge, on any tile behavior. Bike and
   facing carry over. Pair each edge tile with the matching edge tile on the other map (each warp's
-  `dest_warp_id` points at its partner). Example: `Route1_ARHU` (24-27,33) <-> `Route1_CyclingRoad_ARHU` (26-29,0).
+  `dest_warp_id` points at its partner). A real connection on the same side wins (no warp fires). No
+  padding corridor is needed: the fade hides the tileset change.
+- Edge-warped pairs (2026-11-04): Route1 <-> Route1_CyclingRoad (Route1 bottom (24-27,15) / road top
+  (16-19,0)), Route1_CyclingRoad <-> EarnestStateCampus, Route1 <-> Route2_North, Route2_North <->
+  Willowsville, Willowsville <-> WillowWoods, WillowWoods <-> WillowRanch, WillowRanch <-> WillowLake.
+  Still real connections: Fervor <-> Route1/Route2, Route1_CyclingRoad <-> Earnest_Township,
+  Earnest_Township <-> Route3/Route4.
+- To convert another connection: for each tile on the shared edge that is open (collision 0) on both
+  sides, add a warp on each map pointing at the partner, then delete the connection from both maps.
+  For left/right edges the partner row is `y - offset`; for up/down the partner column is `x - offset`.
 - Warps on `MB_NORMAL` tiles anywhere else never fire (`IsWarpMetatileBehavior`). Use a connection,
   an edge warp, or an arrow-warp/door behavior.
 - Elevation must match across the seam: 3 -> 5 is blocked. Put a row of elevation-0 tiles at the seam
