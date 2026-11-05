@@ -22,14 +22,134 @@
       "map": "MAP_ROUTE2_NORTH_ARHU",
       "offset": -2,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "offset": 8,
-      "direction": "down"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 38,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route1_ARHU_EventScript_HurtMonsYoungster",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 20,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route1_ARHU_EventScript_CoolMonsLass",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_HOLT",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 40,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_ROOK",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "x": 41,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_DASH",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 41,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_WESTIN",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "x": 39,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_MIRA",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 39,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_TANGLEWOOD",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 44,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 44,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS"
+    }
+  ],
   "warp_events": [
     {
       "x": 44,
@@ -78,21 +198,21 @@
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "4"
+      "dest_warp_id": "5"
     },
     {
       "x": 26,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "4"
+      "dest_warp_id": "6"
     },
     {
       "x": 27,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "4"
+      "dest_warp_id": "7"
     }
   ],
   "coord_events": [],

@@ -12,23 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE1_ARHU",
-      "offset": -8,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_EARNEST_STATE_CAMPUS_ARHU",
-      "offset": 30,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "offset": 19,
-      "direction": "down"
-    }
-  ],
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
@@ -254,21 +238,21 @@
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_ARHU",
-      "dest_warp_id": "5"
+      "dest_warp_id": "6"
     },
     {
       "x": 28,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_ARHU",
-      "dest_warp_id": "5"
+      "dest_warp_id": "7"
     },
     {
       "x": 29,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_ARHU",
-      "dest_warp_id": "5"
+      "dest_warp_id": "8"
     },
     {
       "x": 13,
@@ -282,63 +266,63 @@
       "y": 56,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_STATE_CAMPUS_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "13"
     },
     {
       "x": 13,
       "y": 57,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_STATE_CAMPUS_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "14"
     },
     {
       "x": 13,
       "y": 58,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_STATE_CAMPUS_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "15"
     },
     {
       "x": 31,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
       "dest_warp_id": "6"
     },
     {
       "x": 30,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "dest_warp_id": "6"
+      "dest_warp_id": "7"
     },
     {
       "x": 29,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "dest_warp_id": "6"
+      "dest_warp_id": "10"
     },
     {
       "x": 32,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "dest_warp_id": "6"
+      "dest_warp_id": "8"
     },
     {
       "x": 33,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "dest_warp_id": "6"
+      "dest_warp_id": "9"
     },
     {
       "x": 28,
-      "y": 105,
+      "y": 102,
       "elevation": 0,
       "dest_map": "MAP_EARNEST_TOWNSHIP_ARHU",
-      "dest_warp_id": "6"
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [],

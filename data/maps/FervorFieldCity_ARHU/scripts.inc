@@ -292,15 +292,19 @@ FervorFieldCity_ARHU_Text_Rival_AllKinds::
 FervorFieldCity_ARHU_Text_Rival_PokeblockCase::
 	.string "Westin: Oh yeah, I remembered to get\n"
 	.string "you a case as well!\p"
-	.string "I could only find 10 blocks,\n"
-	.string "so I gave you half of mine.$"
+	.string "I grinded up all my berries for you!\p"
+	.string "I only made 10 blocks, so I'm\n"
+	.string "giving you half of mine.$"
 
 FervorFieldCity_ARHU_Text_ReceivedPokeblocks::
 	.string "{PLAYER} received 5 POKéBLOCKs!$"
 
 FervorFieldCity_ARHU_Text_Rival_UseThose::
 	.string "Westin: Use those to make it easier\n"
-	.string "to catch Pokémon when we get in!$"
+	.string "to catch Pokémon when we get in!\p"
+	.string "Any left over can make your Pokémon\n"
+	.string "more beautiful, cool, cute, smart\l"
+	.string "or tough outside the Safari, too!$"
 
 FervorFieldCity_ARHU_Text_Rival_HeadingToSafariGate::
 	.string "Wait! If she's late, we're late!\n"
@@ -368,6 +372,12 @@ FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Main::
 	msgbox FervorFieldCity_ARHU_Text_Mira_SoItStartsLikeThat, MSGBOX_DEFAULT
 	closemessage
 	delay 30
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, Common_Movement_FaceLeft
+	waitmovement 0
+	delay 25
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, Common_Movement_FaceRight
+	waitmovement 0
+	delay 25
 	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_MIRA, FervorFieldCity_ARHU_Movement_MiraToDoor
 	waitmovement 0
 	call FervorFieldCity_ARHU_EventScript_SafariGate_OpenDoor
@@ -378,6 +388,9 @@ FervorFieldCity_ARHU_EventScript_TanglewoodSpeech_Main::
 	setflag FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA
 	msgbox FervorFieldCity_ARHU_Text_Westin_ThatsOurCue, MSGBOX_DEFAULT
 	closemessage
+	delay 30
+	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, Common_Movement_FaceRight
+	waitmovement 0
 	delay 30
 	applymovement LOCALID_FERVOR_FIELD_CITY_GATE_WESTIN, FervorFieldCity_ARHU_Movement_WestinToDoor
 	waitmovement 0
@@ -862,8 +875,20 @@ FervorFieldCity_ARHU_Text_Tanglewood_Rules::
 	.string "Once either runs out, you will be\n"
 	.string "exited with any Pokémon you have.\l"
 	.string "You will choose only one\l"
-	.string "to be your partner.\l"
-	.string "I and the rest of my staff will be\l"
+	.string "to be your partner.\p"
+	.string "There are 27 Pokémon in total to\n"
+	.string "be found, of three types:\l"
+	.string "Water, Fire and Grass.\p"
+	.string "Only one can be your starter,\n"
+	.string "so choose wisely!\p"
+	.string "If you don't find what you are\n"
+	.string "looking for, there are 4 zones to\l"
+	.string "explore, and the Pokémon vary\l"
+	.string "within each zone.\p"
+	.string "So don't be shy to walk a bit.\n"
+	.string "Keep hunting until you find\l"
+	.string "the one!\p"
+	.string "I and the rest of my staff will be\n"
 	.string "waiting in case of emergency.\p"
 	.string "If you'll accept it,\n"
 	.string "your journey starts here!\l"
@@ -1016,6 +1041,32 @@ FervorFieldCity_ARHU_Text_MoveDeleterBlocker::
 	.string "He said no visitors until the\n"
 	.string "SAFARI challenge is over.$"
 
+@ General tips for first-time players. Two kids outside the player's house, always present.
+FervorFieldCity_ARHU_EventScript_TipKid_FastText::
+	msgbox FervorFieldCity_ARHU_Text_TipKid_FastText, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_EventScript_TipKid_Saving::
+	msgbox FervorFieldCity_ARHU_Text_TipKid_Saving, MSGBOX_NPC
+	end
+
+FervorFieldCity_ARHU_Text_TipKid_FastText::
+	.string "Sometimes when I play these games\n"
+	.string "I feel like people talk forever!\p"
+	.string "That's why I hold the A Button to\n"
+	.string "speed up conversations!\p"
+	.string "Sometimes I get confused on where\n"
+	.string "I am though…$"
+
+FervorFieldCity_ARHU_Text_TipKid_Saving::
+	.string "You never know what could happen\n"
+	.string "next in these games!\p"
+	.string "That's why I SAVE a lot.\n"
+	.string "Open the START menu and pick SAVE!\p"
+	.string "I save before big moments, like\n"
+	.string "a tough battle or a new area.\p"
+	.string "Better safe than sorry!$"
+
 FervorFieldCity_ARHU_Text_Tanglewood_GoOnIn::
 	.string "Tanglewood: What are you waiting\n"
 	.string "for? Your partner is somewhere in\l"
@@ -1163,6 +1214,13 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Westin_Victory::
 FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_HealThem::
 	.string "Tanglewood: Nicely fought, both of\n"
 	.string "you!\p"
+	.string "Remember, every Pokémon has a type.\n"
+	.string "Water beats Fire, Fire beats Grass,\l"
+	.string "and Grass beats Water.\p"
+	.string "But out in the world you will meet\n"
+	.string "Pokémon of many other types.\p"
+	.string "Each one changes the balance, so\n"
+	.string "watch what works and learn!\p"
 	.string "Let me restore your Pokémon\n"
 	.string "before the next battle.$"
 
@@ -1182,6 +1240,8 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Mira_Victory::
 	.string "You and your partner only just met.\p"
 	.string "Get stronger together, and I'll be\n"
 	.string "waiting for a rematch.\p"
+	.string "I'm off to win my first RIBBON at\n"
+	.string "a Pokémon Contest!\p"
 	.string "See you on the road!$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterLoss::
@@ -1189,6 +1249,8 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Mira_AfterLoss::
 	.string "{PLAYER}.\p"
 	.string "Next time, Eevee and I will be\n"
 	.string "ready for you.\p"
+	.string "I'm off to win my first RIBBON at\n"
+	.string "a Pokémon Contest!\p"
 	.string "See you on the road!$"
 
 FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck::
@@ -1197,6 +1259,8 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Westin_GoodLuck::
 	.string "That was a great battle, {PLAYER}.\n"
 	.string "I'm glad we're starting out\l"
 	.string "together.\p"
+	.string "I'm off to get my first BADGE from\n"
+	.string "a Pokémon Gym!\p"
 	.string "Good luck out there.\n"
 	.string "May the best Trainer win!$"
 
@@ -1206,10 +1270,25 @@ FervorFieldCity_ARHU_Text_ExitSpeech_Tanglewood_StartYourJourney::
 	.string "I have a few more Trainers to look\n"
 	.string "after in the Safari, so I'll leave\l"
 	.string "you here.\p"
-	.string "Oh, and the Safari's east exit\n"
+	.string "Oh, and the Safari's west exit\n"
 	.string "was being monitored for the\l"
 	.string "challenge. It should be open by\l"
 	.string "now.\p"
+	.string "Ahead of you lie two challenges.\n"
+	.string "The Gym Challenge: defeat the Gym\l"
+	.string "Leaders and earn their BADGES.\p"
+	.string "The Contest Challenge: show how\n"
+	.string "beautiful, cool, cute, smart and\l"
+	.string "tough your Pokémon can be to earn\l"
+	.string "RIBBONS.\p"
+	.string "Choose one path, or walk both.\p"
+	.string "Your first stop is the trek to the\n"
+	.string "next town, Earnest.\p"
+	.string "Head south down Route 1 and along\n"
+	.string "the Cycling Road. You don't have a\l"
+	.string "bike yet, so you'll have to walk.\p"
+	.string "Stock up on supplies at the Mart\n"
+	.string "before you go. It's a long way!\p"
 	.string "Good luck out there, and don't give\n"
 	.string "up! Every Pokémon has more to\l"
 	.string "teach you.$"

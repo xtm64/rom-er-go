@@ -31,10 +31,13 @@ FervorFieldCity_SafariZone_North_RestHouse_ARHU_SafariZone_East_Text_MyEeveeEvol
 
 @ Copied from data/scripts/fame_checker_frlg.inc (FRLG-only there)
 FervorFieldCity_SafariZone_North_RestHouse_ARHU_EventScript_BaldingMan::
-	lock
-	faceplayer
-	famechecker FAMECHECKER_KOGA, 5
-	msgbox FervorFieldCity_SafariZone_West_RestHouse_ARHU_SafariZone_West_Text_KogaPatrolsSafariEverySoOften
-	release
+	msgbox FervorFieldCity_SafariZone_North_RestHouse_ARHU_Text_RangerPatrols, MSGBOX_NPC
 	end
+
+FervorFieldCity_SafariZone_North_RestHouse_ARHU_Text_RangerPatrols::
+	.string "The Safari's huge, so RANGERS like\n"
+	.string "me patrol the grounds.\p"
+	.string "PROF. TANGLEWOOD used to walk these\n"
+	.string "very paths. Thanks to RANGERS,\l"
+	.string "you can explore knowing you're safe.$"
 

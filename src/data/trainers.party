@@ -17518,3 +17518,48 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Linoone
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+/* Route 1 ambush (Route1_ARHU). Holt came out of the Safari challenge with one partner and two goons.
+   Tag battle, partner picked by the player: with Westin it's Holt + Rook, with Mira it's Rook + Dash
+   (partners in battle_partners.party). */
+=== TRAINER_ROUTE1_GOON_DASH ===
+Name: DASH
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_RATTATA_ALOLA
+Level: 3
+Ability: Hustle
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ROUTE1_HOLT ===
+Name: HOLT
+Class: Pkmn Trainer 1
+Pic: Cooltrainer M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ZIGZAGOON_GALAR @ Oran Berry
+Level: 3
+Ability: Gluttony
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ROUTE1_GOON_ROOK ===
+Name: ROOK
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MEOWTH_ALOLA
+Level: 3
+Ability: Rattled
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

@@ -91,8 +91,8 @@
 #define FLAG_HIDE_EARNEST_TOWNSHIP_THRESH 0x45 // Thresh in the Earnest Gym doorway; hidden except during the post-gym rival scene
 #define FLAG_HIDE_EARNEST_CONTEST_HALL_MIRA 0x46 // Mira in the Earnest Contest Hall lobby; shown only for her intro and post-contest scenes
 #define FLAG_RECEIVED_EARNEST_CONTEST_SILK_SCARF 0x47 // Earnest Contest Hall prize for clearing its NORMAL RANK (handed over at the counter if the bag was full)
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_HIDE_ROUTE1_HOLT_AMBUSH 0x48 // Holt, his two goons, Mira and Westin on Route 1; shown only from the end of the Safari challenge until the ambush scene is over
+#define FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS 0x49 // Tanglewood and Mom on Route 1; hidden except while they break up the Holt ambush
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
@@ -1539,16 +1539,15 @@
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
 // Twenty-three trailing unused flags (0x909-0x91F) were removed to make room for twenty-three more trainer flags (MAX_TRAINERS_COUNT 864 -> 887).
+// Three more (0x906-0x908) were removed for the Route 1 Holt ambush trainers (MAX_TRAINERS_COUNT 887 -> 890).
+// The last flag here must stay at 0x91F so DAILY_FLAGS_START remains 0x920.
 
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x908 + (8 - FLAG_UNUSED_0x908 % 8))
+#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x905 + (8 - FLAG_UNUSED_0x905 % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)

@@ -4,6 +4,10 @@
 
 #define PARTNER_NONE 0
 #define PARTNER_STEVEN 1
-#define PARTNER_COUNT 2
+#define PARTNER_FERVOR_MIRA 2                // Route 1 Holt ambush tag partner
+#define PARTNER_FERVOR_WESTIN_SQUIRTLE 3     // Route 1 Holt ambush tag partner, by Westin's starter
+#define PARTNER_FERVOR_WESTIN_CHIMCHAR 4
+#define PARTNER_FERVOR_WESTIN_SPRIGATITO 5
+#define PARTNER_COUNT 6
 
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

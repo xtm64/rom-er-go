@@ -15,6 +15,10 @@ FervorFieldCity_SafariZone_Center_RestHouse_ARHU_SafariZone_Center_Text_WhereDid
 	.string "ERIK, go?$"
 
 FervorFieldCity_SafariZone_Center_RestHouse_ARHU_SafariZone_Center_Text_CatchingMonsAsGifts::
-	.string "I'm catching POKéMON to take home\n"
-	.string "as gifts.$"
+	.string "I'm a RANGER, like PROF. TANGLEWOOD\n"
+	.string "once was.\p"
+	.string "RANGERS watch over the wild so\n"
+	.string "POKéMON and people can share the\l"
+	.string "same land safely.\p"
+	.string "Rest up here, then keep exploring!$"
 

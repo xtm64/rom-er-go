@@ -891,13 +891,16 @@
 #define TRAINER_EARNEST_GYM_WESTIN_SQUIRTLE   884
 #define TRAINER_EARNEST_GYM_WESTIN_CHIMCHAR   885
 #define TRAINER_EARNEST_GYM_WESTIN_SPRIGATITO 886
+#define TRAINER_ROUTE1_HOLT                 887
+#define TRAINER_ROUTE1_GOON_ROOK            888
+#define TRAINER_ROUTE1_GOON_DASH            889
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, trainer flag space is shared with the system flags that follow it
 //       (constants/flags.h). Raising MAX_TRAINERS_COUNT shifts them up, so unused flags at the end of the system block were removed to compensate.
 //       Any further trainers need more unused flags removed there, or more saveblock space.
 
-#define TRAINERS_COUNT_EMERALD     887
-#define MAX_TRAINERS_COUNT_EMERALD 887
+#define TRAINERS_COUNT_EMERALD     890
+#define MAX_TRAINERS_COUNT_EMERALD 890
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

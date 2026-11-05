@@ -15,8 +15,12 @@ FervorFieldCity_SafariZone_East_RestHouse_ARHU_EventScript_BaldingMan::
 	end
 
 FervorFieldCity_SafariZone_East_RestHouse_ARHU_SafariZone_East_Text_HowManyDidYouCatch::
-	.string "How many did you catch?\n"
-	.string "I'm bushed from the effort!$"
+	.string "I'm a RANGER. Most people only see\n"
+	.string "the Pokémon, not the work behind\l"
+	.string "keeping them safe.\p"
+	.string "PROF. TANGLEWOOD was the best of us.\n"
+	.string "He taught me that patience beats\l"
+	.string "force every time.$"
 
 FervorFieldCity_SafariZone_East_RestHouse_ARHU_SafariZone_East_Text_CaughtChanseyAllWorthwhile::
 	.string "I caught a CHANSEY!\p"

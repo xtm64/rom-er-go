@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "offset": -19,
-      "direction": "up"
-    },
-    {
       "map": "MAP_ROUTE3_ARHU",
       "offset": 25,
       "direction": "right"
@@ -257,35 +252,35 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "13"
     },
     {
       "x": 13,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "15"
     },
     {
       "x": 14,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "16"
     },
     {
       "x": 10,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "14"
     },
     {
       "x": 9,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
-      "dest_warp_id": "12"
+      "dest_warp_id": "17"
     }
   ],
   "coord_events": [],

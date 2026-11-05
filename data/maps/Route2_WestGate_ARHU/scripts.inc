@@ -5,7 +5,7 @@ Route2_WestGate_ARHU_MapScripts::
 	.byte 0
 
 Route2_WestGate_ARHU_EventScript_Guard::
-	msgbox Route2_WestGate_ARHU_Text_RoadClosed, MSGBOX_NPC
+	msgbox Route2_WestGate_ARHU_Text_GuardRoadClosed, MSGBOX_NPC
 	end
 
 @ Player is walking east toward Route 2: send them back west, toward the city
@@ -28,6 +28,14 @@ Route2_WestGate_ARHU_Movement_WalkLeft::
 
 Route2_WestGate_ARHU_Text_ExcuseMe::
 	.string "Excuse me!$"
+
+Route2_WestGate_ARHU_Text_GuardRoadClosed::
+	.string "Sorry, the road east is closed\n"
+	.string "for now.\p"
+	.string "If it's the SAFARI challenge you're\n"
+	.string "looking for, follow the path back the\l"
+	.string "way you came and cut north.\p"
+	.string "You can't miss it!$"
 
 Route2_WestGate_ARHU_Text_RoadClosed::
 	.string "Sorry, the road east is closed\n"

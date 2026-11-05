@@ -96,6 +96,12 @@ FervorField_PlayersHouse_1F_ARHU_Text_TrainerChallengeBroadcast::
 	.string "Tanglewood announced today that\l"
 	.string "Trainers of all ages are invited to\l"
 	.string "take part.\p"
+	.string "Rangers are the guardians of the\n"
+	.string "wild, keeping Pokémon and people\l"
+	.string "safe from one another's mistakes.\p"
+	.string "Professor Tanglewood was one of the\n"
+	.string "best! Look for the Rangers at the\l"
+	.string "rest stations to learn from them.\p"
 	.string "Participants will begin their journey\n"
 	.string "in the Safari Grounds!\l"
 	.string "Pokémon from many regions have been\l"
@@ -152,6 +158,7 @@ PalletTown_PlayersHouse_1F_EventScript_Mom::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale
 	call_if_eq VAR_RESULT, FEMALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale
+	call_if_eq VAR_FERVOR_FIELD_RIVAL_INTRO_STATE, 0, FervorField_PlayersHouse_1F_ARHU_EventScript_MomFriendWaiting
 	closemessage
 	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -164,6 +171,11 @@ PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale::
 
 PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou
+	return
+
+@ Until the player meets Westin on the main road, Mom mentions he is waiting outside.
+FervorField_PlayersHouse_1F_ARHU_EventScript_MomFriendWaiting::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_MomFriendWaiting
 	return
 
 PalletTown_PlayersHouse_1F_EventScript_MomHeal::
@@ -208,6 +220,11 @@ PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
 	.string "Oh, yes. PROF. TANGLEWOOD is waiting\nat the SAFARI ZONE.\l"
 	.string "The Trainer Challenge starts there!$"
 
+FervorField_PlayersHouse_1F_ARHU_Text_MomFriendWaiting::
+	.string "Oh, and your friend is waiting for\n"
+	.string "you outside!\p"
+	.string "Don't keep them waiting too long.$"
+
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
 	.string "MOM: {PLAYER}!\nYou should take a quick rest.$"
 
@@ -228,3 +245,74 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
 	.string "Oops, wrong side…$"
 
+
+@ Things to poke at, so a first-time player who clicks around gets something back.
+FervorField_PlayersHouse_1F_ARHU_EventScript_Sink::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_Sink, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_Stove::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_Stove, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_Cupboard::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_Cupboard, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_Window::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_Window, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_StarterBook::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_StarterBook, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_PlantLeft::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_PlantLeft, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_EventScript_PlantRight::
+	msgbox FervorField_PlayersHouse_1F_ARHU_Text_PlantRight, MSGBOX_SIGN
+	end
+
+FervorField_PlayersHouse_1F_ARHU_Text_Sink::
+	.string "The sink is spotless.\n"
+	.string "Mom keeps a tidy kitchen!$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_Stove::
+	.string "A stove. Something smells good…\p"
+	.string "Better not touch it, though.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_Cupboard::
+	.string "A cupboard full of neatly stacked\n"
+	.string "dishes and cups.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_Window::
+	.string "Fervor Field City looks lively\n"
+	.string "today.\p"
+	.string "Everyone seems to be heading north\n"
+	.string "toward the SAFARI ZONE.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_PlantLeft::
+	.string "A potted plant.\n"
+	.string "Its leaves are glossy and green.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_PlantRight::
+	.string "A potted plant.\n"
+	.string "Mom waters it every morning.$"
+
+FervorField_PlayersHouse_1F_ARHU_Text_StarterBook::
+	.string "A book is lying open on the table.\n"
+	.string "The title reads “YOUR FIRST PARTNER.”\p"
+	.string "“A starter Pokémon is more than a\n"
+	.string "first teammate. It is the one who\l"
+	.string "grows up right beside you.”\p"
+	.string "“Beginning with only one Pokémon is\n"
+	.string "hard. You will stumble, and you may\l"
+	.string "lose a battle or two.”\p"
+	.string "“That challenge is a good thing!\n"
+	.string "It teaches you what your partner\l"
+	.string "can do, and what you can do for it.”\p"
+	.string "“A challenge is not a wall.\n"
+	.string "It is how a Trainer and a Pokémon\l"
+	.string "become a team.”$"
