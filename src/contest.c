@@ -2954,6 +2954,15 @@ void SetContestants(enum ContestCategories contestType, u8 rank)
         opponentsCount--;
     }
 
+    // Mira takes the first seat in every Earnest Contest Hall contest until the player clears it.
+    // The hall scripts read her result back from contestant slot 0.
+    if (rank == CONTEST_RANK_NORMAL
+     && !(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EARNEST_CONTEST_HALL_ARHU)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EARNEST_CONTEST_HALL_ARHU)
+     && VarGet(VAR_EARNEST_CONTEST_STATE) != EARNEST_CONTEST_STATE_CLEARED)
+        gContestMons[0] = gContestOpponents[CONTEST_OPPONENT_MIRA];
+
     CreateContestMonFromParty(gContestMonPartyIndex);
 }
 

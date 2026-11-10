@@ -859,13 +859,48 @@
 #define TRAINER_LEAF                        852
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
+#define TRAINER_FERVOR_WESTIN_SQUIRTLE      855
+#define TRAINER_FERVOR_WESTIN_CHIMCHAR      856
+#define TRAINER_FERVOR_WESTIN_SPRIGATITO    857
+#define TRAINER_FERVOR_MIRA_EEVEE           858
+#define TRAINER_CYCLING_ROAD_RHYS           859
+#define TRAINER_CYCLING_ROAD_NOVA           860
+#define TRAINER_CYCLING_ROAD_TOBIAS         861
+#define TRAINER_CYCLING_ROAD_SUMI           862
+#define TRAINER_CYCLING_ROAD_PIPER          863
+#define TRAINER_CYCLING_ROAD_ENZO           864
+#define TRAINER_CYCLING_ROAD_COLE           865
+#define TRAINER_CYCLING_ROAD_DREW           866
+#define TRAINER_CYCLING_ROAD_LENA           867
+#define TRAINER_CYCLING_ROAD_GRANT          868
+#define TRAINER_CYCLING_ROAD_ISAAC          869
+#define TRAINER_CYCLING_ROAD_MARISOL        870
+#define TRAINER_CYCLING_ROAD_NICO           871
+#define TRAINER_CYCLING_ROAD_ASHER          872
+#define TRAINER_EARNEST_STATE_QUINN         873
+#define TRAINER_EARNEST_STATE_ELLIOT        874
+#define TRAINER_EARNEST_STATE_REMY          875
+#define TRAINER_EARNEST_STATE_HOLLIS        876
+#define TRAINER_EARNEST_STATE_TASHA         877
+#define TRAINER_EARNEST_STATE_DARIUS        878
+#define TRAINER_EARNEST_STATE_MALIK         879
+#define TRAINER_EARNEST_GYM_THRESH          880
+#define TRAINER_EARNEST_GYM_HARLAN          881
+#define TRAINER_EARNEST_GYM_KAIA            882
+#define TRAINER_EARNEST_GYM_ISAMU           883
+#define TRAINER_EARNEST_GYM_WESTIN_SQUIRTLE   884
+#define TRAINER_EARNEST_GYM_WESTIN_CHIMCHAR   885
+#define TRAINER_EARNEST_GYM_WESTIN_SPRIGATITO 886
+#define TRAINER_ROUTE1_HOLT                 887
+#define TRAINER_ROUTE1_GOON_ROOK            888
+#define TRAINER_ROUTE1_GOON_DASH            889
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
-//       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
-//       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, trainer flag space is shared with the system flags that follow it
+//       (constants/flags.h). Raising MAX_TRAINERS_COUNT shifts them up, so unused flags at the end of the system block were removed to compensate.
+//       Any further trainers need more unused flags removed there, or more saveblock space.
 
-#define TRAINERS_COUNT_EMERALD     855
-#define MAX_TRAINERS_COUNT_EMERALD 864
+#define TRAINERS_COUNT_EMERALD     890
+#define MAX_TRAINERS_COUNT_EMERALD 890
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

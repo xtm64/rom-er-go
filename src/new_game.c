@@ -25,6 +25,7 @@
 #include "coins.h"
 #include "text.h"
 #include "overworld.h"
+#include "constants/heal_locations.h"
 #include "mail.h"
 #include "battle_records.h"
 #include "item.h"
@@ -136,7 +137,7 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     // PokeRedDe: Start player in Fervor Field Player's House 2F (STR-005)
-    SetWarpDestination(MAP_GROUP(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), MAP_NUM(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), WARP_ID_NONE, 6, 4);
+    SetWarpDestination(MAP_GROUP(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), MAP_NUM(MAP_FERVOR_FIELD_PLAYERS_HOUSE_2F_ARHU), WARP_ID_NONE, 2, 5);
     WarpIntoMap();
 }
 
@@ -210,6 +211,8 @@ void NewGameInitData(void)
     ResetLotteryCorner();
     UpdateDailySeed();
     WarpToTruck();
+    // Default whiteout respawn: Fervor Field (outside the player's house) until a Pokemon Center is visited
+    SetLastHealLocationWarp(HEAL_LOCATION_FERVOR_FIELD);
     if (IS_FRLG)
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
     else

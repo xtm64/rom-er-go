@@ -2,6 +2,7 @@ SafariZone_EventScript_OutOfBallsMidBattle::
 #if IS_FRLG
 	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 3
 #else
+	goto_if_eq VAR_FERVOR_FIELD_SAFARI_STATE, 2, SafariZone_EventScript_OutOfBallsMidBattleFervorField
 	setvar VAR_SAFARI_ZONE_STATE, 1
 #endif
 	special ExitSafariMode
@@ -16,6 +17,7 @@ SafariZone_EventScript_Exit::
 #if IS_FRLG
 	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 1
 #else
+	goto_if_eq VAR_FERVOR_FIELD_SAFARI_STATE, 2, SafariZone_EventScript_RetireFervorField
 	setvar VAR_SAFARI_ZONE_STATE, 1
 #endif
 	special ExitSafariMode
@@ -27,6 +29,49 @@ SafariZone_EventScript_Exit::
 	waitstate
 	end
 
+#if !IS_FRLG
+@ Fervor Field's Safari (FervorFieldCity_SafariZone_*_ARHU) returns to its own entrance
+SafariZone_EventScript_OutOfBallsMidBattleFervorField::
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 3  @ entrance gives the CHIKORITA, like retiring
+	special ExitSafariMode
+	setwarp MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1, 4, 1
+	end
+
+SafariZone_EventScript_ExitToFervorField::
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 1
+	special ExitSafariMode
+	warp MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1, 4, 1
+	waitstate
+	end
+
+@ Leaving Fervor Field's Safari without a catch (retiring, out of time, out of balls): the entrance
+@ attendant hands out the CHIKORITA consolation gift (state 4 in FervorFieldCity_SafariZone_Entrance_OnFrame).
+SafariZone_EventScript_RetireFervorField::
+	setvar VAR_FERVOR_FIELD_SAFARI_STATE, 4
+	special ExitSafariMode
+	warp MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1, 4, 1
+	waitstate
+	end
+
+@ Fervor Field's Safari challenge ends as soon as the player catches one POKéMON
+@ (called from CB2_EndSafariBattle in src/safari_zone.c, regardless of balls/steps left).
+@ Marks the challenge as passed so the gate refuses re-entry, then exits like a normal Safari end.
+SafariZone_EventScript_FervorFieldChallengeComplete::
+	lockall
+	playse SE_DING_DONG
+	message SafariZone_Text_FervorFieldChallengeComplete
+	waitmessage
+	waitbuttonpress
+	setvar VAR_FERVOR_FIELD_TANGLEWOOD_STATE, 2
+	setvar VAR_FERVOR_FIELD_STARTER_SPEECH_STATE, 1
+	releaseall
+	goto SafariZone_EventScript_ExitToFervorField
+
+SafariZone_Text_FervorFieldChallengeComplete:
+	.string "Ding-dong! You caught a POKéMON!\n"
+	.string "The SAFARI challenge is over.$"
+#endif
+
 SafariZone_EventScript_RetirePrompt::
 	lockall
 	msgbox SafariZone_Text_WouldYouLikeToExit, MSGBOX_YESNO
@@ -35,6 +80,8 @@ SafariZone_EventScript_RetirePrompt::
 	end
 
 SafariZone_EventScript_Retire::
+#if !IS_FRLG
+#endif
 	goto SafariZone_EventScript_Exit
 
 SafariZone_EventScript_TimesUp::

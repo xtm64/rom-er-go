@@ -3,7 +3,7 @@
   "name": "FervorFieldCity_ARHU",
   "layout": "LAYOUT_FERVOR_FIELD_CITY_ARHU",
   "music": "MUS_RG_FUCHSIA",
-  "region_map_section": "MAPSEC_FUCHSIA_CITY",
+  "region_map_section": "MAPSEC_FERVOR_FIELD",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_ROUTE2_ARHU",
+      "offset": 15,
+      "direction": "right"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -106,8 +112,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FervorFieldCity_ARHU_EventScript_Tanglewood",
+      "flag": "FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD"
     },
     {
       "local_id": "LOCALID_FERVOR_FIELD_CITY_GATE_CAMPER",
@@ -120,46 +126,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 23,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
-      "x": 25,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 26,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FervorFieldCity_ARHU_EventScript_GateCamper",
       "flag": "0"
     },
     {
@@ -217,6 +184,88 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_FERVOR_FIELD_CITY_GATE_HOLT"
+    },
+    {
+      "local_id": "LOCALID_FERVOR_FIELD_CITY_GYM_BLOCKER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 11,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_GymBlocker",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_FERVOR_FIELD_CITY_MART_BLOCKER",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "x": 20,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_MartBlocker",
+      "flag": "FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE"
+    },
+    {
+      "local_id": "LOCALID_FERVOR_FIELD_CITY_POKEMON_CENTER_BLOCKER",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "x": 29,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_PokemonCenterBlocker",
+      "flag": "FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE"
+    },
+    {
+      "local_id": "LOCALID_FERVOR_FIELD_CITY_MOVE_DELETER_BLOCKER",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 8,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_MoveDeleterBlocker",
+      "flag": "FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
+      "x": 19,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_TipKid_FastText",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 20,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FervorFieldCity_ARHU_EventScript_TipKid_Saving",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -226,7 +275,7 @@
       "y": 29,
       "elevation": 0,
       "dest_map": "MAP_FERVOR_FIELD_PLAYERS_HOUSE_1F_ARHU",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 24,
@@ -234,9 +283,177 @@
       "elevation": 0,
       "dest_map": "MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 20,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_MART_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_POKEMON_CENTER_1F_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_FISHERMANS_HOUSE_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_FISHERMANS_HOUSE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_TANGLEWOODS_HOUSE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_HOUSE1_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 8,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_HOUSE2_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_HOUSE3_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 33,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_HOUSE4_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 38,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_HOUSE5_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 40,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_SAFARI_OFFICE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_GYM_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 41,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_FERVOR_FIELD_FISHERMANS_HOUSE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_EAST_GATE_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 46,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_WEST_GATE_ARHU",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeech"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X21"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X22"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X23"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X25"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X26"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_STARTER_SPEECH_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_StarterSpeechPull_X27"
+    },
     {
       "type": "trigger",
       "x": 12,
@@ -288,6 +505,24 @@
       "y": 12,
       "elevation": 0,
       "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
+      "var_value": "1",
+      "script": "FervorFieldCity_ARHU_EventScript_SafariGate_ChallengeNotDone"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_FERVOR_FIELD_TANGLEWOOD_STATE",
       "var_value": "2",
       "script": "FervorFieldCity_ARHU_EventScript_SafariGate_AlreadyPassed"
     },
@@ -302,6 +537,14 @@
     }
   ],
   "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorFieldCity_ARHU_EventScript_DirectionsSign"
+    },
     {
       "type": "sign",
       "x": 37,

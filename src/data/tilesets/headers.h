@@ -837,28 +837,6 @@ const struct Tileset gTileset_UnionRoom =
 
 // FRLG tilesets
 
-const struct Tileset gTileset_PalletTown =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PalletTown,
-    .palettes = gTilesetPalettes_PalletTown,
-    .metatiles = gMetatiles_PalletTown,
-    .metatileAttributes = gMetatileAttributes_PalletTown,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_ViridianCity =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_ViridianCity,
-    .palettes = gTilesetPalettes_ViridianCity,
-    .metatiles = gMetatiles_ViridianCity,
-    .metatileAttributes = gMetatileAttributes_ViridianCity,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_PewterCity =
 {
     .isCompressed = TRUE,
@@ -980,17 +958,6 @@ const struct Tileset gTileset_Cave_Frlg =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Museum =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Museum,
-    .palettes = gTilesetPalettes_Museum,
-    .metatiles = gMetatiles_Museum,
-    .metatileAttributes = gMetatileAttributes_Museum,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_CableClub_Frlg =
 {
     .isCompressed = FALSE,
@@ -1010,17 +977,6 @@ const struct Tileset gTileset_BikeShop_Frlg =
     .palettes = gTilesetPalettes_BikeShop_Frlg,
     .metatiles = gMetatiles_BikeShop_Frlg,
     .metatileAttributes = gMetatileAttributes_BikeShop_Frlg,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Lab_Frlg =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Lab_Frlg,
-    .palettes = gTilesetPalettes_Lab_Frlg,
-    .metatiles = gMetatiles_Lab_Frlg,
-    .metatileAttributes = gMetatileAttributes_Lab_Frlg,
     .callback = NULL,
 };
 
@@ -1230,17 +1186,6 @@ const struct Tileset gTileset_DepartmentStore =
     .palettes = gTilesetPalettes_DepartmentStore,
     .metatiles = gMetatiles_DepartmentStore,
     .metatileAttributes = gMetatileAttributes_DepartmentStore,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_GenericBuilding2 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_GenericBuilding2,
-    .palettes = gTilesetPalettes_GenericBuilding2,
-    .metatiles = gMetatiles_GenericBuilding2,
-    .metatileAttributes = gMetatileAttributes_GenericBuilding2,
     .callback = NULL,
 };
 
@@ -1489,6 +1434,28 @@ const struct Tileset gTileset_HallOfFame =
 #endif // IS_FRLG
 
 // Used by custom ARHU maps — needed in both Emerald and FRLG builds
+const struct Tileset gTileset_Lab_Frlg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lab_Frlg,
+    .palettes = gTilesetPalettes_Lab_Frlg,
+    .metatiles = gMetatiles_Lab_Frlg,
+    .metatileAttributes = gMetatileAttributes_Lab_Frlg,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PalletTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PalletTown,
+    .palettes = gTilesetPalettes_PalletTown,
+    .metatiles = gMetatiles_PalletTown,
+    .metatileAttributes = gMetatileAttributes_PalletTown,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_BuildingFrlg =
 {
     .isCompressed = TRUE,
@@ -1522,12 +1489,45 @@ const struct Tileset gTileset_SafariZoneBuilding =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Museum =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Museum,
+    .palettes = gTilesetPalettes_Museum,
+    .metatiles = gMetatiles_Museum,
+    .metatileAttributes = gMetatileAttributes_Museum,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_GenericBuilding2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GenericBuilding2,
+    .palettes = gTilesetPalettes_GenericBuilding2,
+    .metatiles = gMetatiles_GenericBuilding2,
+    .metatileAttributes = gMetatileAttributes_GenericBuilding2,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_General_Frlg =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
     .tiles = gTilesetTiles_General_Frlg,
     .palettes = gTilesetPalettes_General_Frlg,
+    .metatiles = gMetatiles_General_Frlg,
+    .metatileAttributes = gMetatileAttributes_General_Frlg,
+    .callback = InitTilesetAnim_General_Frlg,
+};
+
+const struct Tileset gTileset_General_Frlg_North =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General_Frlg,
+    .palettes = gTilesetPalettes_General_Frlg_North,
     .metatiles = gMetatiles_General_Frlg,
     .metatileAttributes = gMetatileAttributes_General_Frlg,
     .callback = InitTilesetAnim_General_Frlg,
@@ -1541,5 +1541,16 @@ const struct Tileset gTileset_FuchsiaCity =
     .palettes = gTilesetPalettes_FuchsiaCity,
     .metatiles = gMetatiles_FuchsiaCity,
     .metatileAttributes = gMetatileAttributes_FuchsiaCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_ViridianCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ViridianCity,
+    .palettes = gTilesetPalettes_ViridianCity,
+    .metatiles = gMetatiles_ViridianCity,
+    .metatileAttributes = gMetatileAttributes_ViridianCity,
     .callback = NULL,
 };

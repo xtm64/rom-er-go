@@ -58,41 +58,41 @@
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_HIKER   0x24 // "I got here first" trainer at the Safari gate, hidden after the Tanglewood speech
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_MIRA    0x25 // Mira at the Safari gate, hidden after the Tanglewood speech
 #define FLAG_HIDE_FERVOR_FIELD_CITY_GATE_WESTIN  0x26 // Westin at the Safari gate, hidden after the Tanglewood speech
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_ITEM_FERVOR_SAFARI_CENTER_NUGGET    0x27 // Fervor Safari Center item ball (ITEM_NUGGET), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_MAX_POTION  0x28 // Fervor Safari East item ball (ITEM_MAX_POTION), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_FULL_RESTORE 0x29 // Fervor Safari East item ball (ITEM_FULL_RESTORE), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_TM11        0x2A // Fervor Safari East item ball (ITEM_TM11), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_EAST_LEAF_STONE  0x2B // Fervor Safari East item ball (ITEM_LEAF_STONE), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_PROTEIN    0x2C // Fervor Safari North item ball (ITEM_PROTEIN), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_TM47       0x2D // Fervor Safari North item ball (ITEM_TM47), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_NORTH_QUICK_CLAW 0x2E // Fervor Safari North item ball (ITEM_QUICK_CLAW), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_GOLD_TEETH  0x2F // Fervor Safari West item ball (ITEM_GOLD_TEETH), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_TM32        0x30 // Fervor Safari West item ball (ITEM_TM32), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_POTION  0x31 // Fervor Safari West item ball (ITEM_MAX_POTION), set once picked up
+#define FLAG_ITEM_FERVOR_SAFARI_WEST_MAX_REVIVE  0x32 // Fervor Safari West item ball (ITEM_MAX_REVIVE), set once picked up
+#define FLAG_RECEIVED_FERVOR_SAFARI_HM03         0x33 // HM03 (Surf) prize from the Fervor Safari secret house
+#define FLAG_FERVOR_FIELD_RIVAL_NO_WHITEOUT 0x34 // Set only during the rival battles after Tanglewood's exit speech so losing to Westin/Mira doesn't white out (B_FLAG_NO_WHITEOUT)
+#define FLAG_HIDE_FERVOR_FIELD_CITY_TANGLEWOOD 0x35 // Tanglewood at the Safari gate, hidden after he heads inside at the end of the exit speech
+#define FLAG_FERVOR_FIELD_SAFARI_CHALLENGE_COMPLETE 0x36 // Set when the Safari challenge is completed; lets the player leave the Fisherman's House through the back exit
+#define FLAG_RECEIVED_WILLOWSVILLE_RARE_CANDY 0x37 // Rare Candy gift from the Willowsville lab researcher
+#define FLAG_RECEIVED_WILLOWSVILLE_TM_ROCK_TOMB 0x38 // TM Rock Tomb gift from the Willowsville lab researcher
+#define FLAG_ITEM_WILLOW_WOODS_GREAT_BALL 0x39 // Willow Woods item ball (ITEM_GREAT_BALL), set once picked up
+#define FLAG_ITEM_WILLOW_WOODS_ETHER 0x3A // Willow Woods item ball (ITEM_ETHER), set once picked up
+#define FLAG_ITEM_WILLOW_WOODS_X_ATTACK 0x3B // Willow Woods item ball (ITEM_X_ATTACK), set once picked up
+#define FLAG_ITEM_WILLOW_LAKE_ISLAND 0x3C // Willow Lake island item ball (ITEM_SUPER_POTION), set once picked up
+#define FLAG_ITEM_EARNEST_STATE_GARDEN_MIRACLE_SEED 0x3D // Earnest State garden item ball (ITEM_MIRACLE_SEED), set once picked up
+#define FLAG_RECEIVED_EARNEST_STATE_AMULET_COIN 0x3E // Earnest State Admin Hall bursar "scholarship" gift
+#define FLAG_RECEIVED_EARNEST_STATE_WISE_GLASSES 0x3F // Earnest State Lecture Hall professor pop quiz reward
+#define FLAG_RECEIVED_EARNEST_STATE_TWISTED_SPOON 0x40 // Earnest State Library, Elliot post-battle gift
+#define FLAG_RECEIVED_EARNEST_STATE_THROAT_SPRAY 0x41 // Earnest State Media Center, Remy post-battle gift
+#define FLAG_RECEIVED_EARNEST_STATE_MYSTIC_WATER 0x42 // Earnest State Science Tower field quiz reward
+#define FLAG_RECEIVED_EARNEST_STATE_MUSCLE_BAND 0x43 // Earnest State Gymnasium, Captain Malik post-battle gift
+#define FLAG_HIDE_EARNEST_TOWNSHIP_RIVAL 0x44 // Westin outside the Earnest Gym; hidden except during the post-gym rival battle
+#define FLAG_HIDE_EARNEST_TOWNSHIP_THRESH 0x45 // Thresh in the Earnest Gym doorway; hidden except during the post-gym rival scene
+#define FLAG_HIDE_EARNEST_CONTEST_HALL_MIRA 0x46 // Mira in the Earnest Contest Hall lobby; shown only for her intro and post-contest scenes
+#define FLAG_RECEIVED_EARNEST_CONTEST_SILK_SCARF 0x47 // Earnest Contest Hall prize for clearing its NORMAL RANK (handed over at the counter if the bag was full)
+#define FLAG_HIDE_ROUTE1_HOLT_AMBUSH 0x48 // Holt, his two goons, Mira and Westin on Route 1; shown only from the end of the Safari challenge until the ambush scene is over
+#define FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS 0x49 // Tanglewood and Mom on Route 1; hidden except while they break up the Holt ambush
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
@@ -664,11 +664,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_CENTER_LEAF_STONE (FLAG_HIDDEN_ITEMS_START + 0x71) // Fervor Safari Center hidden item (27,15)
+#define FLAG_HIDDEN_ITEM_FERVOR_SAFARI_WEST_REVIVE      (FLAG_HIDDEN_ITEMS_START + 0x72) // Fervor Safari West hidden item (13,11)
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_MUSEUM_RARE_BONE   (FLAG_HIDDEN_ITEMS_START + 0x73) // Earnest State Museum hidden item (20,12)
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_DORM_RARE_CANDY    (FLAG_HIDDEN_ITEMS_START + 0x74) // Earnest State Dorm 2F hidden item (13,7)
+#define FLAG_HIDDEN_ITEM_EARNEST_STATE_GARDEN_REVIVAL_HERB (FLAG_HIDDEN_ITEMS_START + 0x75) // Earnest State garden hidden item (29,8)
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
@@ -1539,41 +1539,19 @@
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
-#define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
-#define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
-#define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
-#define FLAG_UNUSED_0x91E                           (SYSTEM_FLAGS + 0xBE) // Unused Flag
-#define FLAG_UNUSED_0x91F                           (SYSTEM_FLAGS + 0xBF) // Unused Flag
+// Twenty-three trailing unused flags (0x909-0x91F) were removed to make room for twenty-three more trainer flags (MAX_TRAINERS_COUNT 864 -> 887).
+// Three more (0x906-0x908) were removed for the Route 1 Holt ambush trainers (MAX_TRAINERS_COUNT 887 -> 890).
+// The last flag here must stay at 0x91F so DAILY_FLAGS_START remains 0x920.
+
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
+#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x905 + (8 - FLAG_UNUSED_0x905 % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_WILLOW_RANCH_BERRIES             (DAILY_FLAGS_START + 0x3)  // Bought today's 10 berries at the Willow Ranch seed shop
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag

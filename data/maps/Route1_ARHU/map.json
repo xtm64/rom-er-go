@@ -1,0 +1,218 @@
+{
+  "id": "MAP_ROUTE1_ARHU",
+  "name": "Route1_ARHU",
+  "layout": "LAYOUT_ROUTE1_ARHU",
+  "music": "MUS_RG_ROUTE1",
+  "region_map_section": "MAPSEC_ROUTE_1",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 20,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route1_ARHU_EventScript_HurtMonsYoungster",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 20,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route1_ARHU_EventScript_CoolMonsLass",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_HOLT",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 38,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_ROOK",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "x": 39,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_DASH",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 39,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_WESTIN",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "x": 37,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_MIRA",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 37,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_TANGLEWOOD",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 44,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS"
+    },
+    {
+      "local_id": "LOCALID_ROUTE1_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 44,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE1_HOLT_AMBUSH_RESCUERS"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 44,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE1_EAST_GATE_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 25,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 26,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 27,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE2_NORTH_ARHU",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 43,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route1_ARHU_EventScript_DirectionsSign"
+    }
+  ]
+}

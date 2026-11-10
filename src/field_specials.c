@@ -979,6 +979,40 @@ u8 GetBattleOutcome(void)
     return gBattleOutcome;
 }
 
+// Fervor Field: one lowest-level POKéBLOCK of each of the five main colors
+#define FERVOR_STARTER_POKEBLOCK_LEVEL 2
+
+void GiveFervorFieldStarterPokeblocks(void)
+{
+    u8 color;
+
+    for (color = PBLOCK_CLR_RED; color <= PBLOCK_CLR_YELLOW; color++)
+    {
+        struct Pokeblock pokeblock = {0};
+
+        pokeblock.color = color;
+        switch (color)
+        {
+        case PBLOCK_CLR_RED:
+            pokeblock.spicy = FERVOR_STARTER_POKEBLOCK_LEVEL;
+            break;
+        case PBLOCK_CLR_BLUE:
+            pokeblock.dry = FERVOR_STARTER_POKEBLOCK_LEVEL;
+            break;
+        case PBLOCK_CLR_PINK:
+            pokeblock.sweet = FERVOR_STARTER_POKEBLOCK_LEVEL;
+            break;
+        case PBLOCK_CLR_GREEN:
+            pokeblock.bitter = FERVOR_STARTER_POKEBLOCK_LEVEL;
+            break;
+        case PBLOCK_CLR_YELLOW:
+            pokeblock.sour = FERVOR_STARTER_POKEBLOCK_LEVEL;
+            break;
+        }
+        AddPokeblock(&pokeblock);
+    }
+}
+
 void CableCarWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)

@@ -3,7 +3,7 @@
   "name": "FervorFieldCity_SafariZone_Entrance_ARHU_1",
   "layout": "LAYOUT_FERVOR_FIELD_CITY_SAFARI_ZONE_ENTRANCE_ARHU_1",
   "music": "MUS_RG_FUCHSIA",
-  "region_map_section": "MAPSEC_FUCHSIA_CITY",
+  "region_map_section": "MAPSEC_FERVOR_FIELD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -52,7 +52,7 @@
       "x": 4,
       "y": 1,
       "elevation": 3,
-      "dest_map": "MAP_SAFARI_ZONE_CENTER",
+      "dest_map": "MAP_FERVOR_FIELD_CITY_SAFARI_ZONE_CENTER_ARHU",
       "dest_warp_id": "1"
     },
     {

@@ -25,6 +25,17 @@
 #define CONTEST_TYPE_NPC_MASTER  (CONTEST_RANK_MASTER + 1)
 #define CONTEST_TYPE_LINK        (CONTEST_RANK_LINK + 1)
 
+// States for VAR_EARNEST_CONTEST_STATE (Earnest Township's NORMAL RANK hall, the contest road's first stop).
+// Mira is seated as a contestant in every Earnest contest until the player clears it.
+#define EARNEST_CONTEST_STATE_MIRA_INTRO       0 // Mira hasn't met the player in the lobby yet
+#define EARNEST_CONTEST_STATE_READY            1 // Intro seen; contests open, Mira competes
+#define EARNEST_CONTEST_STATE_ENTERED          2 // On stage (Mira competing); the hall warps back to Earnest
+#define EARNEST_CONTEST_STATE_PLAYER_WON       3 // Back in the lobby, player won: Accord ceremony pending
+#define EARNEST_CONTEST_STATE_MIRA_WON         4 // Back in the lobby, Mira won
+#define EARNEST_CONTEST_STATE_OTHER_WON        5 // Back in the lobby, another contestant won
+#define EARNEST_CONTEST_STATE_CLEARED          6 // Contest road cleared here (DOJO BADGE via the Fervor Accord); Mira has moved on
+#define EARNEST_CONTEST_STATE_ENTERED_REMATCH  7 // On stage after clearing; the hall warps back to Earnest
+
 // IDs below - 1 are indexes into gSaveBlock1Ptr->contestWinners[]
 // CONTEST_WINNER_ARTIST is for the winner of the most recent contest, and is not saved.
 #define CONTEST_WINNER_ARTIST 0

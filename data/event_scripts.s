@@ -1747,3 +1747,99 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
         .include "data/maps/FervorField_PlayersHouse_2F_ARHU/scripts.inc"
 
         .include "data/maps/FervorField_PlayersHouse_1F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Center_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_East_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_North_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_West_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_Center_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_East_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_North_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_West_RestHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorFieldCity_SafariZone_SecretHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_Mart_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PokemonCenter_1F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_PokemonCenter_2F_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_FishermansHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_TanglewoodsHouse_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House1_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House2_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_SafariOffice_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House3_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House4_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_House5_ARHU/scripts.inc"
+
+        .include "data/maps/FervorField_Gym_ARHU/scripts.inc"
+
+        .include "data/maps/Route1_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_ARHU/scripts.inc"
+
+        .include "data/maps/Route1_EastGate_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_WestGate_ARHU/scripts.inc"
+
+        .include "data/maps/Route2_North_ARHU/scripts.inc"
+
+        .include "data/maps/Route1_CyclingRoad_ARHU/scripts.inc"
+	.include "data/maps/Route1_CyclingRoad_NorthGate_ARHU/scripts.inc"
+	.include "data/maps/Route1_CyclingRoad_SouthGate_ARHU/scripts.inc"
+
+        .include "data/maps/EarnestStateCampus_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_AdminHall_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_LectureHall_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_MediaCenter_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_CampusStore_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Library_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_HealthCenter_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_ScienceTower_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Dorm_1F_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Dorm_2F_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Museum_ARHU/scripts.inc"
+        .include "data/maps/EarnestStateCampus_Gymnasium_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_WestinsHouse_1F_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_WestinsHouse_2F_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_Cottage_ARHU/scripts.inc"
+
+        .include "data/maps/Willowsville_Lab_ARHU/scripts.inc"
+        .include "data/maps/WillowWoods_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_ARHU/scripts.inc"
+        .include "data/maps/WillowLake_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_DayCare_ARHU/scripts.inc"
+        .include "data/maps/WillowRanch_SeedShop_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Township_ARHU/scripts.inc"
+        .include "data/maps/Earnest_PokemonCenter_1F_ARHU/scripts.inc"
+        .include "data/maps/Earnest_PokemonCenter_2F_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Mart_ARHU/scripts.inc"
+        .include "data/maps/Earnest_Gym_ARHU/scripts.inc"
+        .include "data/maps/Earnest_ContestHall_ARHU/scripts.inc"
+        .include "data/maps/Earnest_NameRatersHouse_ARHU/scripts.inc"
+        .include "data/maps/Earnest_House_ARHU/scripts.inc"
+
+	.include "data/maps/Route3_ARHU/scripts.inc"
+
+	.include "data/maps/Route4_ARHU/scripts.inc"

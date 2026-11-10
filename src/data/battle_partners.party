@@ -42,3 +42,53 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+/* Fervor Field tag-battle partners for the Route 1 Holt ambush (Route1_ARHU). The player picks one.
+   Westin's partner entry matches the starter he got (VAR_FERVOR_FIELD_WESTIN_STARTER). */
+=== PARTNER_FERVOR_MIRA ===
+Name: MIRA
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Eevee
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_FERVOR_WESTIN_SQUIRTLE ===
+Name: WESTIN
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Squirtle
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_FERVOR_WESTIN_CHIMCHAR ===
+Name: WESTIN
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Chimchar
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_FERVOR_WESTIN_SPRIGATITO ===
+Name: WESTIN
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Sprigatito
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

@@ -1626,6 +1626,34 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_FERVOR_FIELD",
+      "name": "FERVOR FIELD"
+    },
+    {
+      "id": "MAPSEC_WILLOWSVILLE",
+      "name": "WILLOWSVILLE"
+    },
+    {
+      "id": "MAPSEC_WILLOW_WOODS",
+      "name": "WILLOW WOODS"
+    },
+    {
+      "id": "MAPSEC_WILLOW_RANCH",
+      "name": "WILLOW RANCH"
+    },
+    {
+      "id": "MAPSEC_WILLOW_LAKE",
+      "name": "WILLOW LAKE"
+    },
+    {
+      "id": "MAPSEC_EARNEST_STATE_CAMPUS",
+      "name": "EARNEST STATE"
+    },
+    {
+      "id": "MAPSEC_EARNEST_TOWNSHIP",
+      "name": "EARNEST TWP."
     }
   ]
 }

@@ -1,0 +1,116 @@
+{
+  "id": "MAP_FERVOR_FIELD_TANGLEWOODS_HOUSE_ARHU",
+  "name": "FervorField_TanglewoodsHouse_ARHU",
+  "layout": "LAYOUT_FERVOR_FIELD_TANGLEWOODS_HOUSE_ARHU",
+  "music": "MUS_RG_FUCHSIA",
+  "region_map_section": "MAPSEC_FUCHSIA_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_CITY_ARHU",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "dest_map": "MAP_FERVOR_FIELD_CITY_ARHU",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_FERVOR_FIELD_CITY_ARHU",
+      "dest_warp_id": "6"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Books"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Books"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_LakeJournal"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_LakeJournal"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Books"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Notes"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Notes"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Curios"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_TanglewoodsHouse_ARHU_EventScript_Curios"
+    }
+  ],
+  "floor_number": 0
+}

@@ -3,7 +3,7 @@
   "name": "FervorField_PlayersHouse_1F_ARHU",
   "layout": "LAYOUT_FERVOR_FIELD_PLAYERS_HOUSE_1F_ARHU",
   "music": "MUS_RG_PALLET",
-  "region_map_section": "MAPSEC_PALLET_TOWN",
+  "region_map_section": "MAPSEC_FERVOR_FIELD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -30,13 +30,6 @@
     }
   ],
   "warp_events": [
-    {
-      "x": 5,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_FERVOR_FIELD_CITY_ARHU",
-      "dest_warp_id": "0"
-    },
     {
       "x": 4,
       "y": 8,
@@ -87,6 +80,94 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PalletTown_PlayersHouse_1F_EventScript_TV"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_Sink"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_Stove"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_Cupboard"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_Cupboard"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_Window"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_StarterBook"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_StarterBook"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_StarterBook"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_StarterBook"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_PlantLeft"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FervorField_PlayersHouse_1F_ARHU_EventScript_PlantRight"
     }
   ],
   "floor_number": 0

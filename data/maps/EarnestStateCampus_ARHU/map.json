@@ -1,0 +1,388 @@
+{
+  "id": "MAP_EARNEST_STATE_CAMPUS_ARHU",
+  "name": "EarnestStateCampus_ARHU",
+  "layout": "LAYOUT_EARNEST_STATE_CAMPUS_ARHU",
+  "music": "MUS_RUSTBORO",
+  "region_map_section": "MAPSEC_EARNEST_STATE_CAMPUS",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 38,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_TourGuide",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
+      "x": 36,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_Zigzagoon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 27,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_FountainStudent",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
+      "x": 20,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_Jogger",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "x": 5,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_StudyingStudent",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 31,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_Botanist",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 39,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MIRACLE_SEED",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_EARNEST_STATE_GARDEN_MIRACLE_SEED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 10,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_ProfessorEmeritus",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "x": 22,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EarnestStateCampus_ARHU_EventScript_HexManiac",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_ADMIN_HALL_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_ADMIN_HALL_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_LECTURE_HALL_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_MEDIA_CENTER_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_CAMPUS_STORE_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_LIBRARY_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_HEALTH_CENTER_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_SCIENCE_TOWER_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_SCIENCE_TOWER_ARHU",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 6,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_DORM_1F_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_MUSEUM_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_EARNEST_STATE_CAMPUS_GYMNASIUM_ARHU",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 48,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 48,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 48,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 48,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 48,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE1_CYCLING_ROAD_ARHU",
+      "dest_warp_id": "13"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EarnestStateCampus_ARHU_EventScript_DirectionsSign"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_AdminHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_LectureHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_MediaCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_CampusStoreSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_LibrarySign"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_HealthCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_ScienceTowerSign"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_DormSign"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_MuseumSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_GymnasiumSign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_FountainPlaque"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_SteamPlantSign"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "EarnestStateCampus_ARHU_EventScript_GardenSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 8,
+      "elevation": 3,
+      "item": "ITEM_REVIVAL_HERB",
+      "flag": "FLAG_HIDDEN_ITEM_EARNEST_STATE_GARDEN_REVIVAL_HERB",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
+}
