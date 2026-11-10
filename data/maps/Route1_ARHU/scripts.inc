@@ -267,6 +267,8 @@ Route1_ARHU_EventScript_HoltAmbush_Rescue::
 	waitfanfare
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_POKEDEX_GET
 	msgbox Route1_ARHU_Text_Mom_ExplainRunningShoes, MSGBOX_DEFAULT
 	closemessage
 	@ The friend who fought on the side comes over

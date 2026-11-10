@@ -59,28 +59,28 @@
     },
     {
       "x": 10,
-      "y": 4,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "3"
     },
     {
       "x": 11,
-      "y": 4,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "4"
     },
     {
       "x": 12,
-      "y": 4,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "5"
     },
     {
       "x": 13,
-      "y": 4,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "6"

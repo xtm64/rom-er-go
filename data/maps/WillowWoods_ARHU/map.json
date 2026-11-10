@@ -82,42 +82,42 @@
   ],
   "warp_events": [
     {
-      "x": 53,
+      "x": 55,
       "y": 35,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "7"
     },
     {
-      "x": 53,
+      "x": 55,
       "y": 36,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "8"
     },
     {
-      "x": 53,
+      "x": 55,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_WILLOWSVILLE_ARHU",
       "dest_warp_id": "9"
     },
     {
-      "x": 1,
+      "x": 0,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_RANCH_ARHU",
       "dest_warp_id": "1"
     },
     {
-      "x": 1,
+      "x": 0,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_RANCH_ARHU",
       "dest_warp_id": "2"
     },
     {
-      "x": 1,
+      "x": 0,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_WILLOW_RANCH_ARHU",

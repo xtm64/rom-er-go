@@ -44,8 +44,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
-      "y": 7,
+      "x": 9,
+      "y": 6,
       "elevation": 3,
       "dest_map": "MAP_ROUTE2_WEST_GATE_ARHU",
       "dest_warp_id": "1"
